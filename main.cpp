@@ -12,7 +12,5 @@ int main()
     hand.addCard(card);
     card = deck.dealCard();
     hand.addCard(card);
-    std::cout << hand.calculateValue();
-
-    // Game game = Game();
+    std::cout << deck.toString();
 }
