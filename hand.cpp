@@ -4,6 +4,14 @@ Hand::Hand()
 {
 }
 
+Hand::Hand(std::vector<Card> cards)
+{
+    for (std::vector<Card>::iterator it = cards.begin(); it != cards.end(); it++)
+    {
+        hand.push_back(*it);
+    }
+}
+
 void Hand::addCard(Card card)
 {
     hand.push_back(card);
