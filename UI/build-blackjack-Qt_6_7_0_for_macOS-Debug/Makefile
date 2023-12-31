@@ -52,13 +52,31 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../blackjack/main.cpp \
-		../blackjack/mainwindow.cpp qrc_qmake_qmake_qm_files.cpp \
-		moc_mainwindow.cpp
-OBJECTS       = main.o \
+SOURCES       = ../blackjack/card.cpp \
+		../blackjack/main.cpp \
+		../blackjack/mainwindow.cpp \
+		../blackjack/player.cpp \
+		../blackjack/playwindow.cpp \
+		../blackjack/roomitemwidget.cpp qrc_A_h.cpp \
+		qrc_qmake_qmake_qm_files.cpp \
+		moc_card.cpp \
+		moc_mainwindow.cpp \
+		moc_player.cpp \
+		moc_playwindow.cpp \
+		moc_roomitemwidget.cpp
+OBJECTS       = card.o \
+		main.o \
 		mainwindow.o \
+		player.o \
+		playwindow.o \
+		roomitemwidget.o \
+		qrc_A_h.o \
 		qrc_qmake_qmake_qm_files.o \
-		moc_mainwindow.o
+		moc_card.o \
+		moc_mainwindow.o \
+		moc_player.o \
+		moc_playwindow.o \
+		moc_roomitemwidget.o
 DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/device_config.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/common/unix.conf \
@@ -350,6 +368,7 @@ DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/spec_post.prf \
+		../blackjack/.qmake.stash \
 		../../../../Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/toolchain.prf \
@@ -380,8 +399,16 @@ DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/exceptions.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/lex.prf \
-		../blackjack/blackjack.pro ../blackjack/mainwindow.h ../blackjack/main.cpp \
-		../blackjack/mainwindow.cpp
+		../blackjack/blackjack.pro ../blackjack/card.h \
+		../blackjack/mainwindow.h \
+		../blackjack/player.h \
+		../blackjack/playwindow.h \
+		../blackjack/roomitemwidget.h ../blackjack/card.cpp \
+		../blackjack/main.cpp \
+		../blackjack/mainwindow.cpp \
+		../blackjack/player.cpp \
+		../blackjack/playwindow.cpp \
+		../blackjack/roomitemwidget.cpp
 QMAKE_TARGET  = blackjack
 DESTDIR       = 
 TARGET        = blackjack.app/Contents/MacOS/blackjack
@@ -390,7 +417,7 @@ TARGET        = blackjack.app/Contents/MacOS/blackjack
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 13.3
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/nghiann/Desktop/cpp_blackjack/UI/build-blackjack-Qt_6_7_0_for_macOS-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64 arm64
 EXPORT_DEFAULT_ARCHS = x86_64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -402,7 +429,7 @@ include /Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/sdk.mk
 first: all
 ####### Build rules
 
-blackjack.app/Contents/MacOS/blackjack: ui_mainwindow.h $(OBJECTS)  
+blackjack.app/Contents/MacOS/blackjack: ui_card.h ui_mainwindow.h ui_player.h ui_playwindow.h ui_roomitemwidget.h $(OBJECTS)  
 	@test -d blackjack.app/Contents/MacOS/ || mkdir -p blackjack.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -697,6 +724,7 @@ Makefile: ../blackjack/blackjack.pro ../../../../Qt/6.7.0/macos/mkspecs/macx-cla
 		../../../../Qt/6.7.0/macos/mkspecs/features/qt_config.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/toolchain.prf \
@@ -728,6 +756,7 @@ Makefile: ../blackjack/blackjack.pro ../../../../Qt/6.7.0/macos/mkspecs/macx-cla
 		../../../../Qt/6.7.0/macos/mkspecs/features/yacc.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/lex.prf \
 		../blackjack/blackjack.pro \
+		../blackjack/A_h.qrc \
 		qmake_qmake_qm_files.qrc \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl \
 		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Resources/QtGui.prl \
@@ -1024,6 +1053,7 @@ Makefile: ../blackjack/blackjack.pro ../../../../Qt/6.7.0/macos/mkspecs/macx-cla
 ../../../../Qt/6.7.0/macos/mkspecs/features/qt_config.prf:
 ../../../../Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf:
 ../../../../Qt/6.7.0/macos/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf:
 ../../../../Qt/6.7.0/macos/mkspecs/features/toolchain.prf:
@@ -1055,6 +1085,7 @@ Makefile: ../blackjack/blackjack.pro ../../../../Qt/6.7.0/macos/mkspecs/macx-cla
 ../../../../Qt/6.7.0/macos/mkspecs/features/yacc.prf:
 ../../../../Qt/6.7.0/macos/mkspecs/features/lex.prf:
 ../blackjack/blackjack.pro:
+../blackjack/A_h.qrc:
 qmake_qmake_qm_files.qrc:
 ../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl:
 ../../../../Qt/6.7.0/macos/lib/QtGui.framework/Resources/QtGui.prl:
@@ -1071,7 +1102,7 @@ blackjack.app/Contents/PkgInfo:
 blackjack.app/Contents/Info.plist: 
 	@test -d blackjack.app/Contents || mkdir -p blackjack.app/Contents
 	@$(DEL_FILE) blackjack.app/Contents/Info.plist
-	@plutil -convert xml1 -o - ../../../../Qt/6.7.0/macos/mkspecs/macx-clang/Info.plist.app | sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,RxSwift-demo-project.blackjack,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},RxSwift-demo-project.blackjack,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},11.0,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,\$${IOS_LAUNCH_SCREEN},LaunchScreen,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,blackjack,g" -e "s,@LIBRARY@,blackjack,g" -e "s,\$${EXECUTABLE_NAME},blackjack,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" >blackjack.app/Contents/Info.plist
+	@plutil -convert xml1 -o - ../../../../Qt/6.7.0/macos/mkspecs/macx-clang/Info.plist.app | sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,ShoeApp.blackjack,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},ShoeApp.blackjack,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},11.0,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,\$${IOS_LAUNCH_SCREEN},LaunchScreen,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,blackjack,g" -e "s,@LIBRARY@,blackjack,g" -e "s,\$${EXECUTABLE_NAME},blackjack,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" >blackjack.app/Contents/Info.plist
 
 all: Makefile \
 		blackjack.app/Contents/PkgInfo \
@@ -1084,10 +1115,10 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/blackjack_en_GB.ts $(DISTDIR)/
-	$(COPY_FILE) --parents qmake_qmake_qm_files.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../blackjack/mainwindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../blackjack/main.cpp ../blackjack/mainwindow.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../blackjack/mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../blackjack/A_h.qrc qmake_qmake_qm_files.qrc $(DISTDIR)/
+	$(COPY_FILE) --parents ../blackjack/card.h ../blackjack/mainwindow.h ../blackjack/player.h ../blackjack/playwindow.h ../blackjack/roomitemwidget.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../blackjack/card.cpp ../blackjack/main.cpp ../blackjack/mainwindow.cpp ../blackjack/player.cpp ../blackjack/playwindow.cpp ../blackjack/roomitemwidget.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../blackjack/card.ui ../blackjack/mainwindow.ui ../blackjack/player.ui ../blackjack/playwindow.ui ../blackjack/roomitemwidget.ui $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/blackjack_en_GB.ts $(DISTDIR)/
 
 
@@ -1098,6 +1129,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r blackjack.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -1120,33 +1152,198 @@ compiler_lrelease_clean:
 .qm/blackjack_en_GB.qm: ../blackjack/blackjack_en_GB.ts
 	/Users/nghiann/Qt/6.7.0/macos/bin/lrelease ../blackjack/blackjack_en_GB.ts -qm .qm/blackjack_en_GB.qm
 
-compiler_rcc_make_all: qrc_qmake_qmake_qm_files.cpp
+compiler_rcc_make_all: qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 compiler_rcc_clean:
-	-$(DEL_FILE) qrc_qmake_qmake_qm_files.cpp
+	-$(DEL_FILE) qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
+qrc_A_h.cpp: ../blackjack/A_h.qrc \
+		../../../../Qt/6.7.0/macos/libexec/rcc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name A_h --no-zstd ../blackjack/A_h.qrc -o qrc_A_h.cpp
+
 qrc_qmake_qmake_qm_files.cpp: qmake_qmake_qm_files.qrc \
-		../../../../Qt/6.7.0/macos/libexec/rcc \
-		.qm/blackjack_en_GB.qm
+		../../../../Qt/6.7.0/macos/libexec/rcc
 	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name qmake_qmake_qm_files --no-zstd qmake_qmake_qm_files.qrc -o qrc_qmake_qmake_qm_files.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp
+compiler_moc_header_make_all: moc_card.cpp moc_mainwindow.cpp moc_player.cpp moc_playwindow.cpp moc_roomitemwidget.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp
+	-$(DEL_FILE) moc_card.cpp moc_mainwindow.cpp moc_player.cpp moc_playwindow.cpp moc_roomitemwidget.cpp
+moc_card.cpp: ../blackjack/card.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/card.h -o moc_card.cpp
+
 moc_mainwindow.cpp: ../blackjack/mainwindow.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../../../Qt/6.7.0/macos/libexec/moc
 	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/mainwindow.h -o moc_mainwindow.cpp
+
+moc_player.cpp: ../blackjack/player.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/player.h -o moc_player.cpp
+
+moc_playwindow.cpp: ../blackjack/playwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/playwindow.h -o moc_playwindow.cpp
+
+moc_roomitemwidget.cpp: ../blackjack/roomitemwidget.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		../../../../Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/roomitemwidget.h -o moc_roomitemwidget.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_card.h ui_mainwindow.h ui_player.h ui_playwindow.h ui_roomitemwidget.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
-ui_mainwindow.h: ../blackjack/mainwindow.ui \
+	-$(DEL_FILE) ui_card.h ui_mainwindow.h ui_player.h ui_playwindow.h ui_roomitemwidget.h
+ui_card.h: ../blackjack/card.ui \
 		../../../../Qt/6.7.0/macos/libexec/uic
+	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/card.ui -o ui_card.h
+
+ui_mainwindow.h: ../blackjack/mainwindow.ui \
+		../../../../Qt/6.7.0/macos/libexec/uic \
+		../blackjack/roomitemwidget.h \
+		../blackjack/playwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/mainwindow.ui -o ui_mainwindow.h
+
+ui_player.h: ../blackjack/player.ui \
+		../../../../Qt/6.7.0/macos/libexec/uic
+	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/player.ui -o ui_player.h
+
+ui_playwindow.h: ../blackjack/playwindow.ui \
+		../../../../Qt/6.7.0/macos/libexec/uic \
+		../blackjack/player.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
+	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/playwindow.ui -o ui_playwindow.h
+
+ui_roomitemwidget.h: ../blackjack/roomitemwidget.ui \
+		../../../../Qt/6.7.0/macos/libexec/uic
+	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/roomitemwidget.ui -o ui_roomitemwidget.h
 
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
@@ -1160,9 +1357,124 @@ compiler_clean: compiler_lrelease_clean compiler_rcc_clean compiler_moc_header_c
 
 ####### Compile
 
+card.o: ../blackjack/card.cpp ../blackjack/card.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_card.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o card.o ../blackjack/card.cpp
+
 main.o: ../blackjack/main.cpp ../blackjack/mainwindow.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QApplication \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qapplication.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QLocale \
@@ -1174,14 +1486,163 @@ main.o: ../blackjack/main.cpp ../blackjack/mainwindow.h \
 mainwindow.o: ../blackjack/mainwindow.cpp ../blackjack/mainwindow.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow.h
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		ui_mainwindow.h \
+		../blackjack/playwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../blackjack/roomitemwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../blackjack/mainwindow.cpp
+
+player.o: ../blackjack/player.cpp ../blackjack/player.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_player.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../blackjack/player.cpp
+
+playwindow.o: ../blackjack/playwindow.cpp ../blackjack/playwindow.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_playwindow.h \
+		../blackjack/player.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o playwindow.o ../blackjack/playwindow.cpp
+
+roomitemwidget.o: ../blackjack/roomitemwidget.cpp ../blackjack/roomitemwidget.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		ui_roomitemwidget.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o roomitemwidget.o ../blackjack/roomitemwidget.cpp
+
+qrc_A_h.o: qrc_A_h.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_A_h.o qrc_A_h.cpp
 
 qrc_qmake_qmake_qm_files.o: qrc_qmake_qmake_qm_files.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_qmake_qmake_qm_files.o qrc_qmake_qmake_qm_files.cpp
 
+moc_card.o: moc_card.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_card.o moc_card.cpp
+
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
+
+moc_player.o: moc_player.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_player.o moc_player.cpp
+
+moc_playwindow.o: moc_playwindow.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_playwindow.o moc_playwindow.cpp
+
+moc_roomitemwidget.o: moc_roomitemwidget.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_roomitemwidget.o moc_roomitemwidget.cpp
 
 ####### Install
 

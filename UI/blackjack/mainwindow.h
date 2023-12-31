@@ -35,6 +35,17 @@ private slots:
 
     void on_playGroupBtn_clicked();
 
+
+    void on_playGame_clicked();
+
+    void on_cancelBtn_clicked();
+
+    void on_login_btn_clicked();
+
+    void on_to_login_page_btn_clicked();
+
+    void on_to_signup_page_btn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

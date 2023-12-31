@@ -9,16 +9,25 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    card.cpp \
     main.cpp \
     mainwindow.cpp \
+    player.cpp \
+    playwindow.cpp \
     roomitemwidget.cpp
 
 HEADERS += \
+    card.h \
     mainwindow.h \
+    player.h \
+    playwindow.h \
     roomitemwidget.h
 
 FORMS += \
+    card.ui \
     mainwindow.ui \
+    player.ui \
+    playwindow.ui \
     roomitemwidget.ui
 
 TRANSLATIONS += \
@@ -30,3 +39,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    A_h.qrc

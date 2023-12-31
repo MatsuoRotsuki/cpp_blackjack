@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+// #include "readywindow.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -13,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->homeBtn, &QPushButton::clicked, this, &MainWindow::on_homeBtn_clicked);
     connect(ui->roomBtn, &QPushButton::clicked, this, &MainWindow::on_roomBtn_clicked);
     connect(ui->inviteBtn, &QPushButton::clicked, this, &MainWindow::on_inviteBtn_clicked);
+    connect(ui->playGame, &QPushButton::clicked, this, &MainWindow::on_playGame_clicked);
+
 
 }
 
@@ -81,5 +84,38 @@ void MainWindow::on_playAloneBtn_clicked()
 void MainWindow::on_playGroupBtn_clicked()
 {
     setTappedMode(ui->playGroupBtn, ui->playAloneBtn);
+}
+
+
+
+
+void MainWindow::on_playGame_clicked()
+{
+    ui->stackedWidget_main->setCurrentIndex(1);
+
+}
+
+
+void MainWindow::on_cancelBtn_clicked()
+{
+    ui->stackedWidget_main->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_login_btn_clicked()
+{
+    ui->stackedWidget_main->setCurrentIndex(2);
+}
+
+
+void MainWindow::on_to_login_page_btn_clicked()
+{
+    ui->stackedWidget_main->setCurrentIndex(4);
+}
+
+
+void MainWindow::on_to_signup_page_btn_clicked()
+{
+    ui->stackedWidget_main->setCurrentIndex(3);
 }
 
