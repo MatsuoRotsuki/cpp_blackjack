@@ -1,7 +1,11 @@
 #pragma once
 #include <iostream>
 #include <string.h>
+/*
+============================================================================
 
+============================================================================
+*/
 enum class MessageType
 {
     CLT_DISCONNECT, //OK
@@ -43,7 +47,8 @@ Dưới đây là cấu trúc payload của các thông điệp cụ thể
 */
 
 /**
- * Payload to send
+ * Payload to send when a client want to disconnect from server.
+ * - message: Disconnect message content
  */
 struct ClientDisconnectPayload
 {
@@ -51,9 +56,8 @@ struct ClientDisconnectPayload
 };
 
 /**
- * Payload to send . Including:
- * Message:
- * Reason:
+ * Payload to send when server want to disconnect to all clients
+ * - message: Disconnect message content
  */
 struct ServerDisconnectPayload
 {
@@ -61,7 +65,8 @@ struct ServerDisconnectPayload
 };
 
 /**
- * Payload to send . Including:
+ * Payload sent to a client when server received bad request from that client.
+ * - message: Invalid request message content
  */
 struct InvalidRequestPayload
 {
@@ -69,7 +74,9 @@ struct InvalidRequestPayload
 };
 
 /**
- * Payload to send
+ * Payload to send to server when a client want to login.
+ * - username: Username
+ * - password: Password
  */
 struct LoginRequestPayload
 {
@@ -78,7 +85,11 @@ struct LoginRequestPayload
 };
 
 /**
- * Payload to send . Including:
+ * Payload to send to server when a client want to sign up.
+ * - username: Username
+ * - password: Password
+ * - confirm_password: Confirm Password
+ * - name: Name
  */
 struct SignupRequestPayload
 {
@@ -89,7 +100,9 @@ struct SignupRequestPayload
 };
 
 /**
- * Payload to send
+ * Payload to send back to client when server received login request from a client.
+ * - message: Success or Fail message, may also including validation error message.
+ * - success: 0 if failed, 1 if succeeded.
 */
 struct LoginResponsePayload
 {
@@ -99,7 +112,9 @@ struct LoginResponsePayload
 };
 
 /**
- * Payload to send
+ * Payload to send back to client when server received sign up request from a client.
+ * - message: Success or Fail message, may also including validation error message.
+ * - success: 0 if failed, 1 if succeeded.
 */
 struct SignupResponsePayload
 {
@@ -108,20 +123,64 @@ struct SignupResponsePayload
 };
 
 /**
- * Type: command
+ * Command to get all online users from server.
+ * - limit: number of users can received. Maximum is 10.
+ * - offset: number of users to skip
  */
 struct ViewOnlineRequestPayload
 {
-    uint8_t numberOfUsers;
+    uint8_t limit;
+    uint8_t offset;
 };
 
 /**
- * Payload to send
+ * Payload to send back to client on received get all online users command from client.
+ * - limit: number of users can received. Maximum is 10.
+ * - offset: number of users to skip
+ * - players: players data
  */
 struct ViewOnlineResponsePayload
 {
-    uint8_t numberOfUsers;
-    // Players
+    uint8_t limit;
+    uint8_t offset;
+    // players
+};
+
+struct RoomListRequestPayload
+{
+    uint8_t limit;
+    uint8_t offset;
+};
+
+struct RoomListResponsePayload
+{
+    uint8_t limit;
+    uint8_t offset;
+    // rooms
+};
+
+struct JoinRoomRequest {
+
+};
+
+struct CreateRoomRequest {
+
+};
+
+struct AddToRoomPayload {
+
+};
+
+struct StartRoundPayload {
+
+};
+
+struct BetRequestPayload {
+
+};
+
+struct PlayerBetPayload {
+
 };
 
 /**
@@ -131,6 +190,14 @@ struct GameStatePayload
 {
 };
 
+struct ActionRequestPayload {
+
+};
+
+struct PlayerActionPayload {
+
+};
+
 /**
  * Payload to send
  */
@@ -138,6 +205,33 @@ struct OutcomePayload
 {
 };
 
+struct PlayerReadyPayload {
+
+};
+
+struct LeaveRoomPayload {
+
+};
+
+struct ClientInvitePayload {
+
+};
+
+struct ServerInvitePayload {
+
+};
+
+struct InviteReplyPayload {
+
+};
+
+struct InviteOutcomePayload {
+
+};
+
+/**
+ * 
+*/
 typedef struct Message_
 {
     MessageType type;

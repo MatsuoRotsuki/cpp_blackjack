@@ -14,6 +14,7 @@
 #include <vector>
 #include <atomic>
 #include "message.h"
+#include "state.h"
 
 #define BACK_LOG 10
 
@@ -22,6 +23,7 @@ struct Client
     int socket;
     int id;
     std::thread thread;
+    State state;
     // Client(int _socket, int _id, std::thread _thread) {
     //     socket = _socket;
     //     id  = _id;

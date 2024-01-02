@@ -18,6 +18,10 @@ void DispatchLogin(int id, Message loginMsg)
     std::cout << "[Client " << id << "] sent LOGIN message.\n";
 
     // Handle login logic
+    std::cout << "Login info:" << std::endl;
+    std::cout << "username: " << loginMsg.payload.loginRequestData.username << std::endl;
+    std::cout << "password: " << loginMsg.payload.loginRequestData.password << std::endl;
+    std::cout << std::endl;
 
     // Create response message
     Message responseMsg;
@@ -34,6 +38,12 @@ void DispatchSignup(int id, Message signUpMsg)
     std::cout << "[Client " << id << "] sent SIGNUP message.\n";
 
     // Handle sign up logic
+    std::cout << "Sign up info:" << std::endl;
+    std::cout << "username: " << signUpMsg.payload.signupRequestData.username << std::endl;
+    std::cout << "password: " << signUpMsg.payload.signupRequestData.password << std::endl;
+    std::cout << "confirm_password: " << signUpMsg.payload.signupRequestData.confirm_password << std::endl;
+    std::cout << "name: " << signUpMsg.payload.signupRequestData.name << std::endl;
+    std::cout << std::endl;
 
     // Create response message
     Message responseMsg;
