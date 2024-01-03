@@ -1,4 +1,4 @@
-
+test
 #include "card.h"
 
 Card::Card(Rank _rank, Suit _suit) : rank(_rank), suit(_suit) {}
