@@ -53,7 +53,7 @@ Card Deck::dealCard()
     return cardToDeal;
 }
 
-bool Deck::isNotEmpty()
+bool Deck::isNotEmpty() const
 {
     return !deck.empty();
 }
@@ -71,6 +71,11 @@ void Deck::addCards(std::vector<Card> cards)
     }
 }
 
+void Deck::addCard(Card card)
+{
+    deck.push_back(card);
+}
+
 void Deck::reloadDeckFromDiscard(Deck discard)
 {
     addCards(discard.getDeck());
@@ -79,7 +84,7 @@ void Deck::reloadDeckFromDiscard(Deck discard)
     std::cout << "Ran out of cards, creating new deck from discard pile & shuffling deck.";
 }
 
-int Deck::cardsLeft()
+int Deck::cardsLeft() const
 {
     return deck.size();
 }
