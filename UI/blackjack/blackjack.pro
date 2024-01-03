@@ -1,4 +1,5 @@
 QT       += core gui
+QT       += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,6 +20,7 @@ SOURCES += \
 HEADERS += \
     card.h \
     mainwindow.h \
+    message.h \
     player.h \
     playwindow.h \
     roomitemwidget.h
