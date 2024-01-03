@@ -2,12 +2,22 @@
 	"accounts" : 
 	[
 		{
-			"password" : "ce04bd8105c135f89b0dfd5d9c1e8c5d",
-			"username" : "loc"
+			"loses" : 0,
+			"money" : 0,
+			"name" : "",
+			"password" : "cd67e095aa87a04d2bfb63a3b8f24309",
+			"pushes" : 0,
+			"username" : "luong",
+			"wins" : 0
 		},
 		{
+			"loses" : 0,
+			"money" : 0,
+			"name" : "binh",
 			"password" : "a745715b2ade66190a65e1710b7830c7",
-			"username" : "binh"
+			"pushes" : 0,
+			"username" : "binh",
+			"wins" : 0
 		}
 	]
 }

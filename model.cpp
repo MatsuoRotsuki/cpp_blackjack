@@ -25,31 +25,38 @@ bool isUsernameExists(const std::string& username) {
     return false;  // Username oke
 }
 
-void signUp(const std::string& username, const std::string& password) {
-    if (isUsernameExists(username)) { //check
-        std::cerr << "Username already exists. Choose another username." << std::endl;
+void signUp(const std::string& username, const std::string& password, const std::string& name) {
+    if (isUsernameExists(username)) {
+        std::cerr << "Username already exists. Please choose another username." << std::endl;
         return;
-    }    
-    // Read
+    }
+
+    // Mã hoá mật khẩu đầu vào bằng MD5
+    std::string hashedPassword = md5(password);
+
+    // Tạo một tài khoản mới
+    Player player;
+    player.username = username;
+    player.name = name;
+    player.setPassword(hashedPassword);  // Giả sử bạn có một phương thức để thiết lập mật khẩu
+
+    Json::Value newAccount;
+    newAccount["username"] = player.username;
+    newAccount["password"] = player.getPassword();  // Giả sử bạn có một phương thức để lấy mật khẩu
+    newAccount["name"] = player.name;
+    newAccount["wins"] = player.wins;
+    newAccount["loses"] = player.loses;
+    newAccount["pushes"] = player.pushes;
+    newAccount["money"] = player.money;
+
+    // Lưu tài khoản mới vào file JSON
     std::ifstream inputFile("cpp_code.json");
     Json::Value root;
     inputFile >> root;
     inputFile.close();
 
-    // Creat 
-    Player player;
-    player.username = username;
-    std::string hashedPassword = md5(password); //hash
-    player.setPassword(hashedPassword);
-
-    Json::Value newAccount;
-    newAccount["username"] = player.username;
-    newAccount["password"] = player.getPassword();
-
-    // Add
     root["accounts"].append(newAccount);
 
-    // Save 
     std::ofstream outputFile("cpp_code.json");
     if (outputFile.is_open()) {
         outputFile << root.toStyledString();
@@ -94,12 +101,14 @@ int main() {
     std::cin >> choice;
 
     if (choice == "1") {
-        std::string username, password;
+        std::string username, password, name;
         std::cout << "Enter username: ";
         std::cin >> username;
         std::cout << "Enter password: ";
         std::cin >> password;
-        signUp(username, password);
+        std::cout << "Enter name: ";
+        std::cin >> name;
+        signUp(username, password, name);
     } else if (choice == "2") {
         std::string username, password;
         std::cout << "Enter username: ";
