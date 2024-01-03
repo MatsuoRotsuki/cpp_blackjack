@@ -31,18 +31,18 @@ void signUp(const std::string& username, const std::string& password, const std:
         return;
     }
 
-    // Mã hoá mật khẩu đầu vào bằng MD5
+    // Hash
     std::string hashedPassword = md5(password);
 
-    // Tạo một tài khoản mới
+    // Creat
     Player player;
     player.username = username;
     player.name = name;
-    player.setPassword(hashedPassword);  // Giả sử bạn có một phương thức để thiết lập mật khẩu
+    player.setPassword(hashedPassword);  
 
     Json::Value newAccount;
     newAccount["username"] = player.username;
-    newAccount["password"] = player.getPassword();  // Giả sử bạn có một phương thức để lấy mật khẩu
+    newAccount["password"] = player.getPassword();  
     newAccount["name"] = player.name;
     newAccount["wins"] = player.wins;
     newAccount["loses"] = player.loses;
