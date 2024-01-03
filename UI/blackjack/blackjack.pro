@@ -22,7 +22,7 @@ HEADERS += \
     player.h \
     playwindow.h \
     roomitemwidget.h
-
+ß
 FORMS += \
     card.ui \
     mainwindow.ui \

@@ -5,7 +5,65 @@
         <file>K_h.png</file>
         <file>avatar.png</file>
         <file>back.png</file>
+        <file>10♥.png</file>
     </qresource>
-    <qresource prefix="/new/prefix1"/>
-    <qresource prefix="/new/prefix2"/>
+    <qresource prefix="/hearts">
+        <file>10♥.png</file>
+        <file>9♥.png</file>
+        <file>8♥.png</file>
+        <file>7♥.png</file>
+        <file>6♥.png</file>
+        <file>5♥.png</file>
+        <file>4♥.png</file>
+        <file>3♥.png</file>
+        <file>2♥.png</file>
+        <file>K♥.png</file>
+        <file>J♥.png</file>
+        <file>Q♥.png</file>
+    </qresource>
+    <qresource prefix="/diamonds">
+        <file>6♦.png</file>
+        <file>2♦.png</file>
+        <file>3♦.png</file>
+        <file>4♦.png</file>
+        <file>5♦.png</file>
+        <file>8♦.png</file>
+        <file>7♦.png</file>
+        <file>9♦.png</file>
+        <file>10♦.png</file>
+        <file>J♦.png</file>
+        <file>Q♦.png</file>
+        <file>K♦.png</file>
+        <file>A♦.png</file>
+    </qresource>
+    <qresource prefix="/spades">
+        <file>A♠.png</file>
+        <file>K♠.png</file>
+        <file>Q♠.png</file>
+        <file>J♠.png</file>
+        <file>10♠.png</file>
+        <file>9♠.png</file>
+        <file>8♠.png</file>
+        <file>7♠.png</file>
+        <file>6♠.png</file>
+        <file>5♠.png</file>
+        <file>4♠.png</file>
+        <file>3♠.png</file>
+        <file>2♠.png</file>
+    </qresource>
+    <qresource prefix="/clubs">
+        <file>2♣.png</file>
+        <file>3♣.png</file>
+        <file>4♣.png</file>
+        <file>5♣.png</file>
+        <file>6♣.png</file>
+        <file>7♣.png</file>
+        <file>9♣.png</file>
+        <file>8♣.png</file>
+        <file>10♣.png</file>
+        <file>J♣.png</file>
+        <file>Q♣.png</file>
+        <file>K♣.png</file>
+        <file>A♣.png</file>
+    </qresource>
 </RCC>

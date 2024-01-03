@@ -29,7 +29,7 @@ public:
     QFrame *frame_2;
     QFrame *frame_11;
     QLabel *label_20;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_18;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_77;
@@ -41,13 +41,13 @@ public:
     QLabel *label_74;
     QLabel *label_75;
     QSpacerItem *horizontalSpacer_26;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton_37;
     QPushButton *pushButton_38;
-    QWidget *widget2;
+    QWidget *layoutWidget2;
     QHBoxLayout *listPlayer;
-    player *widget3;
+    player *widget;
     QFormLayout *formLayout;
     player *widget_3;
     QFormLayout *formLayout_3;
@@ -55,7 +55,7 @@ public:
     QFormLayout *formLayout_6;
     player *widget_4;
     QFormLayout *formLayout_4;
-    QWidget *widget4;
+    QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_11;
     QFrame *frame_5;
@@ -98,27 +98,27 @@ public:
         label_20->setObjectName("label_20");
         label_20->setGeometry(QRect(80, 10, 58, 16));
         label_20->setAlignment(Qt::AlignCenter);
-        widget = new QWidget(PlayWindow);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(340, 70, 459, 86));
-        horizontalLayout_18 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(PlayWindow);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(340, 70, 459, 86));
+        horizontalLayout_18 = new QHBoxLayout(layoutWidget);
         horizontalLayout_18->setSpacing(25);
         horizontalLayout_18->setObjectName("horizontalLayout_18");
         horizontalLayout_18->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label_77 = new QLabel(widget);
+        label_77 = new QLabel(layoutWidget);
         label_77->setObjectName("label_77");
         label_77->setMinimumSize(QSize(0, 0));
         label_77->setMaximumSize(QSize(50, 70));
         label_77->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);\n"
 "border-width: 1px;"));
-        label_77->setPixmap(QPixmap(QString::fromUtf8("back.png")));
+        label_77->setPixmap(QPixmap(QString::fromUtf8(":/resource/back.png")));
         label_77->setScaledContents(true);
 
         horizontalLayout_2->addWidget(label_77);
 
-        label_76 = new QLabel(widget);
+        label_76 = new QLabel(layoutWidget);
         label_76->setObjectName("label_76");
         label_76->setMinimumSize(QSize(0, 0));
         label_76->setMaximumSize(QSize(50, 70));
@@ -138,7 +138,7 @@ public:
         list_card_11 = new QHBoxLayout();
         list_card_11->setSpacing(1);
         list_card_11->setObjectName("list_card_11");
-        label_72 = new QLabel(widget);
+        label_72 = new QLabel(layoutWidget);
         label_72->setObjectName("label_72");
         label_72->setMinimumSize(QSize(0, 0));
         label_72->setMaximumSize(QSize(50, 70));
@@ -149,7 +149,7 @@ public:
 
         list_card_11->addWidget(label_72);
 
-        label_73 = new QLabel(widget);
+        label_73 = new QLabel(layoutWidget);
         label_73->setObjectName("label_73");
         label_73->setMinimumSize(QSize(0, 0));
         label_73->setMaximumSize(QSize(50, 70));
@@ -160,7 +160,7 @@ public:
 
         list_card_11->addWidget(label_73);
 
-        label_74 = new QLabel(widget);
+        label_74 = new QLabel(layoutWidget);
         label_74->setObjectName("label_74");
         label_74->setMinimumSize(QSize(0, 0));
         label_74->setMaximumSize(QSize(50, 70));
@@ -171,7 +171,7 @@ public:
 
         list_card_11->addWidget(label_74);
 
-        label_75 = new QLabel(widget);
+        label_75 = new QLabel(layoutWidget);
         label_75->setObjectName("label_75");
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -197,44 +197,44 @@ public:
 
         horizontalLayout_18->addLayout(horizontalLayout_24);
 
-        widget1 = new QWidget(PlayWindow);
-        widget1->setObjectName("widget1");
-        widget1->setGeometry(QRect(800, 0, 152, 66));
-        verticalLayout = new QVBoxLayout(widget1);
+        layoutWidget1 = new QWidget(PlayWindow);
+        layoutWidget1->setObjectName("layoutWidget1");
+        layoutWidget1->setGeometry(QRect(800, 0, 152, 66));
+        verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton_37 = new QPushButton(widget1);
+        pushButton_37 = new QPushButton(layoutWidget1);
         pushButton_37->setObjectName("pushButton_37");
         pushButton_37->setMinimumSize(QSize(100, 0));
         pushButton_37->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);"));
 
         verticalLayout->addWidget(pushButton_37);
 
-        pushButton_38 = new QPushButton(widget1);
+        pushButton_38 = new QPushButton(layoutWidget1);
         pushButton_38->setObjectName("pushButton_38");
         pushButton_38->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);"));
 
         verticalLayout->addWidget(pushButton_38);
 
-        widget2 = new QWidget(PlayWindow);
-        widget2->setObjectName("widget2");
-        widget2->setGeometry(QRect(50, 280, 956, 182));
-        listPlayer = new QHBoxLayout(widget2);
+        layoutWidget2 = new QWidget(PlayWindow);
+        layoutWidget2->setObjectName("layoutWidget2");
+        layoutWidget2->setGeometry(QRect(50, 211, 956, 251));
+        listPlayer = new QHBoxLayout(layoutWidget2);
         listPlayer->setSpacing(0);
         listPlayer->setObjectName("listPlayer");
         listPlayer->setContentsMargins(0, 0, 0, 0);
-        widget3 = new player(widget2);
-        widget3->setObjectName("widget3");
-        formLayout = new QFormLayout(widget3);
+        widget = new player(layoutWidget2);
+        widget->setObjectName("widget");
+        formLayout = new QFormLayout(widget);
         formLayout->setObjectName("formLayout");
         formLayout->setSizeConstraint(QLayout::SetDefaultConstraint);
         formLayout->setLabelAlignment(Qt::AlignCenter);
         formLayout->setVerticalSpacing(10);
         formLayout->setContentsMargins(0, 0, 0, 0);
 
-        listPlayer->addWidget(widget3);
+        listPlayer->addWidget(widget);
 
-        widget_3 = new player(widget2);
+        widget_3 = new player(layoutWidget2);
         widget_3->setObjectName("widget_3");
         formLayout_3 = new QFormLayout(widget_3);
         formLayout_3->setObjectName("formLayout_3");
@@ -245,7 +245,7 @@ public:
 
         listPlayer->addWidget(widget_3);
 
-        widget_5 = new player(widget2);
+        widget_5 = new player(layoutWidget2);
         widget_5->setObjectName("widget_5");
         formLayout_6 = new QFormLayout(widget_5);
         formLayout_6->setObjectName("formLayout_6");
@@ -256,7 +256,7 @@ public:
 
         listPlayer->addWidget(widget_5);
 
-        widget_4 = new player(widget2);
+        widget_4 = new player(layoutWidget2);
         widget_4->setObjectName("widget_4");
         formLayout_4 = new QFormLayout(widget_4);
         formLayout_4->setObjectName("formLayout_4");
@@ -267,17 +267,17 @@ public:
 
         listPlayer->addWidget(widget_4);
 
-        widget4 = new QWidget(PlayWindow);
-        widget4->setObjectName("widget4");
-        widget4->setGeometry(QRect(270, 470, 557, 104));
-        horizontalLayout = new QHBoxLayout(widget4);
+        layoutWidget3 = new QWidget(PlayWindow);
+        layoutWidget3->setObjectName("layoutWidget3");
+        layoutWidget3->setGeometry(QRect(270, 470, 557, 104));
+        horizontalLayout = new QHBoxLayout(layoutWidget3);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalSpacer_11 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_11);
 
-        frame_5 = new QFrame(widget4);
+        frame_5 = new QFrame(layoutWidget3);
         frame_5->setObjectName("frame_5");
         frame_5->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);"));
         frame_5->setFrameShape(QFrame::StyledPanel);

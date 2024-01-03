@@ -1102,7 +1102,7 @@ blackjack.app/Contents/PkgInfo:
 blackjack.app/Contents/Info.plist: 
 	@test -d blackjack.app/Contents || mkdir -p blackjack.app/Contents
 	@$(DEL_FILE) blackjack.app/Contents/Info.plist
-	@plutil -convert xml1 -o - ../../../../Qt/6.7.0/macos/mkspecs/macx-clang/Info.plist.app | sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,ShoeApp.blackjack,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},ShoeApp.blackjack,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},11.0,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,\$${IOS_LAUNCH_SCREEN},LaunchScreen,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,blackjack,g" -e "s,@LIBRARY@,blackjack,g" -e "s,\$${EXECUTABLE_NAME},blackjack,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" >blackjack.app/Contents/Info.plist
+	@plutil -convert xml1 -o - ../../../../Qt/6.7.0/macos/mkspecs/macx-clang/Info.plist.app | sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,persional.blackjack,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},persional.blackjack,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},11.0,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,\$${IOS_LAUNCH_SCREEN},LaunchScreen,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,blackjack,g" -e "s,@LIBRARY@,blackjack,g" -e "s,\$${EXECUTABLE_NAME},blackjack,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" >blackjack.app/Contents/Info.plist
 
 all: Makefile \
 		blackjack.app/Contents/PkgInfo \
@@ -1156,11 +1156,69 @@ compiler_rcc_make_all: qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 qrc_A_h.cpp: ../blackjack/A_h.qrc \
-		../../../../Qt/6.7.0/macos/libexec/rcc
+		../../../../Qt/6.7.0/macos/libexec/rcc \
+		../blackjack/8♦.png \
+		../blackjack/Q♦.png \
+		../blackjack/4♦.png \
+		../blackjack/A♦.png \
+		../blackjack/3♦.png \
+		../blackjack/5♦.png \
+		../blackjack/J♦.png \
+		../blackjack/9♦.png \
+		../blackjack/6♦.png \
+		../blackjack/7♦.png \
+		../blackjack/10♦.png \
+		../blackjack/K♦.png \
+		../blackjack/2♦.png \
+		../blackjack/A_h.png \
+		../blackjack/back.png \
+		../blackjack/K_h.png \
+		../blackjack/10♥.png \
+		../blackjack/avatar.png \
+		../blackjack/avater.png \
+		../blackjack/K♣.png \
+		../blackjack/3♣.png \
+		../blackjack/7♣.png \
+		../blackjack/9♣.png \
+		../blackjack/J♣.png \
+		../blackjack/Q♣.png \
+		../blackjack/10♣.png \
+		../blackjack/4♣.png \
+		../blackjack/A♣.png \
+		../blackjack/5♣.png \
+		../blackjack/8♣.png \
+		../blackjack/6♣.png \
+		../blackjack/2♣.png \
+		../blackjack/9♥.png \
+		../blackjack/3♥.png \
+		../blackjack/10♥.png \
+		../blackjack/5♥.png \
+		../blackjack/K♥.png \
+		../blackjack/Q♥.png \
+		../blackjack/4♥.png \
+		../blackjack/6♥.png \
+		../blackjack/J♥.png \
+		../blackjack/2♥.png \
+		../blackjack/8♥.png \
+		../blackjack/7♥.png \
+		../blackjack/10♠.png \
+		../blackjack/7♠.png \
+		../blackjack/J♠.png \
+		../blackjack/9♠.png \
+		../blackjack/K♠.png \
+		../blackjack/3♠.png \
+		../blackjack/8♠.png \
+		../blackjack/6♠.png \
+		../blackjack/Q♠.png \
+		../blackjack/4♠.png \
+		../blackjack/A♠.png \
+		../blackjack/2♠.png \
+		../blackjack/5♠.png
 	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name A_h --no-zstd ../blackjack/A_h.qrc -o qrc_A_h.cpp
 
 qrc_qmake_qmake_qm_files.cpp: qmake_qmake_qm_files.qrc \
-		../../../../Qt/6.7.0/macos/libexec/rcc
+		../../../../Qt/6.7.0/macos/libexec/rcc \
+		.qm/blackjack_en_GB.qm
 	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name qmake_qmake_qm_files --no-zstd qmake_qmake_qm_files.qrc -o qrc_qmake_qmake_qm_files.cpp
 
 compiler_moc_header_make_all: moc_card.cpp moc_mainwindow.cpp moc_player.cpp moc_playwindow.cpp moc_roomitemwidget.cpp

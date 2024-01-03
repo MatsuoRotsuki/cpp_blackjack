@@ -44,7 +44,7 @@ public:
     {
         if (player->objectName().isEmpty())
             player->setObjectName("player");
-        player->resize(241, 234);
+        player->resize(336, 312);
         player->setLayoutDirection(Qt::LeftToRight);
         verticalLayout_2 = new QVBoxLayout(player);
         verticalLayout_2->setObjectName("verticalLayout_2");
