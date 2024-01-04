@@ -5,6 +5,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , socketManager(SocketManager::GetInstance())
 {
     ui->setupUi(this);
 
@@ -15,13 +16,17 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->roomBtn, &QPushButton::clicked, this, &MainWindow::on_roomBtn_clicked);
     connect(ui->inviteBtn, &QPushButton::clicked, this, &MainWindow::on_inviteBtn_clicked);
     connect(ui->playGame, &QPushButton::clicked, this, &MainWindow::on_playGame_clicked);
+    connect(socketManager->socket(), &QTcpSocket::readyRead, this, &MainWindow::on_readyRead);
+    
+    socketManager->socket()->connectToHost("127.0.0.1", 5500);
 
-
+    ui->stackedWidget_main->setCurrentIndex(4);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+    delete socketManager;
 }
 
 
@@ -92,7 +97,6 @@ void MainWindow::on_playGroupBtn_clicked()
 void MainWindow::on_playGame_clicked()
 {
     ui->stackedWidget_main->setCurrentIndex(1);
-
 }
 
 
@@ -101,10 +105,28 @@ void MainWindow::on_cancelBtn_clicked()
     ui->stackedWidget_main->setCurrentIndex(0);
 }
 
-
 void MainWindow::on_login_btn_clicked()
 {
-    ui->stackedWidget_main->setCurrentIndex(2);
+    // Get input data
+    QString q_Username = ui->usernameLineEdit->text();
+    QString q_Password = ui->passwordLineEdit->text();
+    
+    const char *username = q_Username.toLocal8Bit().data();
+    const char *password = q_Password.toLocal8Bit().data();
+
+    qDebug() <<"QT " << q_Username.count();
+    qDebug() <<"C " <<strlen(username);
+
+    // Create request message
+    Message msg;
+    msg.type = MessageType::CLT_LOGIN_REQ;
+    strcpy(msg.payload.loginRequestData.username, username);
+    strcpy(msg.payload.loginRequestData.password, password);
+
+    // Send request message
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    socketManager->socket()->write(byteArray);
 }
 
 
@@ -117,5 +139,20 @@ void MainWindow::on_to_login_page_btn_clicked()
 void MainWindow::on_to_signup_page_btn_clicked()
 {
     ui->stackedWidget_main->setCurrentIndex(3);
+}
+
+void MainWindow::on_readyRead()
+{
+    QByteArray data = socketManager->socket()->read(sizeof(Message));
+    const Message* msgPtr = reinterpret_cast<const Message*>(data.constData());
+    Message msg;
+    memcpy(&msg, msgPtr, sizeof(Message));
+
+    qDebug() << QString::fromStdString(MessageTypeToString(msg.type));
+}
+
+void MainWindow::on_signup_btn_clicked()
+{
+
 }
 

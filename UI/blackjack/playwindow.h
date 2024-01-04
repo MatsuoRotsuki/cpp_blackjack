@@ -2,6 +2,7 @@
 #define PLAYWINDOW_H
 
 #include <QWidget>
+#include <QDebug>
 
 namespace Ui {
 class PlayWindow;
@@ -21,6 +22,8 @@ private slots:
     void on_stand_btn_clicked();
 
     void on_cashout_btn_clicked();
+
+    void on_quitBtn_clicked();
 
 private:
     Ui::PlayWindow *ui;

@@ -52,3 +52,8 @@ void PlayWindow::on_cashout_btn_clicked()
     }
 }
 
+void PlayWindow::on_quitBtn_clicked()
+{
+    
+}
+
