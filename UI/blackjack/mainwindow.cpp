@@ -10,7 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //set background color
     this->setStyleSheet("background-color: #009150 ;");
-
+    ui-> stackedWidget_main->setCurrentIndex(4);
     connect(ui->homeBtn, &QPushButton::clicked, this, &MainWindow::on_homeBtn_clicked);
     connect(ui->roomBtn, &QPushButton::clicked, this, &MainWindow::on_roomBtn_clicked);
     connect(ui->inviteBtn, &QPushButton::clicked, this, &MainWindow::on_inviteBtn_clicked);
@@ -23,7 +23,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 // set action for sidebar button
 void MainWindow::on_homeBtn_clicked()
@@ -104,7 +103,7 @@ void MainWindow::on_cancelBtn_clicked()
 
 void MainWindow::on_login_btn_clicked()
 {
-    ui->stackedWidget_main->setCurrentIndex(2);
+    ui->stackedWidget_main->setCurrentIndex(0);
 }
 
 

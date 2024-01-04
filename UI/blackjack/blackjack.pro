@@ -10,25 +10,32 @@ CONFIG += c++17
 
 SOURCES += \
     card.cpp \
+    inviteplayerpopup.cpp \
     main.cpp \
     mainwindow.cpp \
+    onlineplayer.cpp \
     player.cpp \
     playwindow.cpp \
     roomitemwidget.cpp
 
 HEADERS += \
     card.h \
+    inviteplayerpopup.h \
     mainwindow.h \
+    onlineplayer.h \
     player.h \
     playwindow.h \
     roomitemwidget.h
 ß
 FORMS += \
     card.ui \
+    inviteplayerpopup.ui \
     mainwindow.ui \
+    onlineplayer.ui \
     player.ui \
     playwindow.ui \
-    roomitemwidget.ui
+    roomitemwidget.ui \
+    sidebar.ui
 
 TRANSLATIONS += \
     blackjack_en_GB.ts

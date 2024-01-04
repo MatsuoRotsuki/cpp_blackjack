@@ -83,6 +83,9 @@ border-width: 2px;</string>
     </property>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>1</number>
+      </property>
       <item>
        <widget class="QLabel" name="label_77">
         <property name="minimumSize">
@@ -305,7 +308,7 @@ border-width: 1px;</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="pushButton_37">
+     <widget class="QPushButton" name="quit_game_btn">
       <property name="minimumSize">
        <size>
         <width>100</width>
@@ -321,7 +324,7 @@ border-width: 1px;</string>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_38">
+     <widget class="QPushButton" name="invite_player_btn">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(58, 32, 32);</string>
       </property>
@@ -509,6 +512,24 @@ border-width: 1px;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_16">
            <item>
             <widget class="QPushButton" name="pushButton_33">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="text">
               <string>10</string>
              </property>

@@ -1,6 +1,8 @@
 #include "playwindow.h"
 #include "ui_playwindow.h"
 #include "player.h"
+#include <QVBoxLayout>
+#include "inviteplayerpopup.h"
 
 PlayWindow::PlayWindow(QWidget *parent)
     : QWidget(parent)
@@ -50,5 +52,35 @@ void PlayWindow::on_cashout_btn_clicked()
         delete item->widget();
         delete item;
     }
+}
+
+
+void PlayWindow::on_quit_game_btn_clicked()
+{
+
+
+}
+
+
+void PlayWindow::on_invite_player_btn_clicked()
+{
+    if(!isInvitePopupShown){
+        InvitePlayerPopup *invitePopup = new InvitePlayerPopup();
+        // invitePopup->show();
+
+        QPoint buttonPos = ui->invite_player_btn->mapToGlobal(QPoint(0, 0));
+
+        // Set the position of the popup
+        invitePopup->move(buttonPos.x(), buttonPos.y() + ui->invite_player_btn->height());
+
+        invitePopup->show();
+        isInvitePopupShown = true;
+
+        // Connect the popup's destroyed signal to a slot that will reset the flag when the popup is closed
+        connect(invitePopup, &InvitePlayerPopup::destroyed, this, [&]() {
+            isInvitePopupShown = false;
+        });
+    }
+
 }
 

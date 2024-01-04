@@ -32,6 +32,7 @@ public:
     QLabel *label_39;
     QLabel *label_40;
     QSpacerItem *horizontalSpacer_14;
+    QLabel *point;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *userInfo;
@@ -120,6 +121,12 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_14);
 
+        point = new QLabel(player);
+        point->setObjectName("point");
+        point->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+
+        horizontalLayout_2->addWidget(point);
+
 
         verticalLayout_2->addLayout(horizontalLayout_2);
 
@@ -177,6 +184,7 @@ public:
         label_38->setText(QString());
         label_39->setText(QString());
         label_40->setText(QString());
+        point->setText(QCoreApplication::translate("player", "6", nullptr));
         avatar->setText(QString());
         username->setText(QCoreApplication::translate("player", "Username", nullptr));
         money->setText(QCoreApplication::translate("player", "65K", nullptr));

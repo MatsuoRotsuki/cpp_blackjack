@@ -22,8 +22,13 @@ private slots:
 
     void on_cashout_btn_clicked();
 
+    void on_quit_game_btn_clicked();
+
+    void on_invite_player_btn_clicked();
+
 private:
     Ui::PlayWindow *ui;
+    bool isInvitePopupShown;
 };
 
 #endif // PLAYWINDOW_H

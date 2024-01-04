@@ -33,7 +33,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QGridLayout *gridLayout_6;
+    QVBoxLayout *verticalLayout_3;
     QStackedWidget *stackedWidget_main;
     QWidget *main_screen;
     QGridLayout *gridLayout;
@@ -146,8 +146,8 @@ public:
         MainWindow->setCursor(QCursor(Qt::ArrowCursor));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        gridLayout_6 = new QGridLayout(centralwidget);
-        gridLayout_6->setObjectName("gridLayout_6");
+        verticalLayout_3 = new QVBoxLayout(centralwidget);
+        verticalLayout_3->setObjectName("verticalLayout_3");
         stackedWidget_main = new QStackedWidget(centralwidget);
         stackedWidget_main->setObjectName("stackedWidget_main");
         main_screen = new QWidget();
@@ -389,7 +389,7 @@ public:
         ready_screen->setObjectName("ready_screen");
         widget_10 = new QWidget(ready_screen);
         widget_10->setObjectName("widget_10");
-        widget_10->setGeometry(QRect(200, 40, 511, 421));
+        widget_10->setGeometry(QRect(200, 40, 511, 381));
         layoutWidget = new QWidget(widget_10);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(180, 100, 173, 96));
@@ -711,13 +711,13 @@ public:
 
         stackedWidget_main->addWidget(Login);
 
-        gridLayout_6->addWidget(stackedWidget_main, 1, 0, 1, 1);
+        verticalLayout_3->addWidget(stackedWidget_main);
 
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        stackedWidget_main->setCurrentIndex(2);
+        stackedWidget_main->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(0);
 
 
