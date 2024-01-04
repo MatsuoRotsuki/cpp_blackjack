@@ -159,6 +159,9 @@ void HandleClient(int client_socket, int id)
         else if (received_bytes == 0)
         {
             // Close connection
+            EndConnection(id);
+            std::cout << "Client handler thread " << id << " terminated.\n";
+            return;
         }
         else if (received_bytes == -1)
         {

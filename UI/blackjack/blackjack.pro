@@ -13,9 +13,11 @@ SOURCES += \
     card.cpp \
     main.cpp \
     mainwindow.cpp \
+    message.cpp \
     player.cpp \
     playwindow.cpp \
-    roomitemwidget.cpp
+    roomitemwidget.cpp \
+    socketmanager.cpp
 
 HEADERS += \
     card.h \
@@ -23,7 +25,8 @@ HEADERS += \
     message.h \
     player.h \
     playwindow.h \
-    roomitemwidget.h
+    roomitemwidget.h \
+    socketmanager.h
 
 FORMS += \
     card.ui \

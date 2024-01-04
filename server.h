@@ -13,7 +13,7 @@
 #include <mutex>
 #include <vector>
 #include <atomic>
-#include "message.h"
+#include "UI/blackjack/message.h"
 #include "state.h"
 
 #define BACK_LOG 10
