@@ -32,7 +32,8 @@ public:
     {
         if (InvitePlayerPopup->objectName().isEmpty())
             InvitePlayerPopup->setObjectName("InvitePlayerPopup");
-        InvitePlayerPopup->resize(63, 102);
+        InvitePlayerPopup->resize(233, 185);
+        InvitePlayerPopup->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);"));
         verticalLayout = new QVBoxLayout(InvitePlayerPopup);
         verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(InvitePlayerPopup);

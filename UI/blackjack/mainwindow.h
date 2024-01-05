@@ -5,6 +5,11 @@
 #include <QtGui>
 #include <QStackedWidget>
 #include <QPushButton>
+#include <QTcpSocket>
+#include <QByteArray>
+#include "message.h"
+#include "socketmanager.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -40,13 +45,26 @@ private slots:
 
     void on_cancelBtn_clicked();
 
+    /**
+     * Slot for Login button
+    */
     void on_login_btn_clicked();
 
     void on_to_login_page_btn_clicked();
 
     void on_to_signup_page_btn_clicked();
 
+    void on_readyRead();
+
+    void on_signup_btn_clicked();
+
+    void on_startBtn_clicked();
+
+public slots:
+    void on_back_to_main_window();
+
 private:
     Ui::MainWindow *ui;
+    SocketManager *socketManager;
 };
 #endif // MAINWINDOW_H

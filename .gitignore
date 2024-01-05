@@ -4,3 +4,5 @@ client
 server
 *.exe
 *.log
+/UI/build-blackjack*/
+!/UI/build-blackjack-Desktop-Debug/.gitignore

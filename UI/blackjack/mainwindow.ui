@@ -21,7 +21,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_main">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="main_screen">
        <layout class="QGridLayout" name="gridLayout">
@@ -41,7 +41,7 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <property name="spacing">
-            <number>-1</number>
+            <number>6</number>
            </property>
            <property name="leftMargin">
             <number>0</number>
@@ -68,7 +68,7 @@
            <item>
             <layout class="QVBoxLayout" name="verticalLayout">
              <property name="spacing">
-              <number>-1</number>
+              <number>6</number>
              </property>
              <property name="topMargin">
               <number>0</number>
@@ -130,7 +130,7 @@
            <item row="1" column="0">
             <widget class="QStackedWidget" name="stackedWidget">
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="home">
               <widget class="QWidget" name="layoutWidget_3">
@@ -519,8 +519,8 @@ border-radius: 10px;</string>
           <rect>
            <x>180</x>
            <y>100</y>
-           <width>173</width>
-           <height>96</height>
+           <width>278</width>
+           <height>122</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -660,10 +660,10 @@ border-color: rgb(255, 255, 255);</string>
        <widget class="QWidget" name="widget_11" native="true">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>110</y>
-          <width>341</width>
-          <height>261</height>
+          <x>270</x>
+          <y>130</y>
+          <width>421</width>
+          <height>301</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -673,6 +673,16 @@ border-radius: 5px;</string>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
           <widget class="QLabel" name="label_5">
+           <property name="font">
+            <font>
+             <family>Umpush</family>
+             <pointsize>20</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:white;</string>
+           </property>
            <property name="text">
             <string>Sign Up</string>
            </property>
@@ -685,6 +695,16 @@ border-radius: 5px;</string>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QLabel" name="label_6">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;</string>
+             </property>
              <property name="text">
               <string>Full name</string>
              </property>
@@ -717,9 +737,14 @@ border-radius: 5px;</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">border-color: rgb(255, 255, 255);
-border-width: 2px;</string>
+              <string notr="true">border: 2px solid white; color: white;</string>
              </property>
             </widget>
            </item>
@@ -729,6 +754,16 @@ border-width: 2px;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
            <item>
             <widget class="QLabel" name="label_7">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;</string>
+             </property>
              <property name="text">
               <string>Username</string>
              </property>
@@ -761,9 +796,14 @@ border-width: 2px;</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">border-color: rgb(255, 255, 255);
-border-width: 2px;</string>
+              <string notr="true">border: 2px solid white; color: white;</string>
              </property>
             </widget>
            </item>
@@ -773,6 +813,16 @@ border-width: 2px;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_8">
            <item>
             <widget class="QLabel" name="label_8">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;</string>
+             </property>
              <property name="text">
               <string>Password</string>
              </property>
@@ -805,9 +855,17 @@ border-width: 2px;</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">border-color: rgb(255, 255, 255);
-border-width: 2px;</string>
+              <string notr="true">border: 2px solid white; color: white;</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
              </property>
             </widget>
            </item>
@@ -817,6 +875,16 @@ border-width: 2px;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_9">
            <item>
             <widget class="QLabel" name="label_12">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;</string>
+             </property>
              <property name="text">
               <string>Confirm password</string>
              </property>
@@ -849,9 +917,17 @@ border-width: 2px;</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">border-color: rgb(255, 255, 255);
-border-width: 2px;</string>
+              <string notr="true">border: 2px solid white; color: white;</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
              </property>
             </widget>
            </item>
@@ -874,12 +950,20 @@ border-width: 2px;</string>
            </item>
            <item>
             <widget class="QPushButton" name="signup_btn">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: rgb(0, 145, 80);
 padding-top: 7px;
-padding-left: 40px; 
+padding-left: 30px; 
 padding-bottom: 7px;
-padding-right: 40px; </string>
+padding-right: 30px; 
+color: white;</string>
              </property>
              <property name="text">
               <string>Sign up</string>
@@ -918,6 +1002,16 @@ padding-right: 40px; </string>
            </item>
            <item>
             <widget class="QPushButton" name="to_login_page_btn">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>14</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;</string>
+             </property>
              <property name="text">
               <string>Log in</string>
              </property>
@@ -947,8 +1041,8 @@ padding-right: 40px; </string>
          <rect>
           <x>270</x>
           <y>130</y>
-          <width>341</width>
-          <height>261</height>
+          <width>381</width>
+          <height>281</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -958,6 +1052,16 @@ border-radius: 5px;</string>
         <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
           <widget class="QLabel" name="label_14">
+           <property name="font">
+            <font>
+             <family>Umpush</family>
+             <pointsize>20</pointsize>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: white;</string>
+           </property>
            <property name="text">
             <string>Login</string>
            </property>
@@ -970,6 +1074,16 @@ border-radius: 5px;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_12">
            <item>
             <widget class="QLabel" name="label_18">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;</string>
+             </property>
              <property name="text">
               <string>Username</string>
              </property>
@@ -989,7 +1103,7 @@ border-radius: 5px;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_6">
+            <widget class="QLineEdit" name="usernameLineEdit">
              <property name="minimumSize">
               <size>
                <width>200</width>
@@ -1002,9 +1116,14 @@ border-radius: 5px;</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">border-color: rgb(255, 255, 255);
-border-width: 2px;</string>
+              <string notr="true">border: 2px solid white; color: white;</string>
              </property>
             </widget>
            </item>
@@ -1014,6 +1133,16 @@ border-width: 2px;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_13">
            <item>
             <widget class="QLabel" name="label_19">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: white;</string>
+             </property>
              <property name="text">
               <string>Password</string>
              </property>
@@ -1033,7 +1162,7 @@ border-width: 2px;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_7">
+            <widget class="QLineEdit" name="passwordLineEdit">
              <property name="minimumSize">
               <size>
                <width>200</width>
@@ -1046,9 +1175,17 @@ border-width: 2px;</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
              <property name="styleSheet">
-              <string notr="true">border-color: rgb(255, 255, 255);
-border-width: 2px;</string>
+              <string notr="true">border: 2px solid white; color:white;</string>
+             </property>
+             <property name="echoMode">
+              <enum>QLineEdit::Password</enum>
              </property>
             </widget>
            </item>
@@ -1071,12 +1208,20 @@ border-width: 2px;</string>
            </item>
            <item>
             <widget class="QPushButton" name="login_btn">
+             <property name="font">
+              <font>
+               <family>Umpush</family>
+               <pointsize>16</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
              <property name="styleSheet">
               <string notr="true">background-color: rgb(0, 145, 80);
 padding-top: 7px;
-padding-left: 40px; 
+padding-left: 30px; 
 padding-bottom: 7px;
-padding-right: 40px; </string>
+padding-right: 30px; 
+color: white;</string>
              </property>
              <property name="text">
               <string>Login</string>
@@ -1099,6 +1244,17 @@ padding-right: 40px; </string>
           </layout>
          </item>
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="loginError">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
             <spacer name="horizontalSpacer">
@@ -1115,6 +1271,16 @@ padding-right: 40px; </string>
            </item>
            <item>
             <widget class="QPushButton" name="to_signup_page_btn">
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color:white;</string>
+             </property>
              <property name="text">
               <string>Sign up</string>
              </property>

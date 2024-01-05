@@ -303,20 +303,22 @@ border-width: 1px;</string>
      <x>800</x>
      <y>0</y>
      <width>152</width>
-     <height>66</height>
+     <height>76</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QPushButton" name="quit_game_btn">
+     <widget class="QPushButton" name="quitBtn">
       <property name="minimumSize">
        <size>
         <width>100</width>
-        <height>0</height>
+        <height>30</height>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(58, 32, 32);</string>
+       <string notr="true">background-color: rgb(58, 32, 32);
+border-radius: 15px;
+</string>
       </property>
       <property name="text">
        <string>Quit</string>
@@ -324,9 +326,16 @@ border-width: 1px;</string>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="invite_player_btn">
+     <widget class="QPushButton" name="inviteBtn">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>30</height>
+       </size>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(58, 32, 32);</string>
+       <string notr="true">background-color: rgb(58, 32, 32);
+border-radius: 15px;</string>
       </property>
       <property name="text">
        <string>Invite</string>

@@ -12,7 +12,7 @@
 #include <iostream>
 #include <memory>
 #include <atomic>
-#include "message.h"
+#include "UI/blackjack/message.h"
 
 void HandleInterrupt(int signal);
 void HandleSendingThread(int client_socket);

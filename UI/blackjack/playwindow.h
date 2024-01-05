@@ -2,7 +2,8 @@
 #define PLAYWINDOW_H
 
 #include <QWidget>
-
+#include <QDebug>
+#include "mainwindow.h"
 namespace Ui {
 class PlayWindow;
 }
@@ -12,7 +13,7 @@ class PlayWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit PlayWindow(QWidget *parent = nullptr);
+    explicit PlayWindow(QWidget *parent = nullptr );
     ~PlayWindow();
 
 private slots:
@@ -22,13 +23,15 @@ private slots:
 
     void on_cashout_btn_clicked();
 
-    void on_quit_game_btn_clicked();
+    void on_inviteBtn_clicked();
 
-    void on_invite_player_btn_clicked();
+    void on_quitBtn_clicked();
 
 private:
     Ui::PlayWindow *ui;
     bool isInvitePopupShown;
+    bool isQuitPopupShown;
+    // MainWindow *mainWindow;
 };
 
 #endif // PLAYWINDOW_H

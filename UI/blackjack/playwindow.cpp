@@ -2,13 +2,15 @@
 #include "ui_playwindow.h"
 #include "player.h"
 #include <QVBoxLayout>
-#include "inviteplayerpopup.h"
+#include "quitdialog.h"
+#include "inviteplayerdialog.h"
 
 PlayWindow::PlayWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PlayWindow)
 {
     ui->setupUi(this);
+    // this->mainWindow = mainWindow;
 }
 
 PlayWindow::~PlayWindow()
@@ -55,32 +57,69 @@ void PlayWindow::on_cashout_btn_clicked()
 }
 
 
-void PlayWindow::on_quit_game_btn_clicked()
-{
-
-
-}
-
-
-void PlayWindow::on_invite_player_btn_clicked()
+void PlayWindow::on_inviteBtn_clicked()
 {
     if(!isInvitePopupShown){
-        InvitePlayerPopup *invitePopup = new InvitePlayerPopup();
+        InvitePlayerDialog *invitePlayerDialog = new InvitePlayerDialog();
         // invitePopup->show();
 
-        QPoint buttonPos = ui->invite_player_btn->mapToGlobal(QPoint(0, 0));
+        QPoint buttonPos = ui->inviteBtn->mapToGlobal(QPoint(0, 0));
 
         // Set the position of the popup
-        invitePopup->move(buttonPos.x(), buttonPos.y() + ui->invite_player_btn->height());
-
-        invitePopup->show();
+        invitePlayerDialog->move(buttonPos.x(), buttonPos.y() + ui->inviteBtn->height());
+        invitePlayerDialog->setWindowTitle("Online players");
+        invitePlayerDialog->show();
         isInvitePopupShown = true;
 
-        // Connect the popup's destroyed signal to a slot that will reset the flag when the popup is closed
-        connect(invitePopup, &InvitePlayerPopup::destroyed, this, [&]() {
+        // Connect the dialog's destroyed signal to a slot that will reset the flag when the dialog is closed
+        // connect(invitePlayerDialog, &InvitePlayerDialog::destroyed, this, [&]() {
+        //     isInvitePopupShown = false;
+        //     qDebug() << "check" << isInvitePopupShown;
+
+        //     // Disconnect the signal-slot connection
+        //     disconnect(invitePlayerDialog, &InvitePlayerDialog::destroyed, this, nullptr);
+        // });
+        connect(invitePlayerDialog, &InvitePlayerDialog::rejected, this, [&]() {
             isInvitePopupShown = false;
+            // Handle the case when the user clicks Cancel or closes the window
         });
     }
+}
+void PlayWindow::on_quitBtn_clicked()
+{
+    if(!isQuitPopupShown){
+        QuitDialog *quitDialog = new QuitDialog();
+        // invitePopup->show();
 
+        QPoint buttonPos = ui->quitBtn->mapToGlobal(QPoint(0, 0));
+
+        // Set the position of the popup
+        quitDialog->move(buttonPos.x(), buttonPos.y() + ui->quitBtn->height());
+        quitDialog->setWindowTitle("Confirm quit");
+        quitDialog->show();
+        isQuitPopupShown = true;
+
+        // Connect accepted and rejected signals
+        connect(quitDialog, &QuitDialog::accepted, this, [&]() {
+            isQuitPopupShown = false;
+            // Handle the case when the user clicks OK
+            // Kiểm tra xem có cửa sổ chính (main window) hay không
+            // Gọi hàm doSomething từ MainWindow sau khi nó đã được tạo và hiển thị
+            // if (auto mainWindow = qobject_cast<MainWindow*>(parentWidget())) {
+            //     QMetaObject::invokeMethod(mainWindow, "on_back_to_main_window", Qt::QueuedConnection);
+            // }
+
+            // if (mainWindow) {
+            //     // Gọi hàm trong MainWindow
+            //     mainWindow->on_back_to_main_window();
+            // }
+            qDebug() << "Yes to exit" ;
+
+        });
+        connect(quitDialog, &QuitDialog::rejected, this, [&]() {
+            isQuitPopupShown = false;
+            // Handle the case when the user clicks Cancel or closes the window
+        });
+    }
 }
 

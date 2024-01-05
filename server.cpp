@@ -134,7 +134,7 @@ void HandleClient(int client_socket, int id)
                 // End connection
                 EndConnection(id);
                 // Terminate thread
-                std::cout << "Client handler thread terminated.\n";
+                std::cout << "Client handler thread " << id << " terminated.\n";
                 return;
 
             case MessageType::CLT_SIGNUP_REQ:
@@ -159,6 +159,9 @@ void HandleClient(int client_socket, int id)
         else if (received_bytes == 0)
         {
             // Close connection
+            EndConnection(id);
+            std::cout << "Client handler thread " << id << " terminated.\n";
+            return;
         }
         else if (received_bytes == -1)
         {

@@ -43,8 +43,8 @@ public:
     QSpacerItem *horizontalSpacer_26;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
-    QPushButton *quit_game_btn;
-    QPushButton *invite_player_btn;
+    QPushButton *quitBtn;
+    QPushButton *inviteBtn;
     QWidget *layoutWidget2;
     QHBoxLayout *listPlayer;
     player *widget;
@@ -200,22 +200,26 @@ public:
 
         layoutWidget1 = new QWidget(PlayWindow);
         layoutWidget1->setObjectName("layoutWidget1");
-        layoutWidget1->setGeometry(QRect(800, 0, 152, 66));
+        layoutWidget1->setGeometry(QRect(800, 0, 152, 76));
         verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        quit_game_btn = new QPushButton(layoutWidget1);
-        quit_game_btn->setObjectName("quit_game_btn");
-        quit_game_btn->setMinimumSize(QSize(100, 0));
-        quit_game_btn->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);"));
+        quitBtn = new QPushButton(layoutWidget1);
+        quitBtn->setObjectName("quitBtn");
+        quitBtn->setMinimumSize(QSize(100, 30));
+        quitBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);\n"
+"border-radius: 15px;\n"
+""));
 
-        verticalLayout->addWidget(quit_game_btn);
+        verticalLayout->addWidget(quitBtn);
 
-        invite_player_btn = new QPushButton(layoutWidget1);
-        invite_player_btn->setObjectName("invite_player_btn");
-        invite_player_btn->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);"));
+        inviteBtn = new QPushButton(layoutWidget1);
+        inviteBtn->setObjectName("inviteBtn");
+        inviteBtn->setMinimumSize(QSize(100, 30));
+        inviteBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);\n"
+"border-radius: 15px;"));
 
-        verticalLayout->addWidget(invite_player_btn);
+        verticalLayout->addWidget(inviteBtn);
 
         layoutWidget2 = new QWidget(PlayWindow);
         layoutWidget2->setObjectName("layoutWidget2");
@@ -384,8 +388,8 @@ public:
         label_73->setText(QString());
         label_74->setText(QString());
         label_75->setText(QString());
-        quit_game_btn->setText(QCoreApplication::translate("PlayWindow", "Quit", nullptr));
-        invite_player_btn->setText(QCoreApplication::translate("PlayWindow", "Invite", nullptr));
+        quitBtn->setText(QCoreApplication::translate("PlayWindow", "Quit", nullptr));
+        inviteBtn->setText(QCoreApplication::translate("PlayWindow", "Invite", nullptr));
         pushButton_33->setText(QCoreApplication::translate("PlayWindow", "10", nullptr));
         pushButton_34->setText(QCoreApplication::translate("PlayWindow", "25", nullptr));
         pushButton_35->setText(QCoreApplication::translate("PlayWindow", "50", nullptr));

@@ -59,7 +59,9 @@ public:
 
         pushButton = new QPushButton(OnlinePlayer);
         pushButton->setObjectName("pushButton");
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);"));
+        pushButton->setMinimumSize(QSize(50, 0));
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+"border-radius: 5px;"));
 
         horizontalLayout->addWidget(pushButton);
 

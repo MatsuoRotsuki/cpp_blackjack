@@ -1,4 +1,5 @@
 QT       += core gui
+QT       += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,30 +11,37 @@ CONFIG += c++17
 
 SOURCES += \
     card.cpp \
-    inviteplayerpopup.cpp \
+    inviteplayerdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     onlineplayer.cpp \
+    message.cpp \
     player.cpp \
     playwindow.cpp \
-    roomitemwidget.cpp
+    quitdialog.cpp \
+    roomitemwidget.cpp \
+    socketmanager.cpp
 
 HEADERS += \
     card.h \
-    inviteplayerpopup.h \
+    inviteplayerdialog.h \
     mainwindow.h \
     onlineplayer.h \
     player.h \
     playwindow.h \
-    roomitemwidget.h
-ß
+    quitdialog.h \
+    roomitemwidget.h \
+    message.h \
+    socketmanager.h
+
 FORMS += \
     card.ui \
-    inviteplayerpopup.ui \
+    inviteplayerdialog.ui \
     mainwindow.ui \
     onlineplayer.ui \
     player.ui \
     playwindow.ui \
+    quitdialog.ui \
     roomitemwidget.ui \
     sidebar.ui
 

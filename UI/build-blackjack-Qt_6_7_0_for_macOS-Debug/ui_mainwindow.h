@@ -124,15 +124,17 @@ public:
     QHBoxLayout *horizontalLayout_12;
     QLabel *label_18;
     QSpacerItem *horizontalSpacer_13;
-    QLineEdit *lineEdit_6;
+    QLineEdit *usernameLineEdit;
     QHBoxLayout *horizontalLayout_13;
     QLabel *label_19;
     QSpacerItem *horizontalSpacer_14;
-    QLineEdit *lineEdit_7;
+    QLineEdit *passwordLineEdit;
     QHBoxLayout *horizontalLayout_15;
     QSpacerItem *horizontalSpacer_16;
     QPushButton *login_btn;
     QSpacerItem *horizontalSpacer_17;
+    QHBoxLayout *horizontalLayout_6;
+    QLabel *loginError;
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer;
     QPushButton *to_signup_page_btn;
@@ -160,9 +162,7 @@ public:
         menu_widget->setToolTipDuration(-1);
         menu_widget->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);"));
         verticalLayout_2 = new QVBoxLayout(menu_widget);
-#ifndef Q_OS_MAC
-        verticalLayout_2->setSpacing(-1);
-#endif
+        verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName("verticalLayout_2");
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         label = new QLabel(menu_widget);
@@ -172,9 +172,7 @@ public:
         verticalLayout_2->addWidget(label);
 
         verticalLayout = new QVBoxLayout();
-#ifndef Q_OS_MAC
-        verticalLayout->setSpacing(-1);
-#endif
+        verticalLayout->setSpacing(6);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(-1, 0, -1, -1);
         homeBtn = new QPushButton(menu_widget);
@@ -392,7 +390,7 @@ public:
         widget_10->setGeometry(QRect(200, 40, 511, 381));
         layoutWidget = new QWidget(widget_10);
         layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(180, 100, 173, 96));
+        layoutWidget->setGeometry(QRect(180, 100, 278, 122));
         verticalLayout_5 = new QVBoxLayout(layoutWidget);
         verticalLayout_5->setObjectName("verticalLayout_5");
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -462,13 +460,19 @@ public:
         Signup->setObjectName("Signup");
         widget_11 = new QWidget(Signup);
         widget_11->setObjectName("widget_11");
-        widget_11->setGeometry(QRect(250, 110, 341, 261));
+        widget_11->setGeometry(QRect(270, 130, 421, 301));
         widget_11->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);\n"
 "border-radius: 5px;"));
         verticalLayout_4 = new QVBoxLayout(widget_11);
         verticalLayout_4->setObjectName("verticalLayout_4");
         label_5 = new QLabel(widget_11);
         label_5->setObjectName("label_5");
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Umpush")});
+        font3.setPointSize(20);
+        font3.setBold(true);
+        label_5->setFont(font3);
+        label_5->setStyleSheet(QString::fromUtf8("color:white;"));
         label_5->setAlignment(Qt::AlignCenter);
 
         verticalLayout_4->addWidget(label_5);
@@ -477,6 +481,12 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         label_6 = new QLabel(widget_11);
         label_6->setObjectName("label_6");
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Umpush")});
+        font4.setPointSize(16);
+        font4.setBold(true);
+        label_6->setFont(font4);
+        label_6->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout->addWidget(label_6);
 
@@ -488,8 +498,11 @@ public:
         lineEdit->setObjectName("lineEdit");
         lineEdit->setMinimumSize(QSize(200, 0));
         lineEdit->setMaximumSize(QSize(200, 16777215));
-        lineEdit->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);\n"
-"border-width: 2px;"));
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Ubuntu Mono")});
+        font5.setPointSize(14);
+        lineEdit->setFont(font5);
+        lineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
 
         horizontalLayout->addWidget(lineEdit);
 
@@ -500,6 +513,8 @@ public:
         horizontalLayout_7->setObjectName("horizontalLayout_7");
         label_7 = new QLabel(widget_11);
         label_7->setObjectName("label_7");
+        label_7->setFont(font4);
+        label_7->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_7->addWidget(label_7);
 
@@ -511,8 +526,8 @@ public:
         lineEdit_2->setObjectName("lineEdit_2");
         lineEdit_2->setMinimumSize(QSize(200, 0));
         lineEdit_2->setMaximumSize(QSize(200, 16777215));
-        lineEdit_2->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);\n"
-"border-width: 2px;"));
+        lineEdit_2->setFont(font5);
+        lineEdit_2->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
 
         horizontalLayout_7->addWidget(lineEdit_2);
 
@@ -523,6 +538,8 @@ public:
         horizontalLayout_8->setObjectName("horizontalLayout_8");
         label_8 = new QLabel(widget_11);
         label_8->setObjectName("label_8");
+        label_8->setFont(font4);
+        label_8->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_8->addWidget(label_8);
 
@@ -534,8 +551,9 @@ public:
         lineEdit_5->setObjectName("lineEdit_5");
         lineEdit_5->setMinimumSize(QSize(200, 0));
         lineEdit_5->setMaximumSize(QSize(200, 16777215));
-        lineEdit_5->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);\n"
-"border-width: 2px;"));
+        lineEdit_5->setFont(font5);
+        lineEdit_5->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
+        lineEdit_5->setEchoMode(QLineEdit::Password);
 
         horizontalLayout_8->addWidget(lineEdit_5);
 
@@ -546,6 +564,8 @@ public:
         horizontalLayout_9->setObjectName("horizontalLayout_9");
         label_12 = new QLabel(widget_11);
         label_12->setObjectName("label_12");
+        label_12->setFont(font4);
+        label_12->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_9->addWidget(label_12);
 
@@ -557,8 +577,9 @@ public:
         lineEdit_3->setObjectName("lineEdit_3");
         lineEdit_3->setMinimumSize(QSize(200, 0));
         lineEdit_3->setMaximumSize(QSize(200, 16777215));
-        lineEdit_3->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);\n"
-"border-width: 2px;"));
+        lineEdit_3->setFont(font5);
+        lineEdit_3->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
+        lineEdit_3->setEchoMode(QLineEdit::Password);
 
         horizontalLayout_9->addWidget(lineEdit_3);
 
@@ -573,11 +594,13 @@ public:
 
         signup_btn = new QPushButton(widget_11);
         signup_btn->setObjectName("signup_btn");
+        signup_btn->setFont(font4);
         signup_btn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 145, 80);\n"
 "padding-top: 7px;\n"
-"padding-left: 40px; \n"
+"padding-left: 30px; \n"
 "padding-bottom: 7px;\n"
-"padding-right: 40px; "));
+"padding-right: 30px; \n"
+"color: white;"));
 
         horizontalLayout_10->addWidget(signup_btn);
 
@@ -596,6 +619,12 @@ public:
 
         to_login_page_btn = new QPushButton(widget_11);
         to_login_page_btn->setObjectName("to_login_page_btn");
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Umpush")});
+        font6.setPointSize(14);
+        font6.setBold(true);
+        to_login_page_btn->setFont(font6);
+        to_login_page_btn->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_4->addWidget(to_login_page_btn);
 
@@ -611,13 +640,15 @@ public:
         Login->setObjectName("Login");
         widget_12 = new QWidget(Login);
         widget_12->setObjectName("widget_12");
-        widget_12->setGeometry(QRect(270, 130, 341, 261));
+        widget_12->setGeometry(QRect(270, 130, 381, 281));
         widget_12->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);\n"
 "border-radius: 5px;"));
         verticalLayout_6 = new QVBoxLayout(widget_12);
         verticalLayout_6->setObjectName("verticalLayout_6");
         label_14 = new QLabel(widget_12);
         label_14->setObjectName("label_14");
+        label_14->setFont(font3);
+        label_14->setStyleSheet(QString::fromUtf8("color: white;"));
         label_14->setAlignment(Qt::AlignCenter);
 
         verticalLayout_6->addWidget(label_14);
@@ -626,6 +657,8 @@ public:
         horizontalLayout_12->setObjectName("horizontalLayout_12");
         label_18 = new QLabel(widget_12);
         label_18->setObjectName("label_18");
+        label_18->setFont(font4);
+        label_18->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_12->addWidget(label_18);
 
@@ -633,14 +666,14 @@ public:
 
         horizontalLayout_12->addItem(horizontalSpacer_13);
 
-        lineEdit_6 = new QLineEdit(widget_12);
-        lineEdit_6->setObjectName("lineEdit_6");
-        lineEdit_6->setMinimumSize(QSize(200, 0));
-        lineEdit_6->setMaximumSize(QSize(200, 16777215));
-        lineEdit_6->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);\n"
-"border-width: 2px;"));
+        usernameLineEdit = new QLineEdit(widget_12);
+        usernameLineEdit->setObjectName("usernameLineEdit");
+        usernameLineEdit->setMinimumSize(QSize(200, 0));
+        usernameLineEdit->setMaximumSize(QSize(200, 16777215));
+        usernameLineEdit->setFont(font5);
+        usernameLineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
 
-        horizontalLayout_12->addWidget(lineEdit_6);
+        horizontalLayout_12->addWidget(usernameLineEdit);
 
 
         verticalLayout_6->addLayout(horizontalLayout_12);
@@ -649,6 +682,8 @@ public:
         horizontalLayout_13->setObjectName("horizontalLayout_13");
         label_19 = new QLabel(widget_12);
         label_19->setObjectName("label_19");
+        label_19->setFont(font4);
+        label_19->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_13->addWidget(label_19);
 
@@ -656,14 +691,15 @@ public:
 
         horizontalLayout_13->addItem(horizontalSpacer_14);
 
-        lineEdit_7 = new QLineEdit(widget_12);
-        lineEdit_7->setObjectName("lineEdit_7");
-        lineEdit_7->setMinimumSize(QSize(200, 0));
-        lineEdit_7->setMaximumSize(QSize(200, 16777215));
-        lineEdit_7->setStyleSheet(QString::fromUtf8("border-color: rgb(255, 255, 255);\n"
-"border-width: 2px;"));
+        passwordLineEdit = new QLineEdit(widget_12);
+        passwordLineEdit->setObjectName("passwordLineEdit");
+        passwordLineEdit->setMinimumSize(QSize(200, 0));
+        passwordLineEdit->setMaximumSize(QSize(200, 16777215));
+        passwordLineEdit->setFont(font5);
+        passwordLineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color:white;"));
+        passwordLineEdit->setEchoMode(QLineEdit::Password);
 
-        horizontalLayout_13->addWidget(lineEdit_7);
+        horizontalLayout_13->addWidget(passwordLineEdit);
 
 
         verticalLayout_6->addLayout(horizontalLayout_13);
@@ -676,11 +712,13 @@ public:
 
         login_btn = new QPushButton(widget_12);
         login_btn->setObjectName("login_btn");
+        login_btn->setFont(font4);
         login_btn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 145, 80);\n"
 "padding-top: 7px;\n"
-"padding-left: 40px; \n"
+"padding-left: 30px; \n"
 "padding-bottom: 7px;\n"
-"padding-right: 40px; "));
+"padding-right: 30px; \n"
+"color: white;"));
 
         horizontalLayout_15->addWidget(login_btn);
 
@@ -691,6 +729,16 @@ public:
 
         verticalLayout_6->addLayout(horizontalLayout_15);
 
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        loginError = new QLabel(widget_12);
+        loginError->setObjectName("loginError");
+
+        horizontalLayout_6->addWidget(loginError);
+
+
+        verticalLayout_6->addLayout(horizontalLayout_6);
+
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
@@ -699,6 +747,12 @@ public:
 
         to_signup_page_btn = new QPushButton(widget_12);
         to_signup_page_btn->setObjectName("to_signup_page_btn");
+        QFont font7;
+        font7.setFamilies({QString::fromUtf8("Ubuntu Mono")});
+        font7.setPointSize(14);
+        font7.setBold(true);
+        to_signup_page_btn->setFont(font7);
+        to_signup_page_btn->setStyleSheet(QString::fromUtf8("color:white;"));
 
         horizontalLayout_3->addWidget(to_signup_page_btn);
 
@@ -717,8 +771,8 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget_main->setCurrentIndex(0);
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget_main->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -755,6 +809,7 @@ public:
         label_18->setText(QCoreApplication::translate("MainWindow", "Username", nullptr));
         label_19->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         login_btn->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
+        loginError->setText(QString());
         to_signup_page_btn->setText(QCoreApplication::translate("MainWindow", "Sign up", nullptr));
     } // retranslateUi
 

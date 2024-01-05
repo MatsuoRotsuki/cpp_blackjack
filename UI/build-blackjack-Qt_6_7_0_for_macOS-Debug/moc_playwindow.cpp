@@ -7,6 +7,8 @@
 *****************************************************************************/
 
 #include "../blackjack/playwindow.h"
+#include <QtGui/qtextcursor.h>
+#include <QtGui/qscreen.h>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -38,8 +40,8 @@ constexpr auto qt_meta_stringdata_CLASSPlayWindowENDCLASS = QtMocHelpers::string
     "",
     "on_stand_btn_clicked",
     "on_cashout_btn_clicked",
-    "on_quit_game_btn_clicked",
-    "on_invite_player_btn_clicked"
+    "on_inviteBtn_clicked",
+    "on_quitBtn_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -91,9 +93,9 @@ Q_CONSTINIT const QMetaObject PlayWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_cashout_btn_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_quit_game_btn_clicked'
+        // method 'on_inviteBtn_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_invite_player_btn_clicked'
+        // method 'on_quitBtn_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -108,8 +110,8 @@ void PlayWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->on_hit_btn_clicked(); break;
         case 1: _t->on_stand_btn_clicked(); break;
         case 2: _t->on_cashout_btn_clicked(); break;
-        case 3: _t->on_quit_game_btn_clicked(); break;
-        case 4: _t->on_invite_player_btn_clicked(); break;
+        case 3: _t->on_inviteBtn_clicked(); break;
+        case 4: _t->on_quitBtn_clicked(); break;
         default: ;
         }
     }
