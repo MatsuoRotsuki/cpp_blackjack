@@ -21,6 +21,8 @@ private:
     Ui::RoomItemWidget *ui;
 
 signals:
+private slots:
+    void on_joinRoombtn_clicked();
 };
 
 #endif // ROOMITEMWIDGET_H

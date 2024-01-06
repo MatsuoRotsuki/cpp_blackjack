@@ -11,29 +11,41 @@ CONFIG += c++17
 
 SOURCES += \
     card.cpp \
+    inviteplayerdialog.cpp \
     main.cpp \
     mainwindow.cpp \
+    onlineplayer.cpp \
     message.cpp \
     player.cpp \
     playwindow.cpp \
+    quitdialog.cpp \
     roomitemwidget.cpp \
+    screencontroller.cpp \
     socketmanager.cpp
 
 HEADERS += \
     card.h \
+    inviteplayerdialog.h \
     mainwindow.h \
-    message.h \
+    onlineplayer.h \
     player.h \
     playwindow.h \
+    quitdialog.h \
     roomitemwidget.h \
+    message.h \
+    screencontroller.h \
     socketmanager.h
 
 FORMS += \
     card.ui \
+    inviteplayerdialog.ui \
     mainwindow.ui \
+    onlineplayer.ui \
     player.ui \
     playwindow.ui \
-    roomitemwidget.ui
+    quitdialog.ui \
+    roomitemwidget.ui \
+    sidebar.ui
 
 TRANSLATIONS += \
     blackjack_en_GB.ts

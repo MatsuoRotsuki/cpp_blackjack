@@ -17,11 +17,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_6">
-    <item row="1" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
      <widget class="QStackedWidget" name="stackedWidget_main">
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="main_screen">
        <layout class="QGridLayout" name="gridLayout">
@@ -132,133 +132,8 @@
              <property name="currentIndex">
               <number>1</number>
              </property>
-             <widget class="QWidget" name="home">
-              <widget class="QWidget" name="layoutWidget_3">
-               <property name="geometry">
-                <rect>
-                 <x>200</x>
-                 <y>80</y>
-                 <width>416</width>
-                 <height>112</height>
-                </rect>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_2">
-                <item>
-                 <widget class="QPushButton" name="playAloneBtn">
-                  <property name="minimumSize">
-                   <size>
-                    <width>200</width>
-                    <height>100</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(58, 32, 32);
-border-color: rgb(255, 255, 255);
-border-radius: 10px;
-</string>
-                  </property>
-                  <property name="text">
-                   <string>Play Alone</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="playGroupBtn">
-                  <property name="minimumSize">
-                   <size>
-                    <width>200</width>
-                    <height>100</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(58, 32, 32);
-border-color: rgb(255, 255, 255);
-border-radius: 10px;</string>
-                  </property>
-                  <property name="text">
-                   <string>Play with other player</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-              <widget class="QLabel" name="label_4">
-               <property name="geometry">
-                <rect>
-                 <x>320</x>
-                 <y>40</y>
-                 <width>261</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Academy Engraved LET</family>
-                 <pointsize>14</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Welcome to Blackjack game</string>
-               </property>
-              </widget>
-              <widget class="QFrame" name="frame">
-               <property name="geometry">
-                <rect>
-                 <x>360</x>
-                 <y>230</y>
-                 <width>91</width>
-                 <height>61</height>
-                </rect>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">border-radius: 30px;
-border-color: rgb(255, 255, 255);
-border-width: 2px; 
-border-style: solid;</string>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <widget class="QPushButton" name="playGame">
-                <property name="geometry">
-                 <rect>
-                  <x>0</x>
-                  <y>0</y>
-                  <width>91</width>
-                  <height>60</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>90</width>
-                  <height>60</height>
-                 </size>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: rgb(58, 32, 32);
-border-radius: 30px;
-border-color: rgb(255, 255, 255);</string>
-                </property>
-                <property name="text">
-                 <string>Play game</string>
-                </property>
-               </widget>
-              </widget>
-             </widget>
              <widget class="QWidget" name="room">
-              <widget class="QPushButton" name="createNewRoom">
+              <widget class="QPushButton" name="createNewRoomBtn">
                <property name="geometry">
                 <rect>
                  <x>10</x>
@@ -290,7 +165,7 @@ border-radius: 10px;</string>
                 <string>Create new room</string>
                </property>
               </widget>
-              <widget class="QPushButton" name="pushButton_2">
+              <widget class="QPushButton" name="joinRandomBtn">
                <property name="geometry">
                 <rect>
                  <x>240</x>
@@ -383,21 +258,6 @@ border-radius: 10px;</string>
                  <widget class="RoomItemWidget" name="widget_9" native="true"/>
                 </item>
                </layout>
-              </widget>
-             </widget>
-             <widget class="QWidget" name="invite">
-              <widget class="QLabel" name="label_3">
-               <property name="geometry">
-                <rect>
-                 <x>300</x>
-                 <y>190</y>
-                 <width>58</width>
-                 <height>16</height>
-                </rect>
-               </property>
-               <property name="text">
-                <string>invite</string>
-               </property>
               </widget>
              </widget>
             </widget>
@@ -510,7 +370,7 @@ border-radius: 10px;</string>
          <rect>
           <x>200</x>
           <y>40</y>
-          <width>511</width>
+          <width>638</width>
           <height>421</height>
          </rect>
         </property>
@@ -561,7 +421,7 @@ border-radius: 10px;</string>
         <widget class="QSplitter" name="splitter">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>220</x>
            <y>260</y>
            <width>191</width>
            <height>61</height>
@@ -602,8 +462,8 @@ border-style: solid;</string>
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: rgb(58, 32, 32);
-border-radius: 30px;
+            <string notr="true">border-radius: 30px;
+background-color: rgb(242, 78, 30);
 border-color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">

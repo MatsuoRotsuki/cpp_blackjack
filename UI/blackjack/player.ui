@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>241</width>
-    <height>234</height>
+    <width>336</width>
+    <height>312</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -186,6 +186,16 @@ border-width: 1px;</string>
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="point">
+       <property name="text">
+        <string>6</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>

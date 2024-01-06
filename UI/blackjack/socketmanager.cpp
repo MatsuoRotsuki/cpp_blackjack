@@ -19,9 +19,10 @@ SocketManager *SocketManager::GetInstance()
 
 SocketManager::~SocketManager()
 {
-    qDebug() << "Socket Manager destroyed.";
     socket_->close();
     delete socket_;
+    delete instance_;
+    qDebug() << "Socket Manager destroyed.";
 }
 
 QTcpSocket *SocketManager::socket() const

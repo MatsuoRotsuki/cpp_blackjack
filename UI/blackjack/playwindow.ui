@@ -83,6 +83,9 @@ border-width: 2px;</string>
     </property>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>1</number>
+      </property>
       <item>
        <widget class="QLabel" name="label_77">
         <property name="minimumSize">
@@ -105,7 +108,7 @@ border-width: 1px;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>back.png</pixmap>
+         <pixmap resource="A_h.qrc">:/resource/back.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -300,7 +303,7 @@ border-width: 1px;</string>
      <x>800</x>
      <y>0</y>
      <width>152</width>
-     <height>66</height>
+     <height>76</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -309,11 +312,13 @@ border-width: 1px;</string>
       <property name="minimumSize">
        <size>
         <width>100</width>
-        <height>0</height>
+        <height>30</height>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(58, 32, 32);</string>
+       <string notr="true">background-color: rgb(58, 32, 32);
+border-radius: 15px;
+</string>
       </property>
       <property name="text">
        <string>Quit</string>
@@ -322,8 +327,15 @@ border-width: 1px;</string>
     </item>
     <item>
      <widget class="QPushButton" name="inviteBtn">
+      <property name="minimumSize">
+       <size>
+        <width>100</width>
+        <height>30</height>
+       </size>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(58, 32, 32);</string>
+       <string notr="true">background-color: rgb(58, 32, 32);
+border-radius: 15px;</string>
       </property>
       <property name="text">
        <string>Invite</string>
@@ -336,9 +348,9 @@ border-width: 1px;</string>
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>280</y>
+     <y>211</y>
      <width>956</width>
-     <height>182</height>
+     <height>251</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="listPlayer">
@@ -509,6 +521,24 @@ border-width: 1px;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_16">
            <item>
             <widget class="QPushButton" name="pushButton_33">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="sizeIncrement">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="baseSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
              <property name="text">
               <string>10</string>
              </property>
