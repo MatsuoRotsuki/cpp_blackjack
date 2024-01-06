@@ -20,6 +20,7 @@ SOURCES += \
     playwindow.cpp \
     quitdialog.cpp \
     roomitemwidget.cpp \
+    screencontroller.cpp \
     socketmanager.cpp
 
 HEADERS += \
@@ -32,6 +33,7 @@ HEADERS += \
     quitdialog.h \
     roomitemwidget.h \
     message.h \
+    screencontroller.h \
     socketmanager.h
 
 FORMS += \

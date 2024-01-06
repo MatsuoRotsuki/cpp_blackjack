@@ -27,6 +27,8 @@ private slots:
 
     void on_quitBtn_clicked();
 
+    void back_to_home_screen();
+
 private:
     Ui::PlayWindow *ui;
     bool isInvitePopupShown;

@@ -4,6 +4,7 @@
 #include <QVBoxLayout>
 #include "quitdialog.h"
 #include "inviteplayerdialog.h"
+#include "screencontroller.h"
 
 PlayWindow::PlayWindow(QWidget *parent)
     : QWidget(parent)
@@ -114,6 +115,7 @@ void PlayWindow::on_quitBtn_clicked()
             //     mainWindow->on_back_to_main_window();
             // }
             qDebug() << "Yes to exit" ;
+            back_to_home_screen();
 
         });
         connect(quitDialog, &QuitDialog::rejected, this, [&]() {
@@ -121,5 +123,10 @@ void PlayWindow::on_quitBtn_clicked()
             // Handle the case when the user clicks Cancel or closes the window
         });
     }
+}
+
+void PlayWindow::back_to_home_screen()
+{
+    ScreenController::instance().switchToScreen(0);
 }
 

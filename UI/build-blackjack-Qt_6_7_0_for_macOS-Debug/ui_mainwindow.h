@@ -48,17 +48,9 @@ public:
     QWidget *widget;
     QGridLayout *gridLayout_3;
     QStackedWidget *stackedWidget;
-    QWidget *home;
-    QWidget *layoutWidget_3;
-    QHBoxLayout *horizontalLayout_2;
-    QPushButton *playAloneBtn;
-    QPushButton *playGroupBtn;
-    QLabel *label_4;
-    QFrame *frame;
-    QPushButton *playGame;
     QWidget *room;
-    QPushButton *createNewRoom;
-    QPushButton *pushButton_2;
+    QPushButton *createNewRoomBtn;
+    QPushButton *joinRandomBtn;
     QWidget *layoutWidget_4;
     QGridLayout *gridLayout_2;
     RoomItemWidget *widget_5;
@@ -69,8 +61,6 @@ public:
     RoomItemWidget *widget_2;
     RoomItemWidget *widget_4;
     RoomItemWidget *widget_9;
-    QWidget *invite;
-    QLabel *label_3;
     QHBoxLayout *horizontalLayout_5;
     QSpacerItem *horizontalSpacer_7;
     QLabel *label_9;
@@ -208,77 +198,23 @@ public:
         gridLayout_3->setObjectName("gridLayout_3");
         stackedWidget = new QStackedWidget(widget);
         stackedWidget->setObjectName("stackedWidget");
-        home = new QWidget();
-        home->setObjectName("home");
-        layoutWidget_3 = new QWidget(home);
-        layoutWidget_3->setObjectName("layoutWidget_3");
-        layoutWidget_3->setGeometry(QRect(200, 80, 416, 112));
-        horizontalLayout_2 = new QHBoxLayout(layoutWidget_3);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        playAloneBtn = new QPushButton(layoutWidget_3);
-        playAloneBtn->setObjectName("playAloneBtn");
-        playAloneBtn->setMinimumSize(QSize(200, 100));
-        playAloneBtn->setCursor(QCursor(Qt::PointingHandCursor));
-        playAloneBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);\n"
-"border-color: rgb(255, 255, 255);\n"
-"border-radius: 10px;\n"
-""));
-
-        horizontalLayout_2->addWidget(playAloneBtn);
-
-        playGroupBtn = new QPushButton(layoutWidget_3);
-        playGroupBtn->setObjectName("playGroupBtn");
-        playGroupBtn->setMinimumSize(QSize(200, 100));
-        playGroupBtn->setCursor(QCursor(Qt::PointingHandCursor));
-        playGroupBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);\n"
-"border-color: rgb(255, 255, 255);\n"
-"border-radius: 10px;"));
-
-        horizontalLayout_2->addWidget(playGroupBtn);
-
-        label_4 = new QLabel(home);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(320, 40, 261, 16));
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Academy Engraved LET")});
-        font.setPointSize(14);
-        label_4->setFont(font);
-        frame = new QFrame(home);
-        frame->setObjectName("frame");
-        frame->setGeometry(QRect(360, 230, 91, 61));
-        frame->setStyleSheet(QString::fromUtf8("border-radius: 30px;\n"
-"border-color: rgb(255, 255, 255);\n"
-"border-width: 2px; \n"
-"border-style: solid;"));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
-        playGame = new QPushButton(frame);
-        playGame->setObjectName("playGame");
-        playGame->setGeometry(QRect(0, 0, 91, 60));
-        playGame->setMinimumSize(QSize(90, 60));
-        playGame->setCursor(QCursor(Qt::PointingHandCursor));
-        playGame->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);\n"
-"border-radius: 30px;\n"
-"border-color: rgb(255, 255, 255);"));
-        stackedWidget->addWidget(home);
         room = new QWidget();
         room->setObjectName("room");
-        createNewRoom = new QPushButton(room);
-        createNewRoom->setObjectName("createNewRoom");
-        createNewRoom->setGeometry(QRect(10, 10, 200, 30));
-        createNewRoom->setMinimumSize(QSize(200, 30));
-        createNewRoom->setMaximumSize(QSize(200, 30));
-        createNewRoom->setCursor(QCursor(Qt::PointingHandCursor));
-        createNewRoom->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+        createNewRoomBtn = new QPushButton(room);
+        createNewRoomBtn->setObjectName("createNewRoomBtn");
+        createNewRoomBtn->setGeometry(QRect(10, 10, 200, 30));
+        createNewRoomBtn->setMinimumSize(QSize(200, 30));
+        createNewRoomBtn->setMaximumSize(QSize(200, 30));
+        createNewRoomBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        createNewRoomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
 "border-radius: 10px;"));
-        pushButton_2 = new QPushButton(room);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(240, 10, 200, 30));
-        pushButton_2->setMinimumSize(QSize(200, 30));
-        pushButton_2->setMaximumSize(QSize(200, 30));
-        pushButton_2->setCursor(QCursor(Qt::PointingHandCursor));
-        pushButton_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+        joinRandomBtn = new QPushButton(room);
+        joinRandomBtn->setObjectName("joinRandomBtn");
+        joinRandomBtn->setGeometry(QRect(240, 10, 200, 30));
+        joinRandomBtn->setMinimumSize(QSize(200, 30));
+        joinRandomBtn->setMaximumSize(QSize(200, 30));
+        joinRandomBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        joinRandomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
 "border-radius: 10px;"));
         layoutWidget_4 = new QWidget(room);
         layoutWidget_4->setObjectName("layoutWidget_4");
@@ -333,12 +269,6 @@ public:
         gridLayout_2->addWidget(widget_9, 2, 0, 1, 1);
 
         stackedWidget->addWidget(room);
-        invite = new QWidget();
-        invite->setObjectName("invite");
-        label_3 = new QLabel(invite);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(300, 190, 58, 16));
-        stackedWidget->addWidget(invite);
 
         gridLayout_3->addWidget(stackedWidget, 1, 0, 1, 1);
 
@@ -387,7 +317,7 @@ public:
         ready_screen->setObjectName("ready_screen");
         widget_10 = new QWidget(ready_screen);
         widget_10->setObjectName("widget_10");
-        widget_10->setGeometry(QRect(200, 40, 511, 381));
+        widget_10->setGeometry(QRect(200, 40, 638, 421));
         layoutWidget = new QWidget(widget_10);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(180, 100, 278, 122));
@@ -396,27 +326,27 @@ public:
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
         label_11 = new QLabel(layoutWidget);
         label_11->setObjectName("label_11");
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Academy Engraved LET")});
-        font1.setPointSize(36);
-        label_11->setFont(font1);
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Academy Engraved LET")});
+        font.setPointSize(36);
+        label_11->setFont(font);
         label_11->setAlignment(Qt::AlignCenter);
 
         verticalLayout_5->addWidget(label_11);
 
         label_10 = new QLabel(layoutWidget);
         label_10->setObjectName("label_10");
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Kannada MN")});
-        font2.setPointSize(36);
-        label_10->setFont(font2);
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Kannada MN")});
+        font1.setPointSize(36);
+        label_10->setFont(font1);
         label_10->setAlignment(Qt::AlignCenter);
 
         verticalLayout_5->addWidget(label_10);
 
         splitter = new QSplitter(widget_10);
         splitter->setObjectName("splitter");
-        splitter->setGeometry(QRect(170, 260, 191, 61));
+        splitter->setGeometry(QRect(220, 260, 191, 61));
         splitter->setOrientation(Qt::Horizontal);
         frame_4 = new QFrame(splitter);
         frame_4->setObjectName("frame_4");
@@ -431,8 +361,8 @@ public:
         cancelBtn->setGeometry(QRect(0, 0, 91, 60));
         cancelBtn->setMinimumSize(QSize(90, 60));
         cancelBtn->setCursor(QCursor(Qt::PointingHandCursor));
-        cancelBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 32, 32);\n"
-"border-radius: 30px;\n"
+        cancelBtn->setStyleSheet(QString::fromUtf8("border-radius: 30px;\n"
+"background-color: rgb(242, 78, 30);\n"
 "border-color: rgb(255, 255, 255);"));
         splitter->addWidget(frame_4);
         frame_3 = new QFrame(splitter);
@@ -467,11 +397,11 @@ public:
         verticalLayout_4->setObjectName("verticalLayout_4");
         label_5 = new QLabel(widget_11);
         label_5->setObjectName("label_5");
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("Umpush")});
-        font3.setPointSize(20);
-        font3.setBold(true);
-        label_5->setFont(font3);
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Umpush")});
+        font2.setPointSize(20);
+        font2.setBold(true);
+        label_5->setFont(font2);
         label_5->setStyleSheet(QString::fromUtf8("color:white;"));
         label_5->setAlignment(Qt::AlignCenter);
 
@@ -481,11 +411,11 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         label_6 = new QLabel(widget_11);
         label_6->setObjectName("label_6");
-        QFont font4;
-        font4.setFamilies({QString::fromUtf8("Umpush")});
-        font4.setPointSize(16);
-        font4.setBold(true);
-        label_6->setFont(font4);
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Umpush")});
+        font3.setPointSize(16);
+        font3.setBold(true);
+        label_6->setFont(font3);
         label_6->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout->addWidget(label_6);
@@ -498,10 +428,10 @@ public:
         lineEdit->setObjectName("lineEdit");
         lineEdit->setMinimumSize(QSize(200, 0));
         lineEdit->setMaximumSize(QSize(200, 16777215));
-        QFont font5;
-        font5.setFamilies({QString::fromUtf8("Ubuntu Mono")});
-        font5.setPointSize(14);
-        lineEdit->setFont(font5);
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Ubuntu Mono")});
+        font4.setPointSize(14);
+        lineEdit->setFont(font4);
         lineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
 
         horizontalLayout->addWidget(lineEdit);
@@ -513,7 +443,7 @@ public:
         horizontalLayout_7->setObjectName("horizontalLayout_7");
         label_7 = new QLabel(widget_11);
         label_7->setObjectName("label_7");
-        label_7->setFont(font4);
+        label_7->setFont(font3);
         label_7->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_7->addWidget(label_7);
@@ -526,7 +456,7 @@ public:
         lineEdit_2->setObjectName("lineEdit_2");
         lineEdit_2->setMinimumSize(QSize(200, 0));
         lineEdit_2->setMaximumSize(QSize(200, 16777215));
-        lineEdit_2->setFont(font5);
+        lineEdit_2->setFont(font4);
         lineEdit_2->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
 
         horizontalLayout_7->addWidget(lineEdit_2);
@@ -538,7 +468,7 @@ public:
         horizontalLayout_8->setObjectName("horizontalLayout_8");
         label_8 = new QLabel(widget_11);
         label_8->setObjectName("label_8");
-        label_8->setFont(font4);
+        label_8->setFont(font3);
         label_8->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_8->addWidget(label_8);
@@ -551,7 +481,7 @@ public:
         lineEdit_5->setObjectName("lineEdit_5");
         lineEdit_5->setMinimumSize(QSize(200, 0));
         lineEdit_5->setMaximumSize(QSize(200, 16777215));
-        lineEdit_5->setFont(font5);
+        lineEdit_5->setFont(font4);
         lineEdit_5->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
         lineEdit_5->setEchoMode(QLineEdit::Password);
 
@@ -564,7 +494,7 @@ public:
         horizontalLayout_9->setObjectName("horizontalLayout_9");
         label_12 = new QLabel(widget_11);
         label_12->setObjectName("label_12");
-        label_12->setFont(font4);
+        label_12->setFont(font3);
         label_12->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_9->addWidget(label_12);
@@ -577,7 +507,7 @@ public:
         lineEdit_3->setObjectName("lineEdit_3");
         lineEdit_3->setMinimumSize(QSize(200, 0));
         lineEdit_3->setMaximumSize(QSize(200, 16777215));
-        lineEdit_3->setFont(font5);
+        lineEdit_3->setFont(font4);
         lineEdit_3->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
         lineEdit_3->setEchoMode(QLineEdit::Password);
 
@@ -594,7 +524,7 @@ public:
 
         signup_btn = new QPushButton(widget_11);
         signup_btn->setObjectName("signup_btn");
-        signup_btn->setFont(font4);
+        signup_btn->setFont(font3);
         signup_btn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 145, 80);\n"
 "padding-top: 7px;\n"
 "padding-left: 30px; \n"
@@ -619,11 +549,11 @@ public:
 
         to_login_page_btn = new QPushButton(widget_11);
         to_login_page_btn->setObjectName("to_login_page_btn");
-        QFont font6;
-        font6.setFamilies({QString::fromUtf8("Umpush")});
-        font6.setPointSize(14);
-        font6.setBold(true);
-        to_login_page_btn->setFont(font6);
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Umpush")});
+        font5.setPointSize(14);
+        font5.setBold(true);
+        to_login_page_btn->setFont(font5);
         to_login_page_btn->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_4->addWidget(to_login_page_btn);
@@ -647,7 +577,7 @@ public:
         verticalLayout_6->setObjectName("verticalLayout_6");
         label_14 = new QLabel(widget_12);
         label_14->setObjectName("label_14");
-        label_14->setFont(font3);
+        label_14->setFont(font2);
         label_14->setStyleSheet(QString::fromUtf8("color: white;"));
         label_14->setAlignment(Qt::AlignCenter);
 
@@ -657,7 +587,7 @@ public:
         horizontalLayout_12->setObjectName("horizontalLayout_12");
         label_18 = new QLabel(widget_12);
         label_18->setObjectName("label_18");
-        label_18->setFont(font4);
+        label_18->setFont(font3);
         label_18->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_12->addWidget(label_18);
@@ -670,7 +600,7 @@ public:
         usernameLineEdit->setObjectName("usernameLineEdit");
         usernameLineEdit->setMinimumSize(QSize(200, 0));
         usernameLineEdit->setMaximumSize(QSize(200, 16777215));
-        usernameLineEdit->setFont(font5);
+        usernameLineEdit->setFont(font4);
         usernameLineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
 
         horizontalLayout_12->addWidget(usernameLineEdit);
@@ -682,7 +612,7 @@ public:
         horizontalLayout_13->setObjectName("horizontalLayout_13");
         label_19 = new QLabel(widget_12);
         label_19->setObjectName("label_19");
-        label_19->setFont(font4);
+        label_19->setFont(font3);
         label_19->setStyleSheet(QString::fromUtf8("color: white;"));
 
         horizontalLayout_13->addWidget(label_19);
@@ -695,7 +625,7 @@ public:
         passwordLineEdit->setObjectName("passwordLineEdit");
         passwordLineEdit->setMinimumSize(QSize(200, 0));
         passwordLineEdit->setMaximumSize(QSize(200, 16777215));
-        passwordLineEdit->setFont(font5);
+        passwordLineEdit->setFont(font4);
         passwordLineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color:white;"));
         passwordLineEdit->setEchoMode(QLineEdit::Password);
 
@@ -712,7 +642,7 @@ public:
 
         login_btn = new QPushButton(widget_12);
         login_btn->setObjectName("login_btn");
-        login_btn->setFont(font4);
+        login_btn->setFont(font3);
         login_btn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 145, 80);\n"
 "padding-top: 7px;\n"
 "padding-left: 30px; \n"
@@ -747,11 +677,11 @@ public:
 
         to_signup_page_btn = new QPushButton(widget_12);
         to_signup_page_btn->setObjectName("to_signup_page_btn");
-        QFont font7;
-        font7.setFamilies({QString::fromUtf8("Ubuntu Mono")});
-        font7.setPointSize(14);
-        font7.setBold(true);
-        to_signup_page_btn->setFont(font7);
+        QFont font6;
+        font6.setFamilies({QString::fromUtf8("Ubuntu Mono")});
+        font6.setPointSize(14);
+        font6.setBold(true);
+        to_signup_page_btn->setFont(font6);
         to_signup_page_btn->setStyleSheet(QString::fromUtf8("color:white;"));
 
         horizontalLayout_3->addWidget(to_signup_page_btn);
@@ -772,7 +702,7 @@ public:
         retranslateUi(MainWindow);
 
         stackedWidget_main->setCurrentIndex(1);
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -785,13 +715,8 @@ public:
         homeBtn->setText(QCoreApplication::translate("MainWindow", "Home", nullptr));
         roomBtn->setText(QCoreApplication::translate("MainWindow", "Room", nullptr));
         inviteBtn->setText(QCoreApplication::translate("MainWindow", "Invite", nullptr));
-        playAloneBtn->setText(QCoreApplication::translate("MainWindow", "Play Alone", nullptr));
-        playGroupBtn->setText(QCoreApplication::translate("MainWindow", "Play with other player", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Welcome to Blackjack game", nullptr));
-        playGame->setText(QCoreApplication::translate("MainWindow", "Play game", nullptr));
-        createNewRoom->setText(QCoreApplication::translate("MainWindow", "Create new room", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "invite", nullptr));
+        createNewRoomBtn->setText(QCoreApplication::translate("MainWindow", "Create new room", nullptr));
+        joinRandomBtn->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "Jemmy", nullptr));
         pushButton_6->setText(QString());
         label_11->setText(QCoreApplication::translate("MainWindow", "Start Game", nullptr));

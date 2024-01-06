@@ -62,6 +62,7 @@ SOURCES       = ../blackjack/card.cpp \
 		../blackjack/playwindow.cpp \
 		../blackjack/quitdialog.cpp \
 		../blackjack/roomitemwidget.cpp \
+		../blackjack/screencontroller.cpp \
 		../blackjack/socketmanager.cpp qrc_A_h.cpp \
 		qrc_qmake_qmake_qm_files.cpp \
 		moc_card.cpp \
@@ -72,6 +73,7 @@ SOURCES       = ../blackjack/card.cpp \
 		moc_playwindow.cpp \
 		moc_quitdialog.cpp \
 		moc_roomitemwidget.cpp \
+		moc_screencontroller.cpp \
 		moc_socketmanager.cpp
 OBJECTS       = card.o \
 		inviteplayerdialog.o \
@@ -83,6 +85,7 @@ OBJECTS       = card.o \
 		playwindow.o \
 		quitdialog.o \
 		roomitemwidget.o \
+		screencontroller.o \
 		socketmanager.o \
 		qrc_A_h.o \
 		qrc_qmake_qmake_qm_files.o \
@@ -94,6 +97,7 @@ OBJECTS       = card.o \
 		moc_playwindow.o \
 		moc_quitdialog.o \
 		moc_roomitemwidget.o \
+		moc_screencontroller.o \
 		moc_socketmanager.o
 DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		../../../../Qt/6.7.0/macos/mkspecs/features/device_config.prf \
@@ -426,6 +430,7 @@ DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		../blackjack/quitdialog.h \
 		../blackjack/roomitemwidget.h \
 		../blackjack/message.h \
+		../blackjack/screencontroller.h \
 		../blackjack/socketmanager.h ../blackjack/card.cpp \
 		../blackjack/inviteplayerdialog.cpp \
 		../blackjack/main.cpp \
@@ -436,6 +441,7 @@ DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		../blackjack/playwindow.cpp \
 		../blackjack/quitdialog.cpp \
 		../blackjack/roomitemwidget.cpp \
+		../blackjack/screencontroller.cpp \
 		../blackjack/socketmanager.cpp
 QMAKE_TARGET  = blackjack
 DESTDIR       = 
@@ -1146,8 +1152,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/blackjack_en_GB.ts $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/A_h.qrc qmake_qmake_qm_files.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../blackjack/card.h ../blackjack/inviteplayerdialog.h ../blackjack/mainwindow.h ../blackjack/onlineplayer.h ../blackjack/player.h ../blackjack/playwindow.h ../blackjack/quitdialog.h ../blackjack/roomitemwidget.h ../blackjack/message.h ../blackjack/socketmanager.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../blackjack/card.cpp ../blackjack/inviteplayerdialog.cpp ../blackjack/main.cpp ../blackjack/mainwindow.cpp ../blackjack/onlineplayer.cpp ../blackjack/message.cpp ../blackjack/player.cpp ../blackjack/playwindow.cpp ../blackjack/quitdialog.cpp ../blackjack/roomitemwidget.cpp ../blackjack/socketmanager.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../blackjack/card.h ../blackjack/inviteplayerdialog.h ../blackjack/mainwindow.h ../blackjack/onlineplayer.h ../blackjack/player.h ../blackjack/playwindow.h ../blackjack/quitdialog.h ../blackjack/roomitemwidget.h ../blackjack/message.h ../blackjack/screencontroller.h ../blackjack/socketmanager.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../blackjack/card.cpp ../blackjack/inviteplayerdialog.cpp ../blackjack/main.cpp ../blackjack/mainwindow.cpp ../blackjack/onlineplayer.cpp ../blackjack/message.cpp ../blackjack/player.cpp ../blackjack/playwindow.cpp ../blackjack/quitdialog.cpp ../blackjack/roomitemwidget.cpp ../blackjack/screencontroller.cpp ../blackjack/socketmanager.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/card.ui ../blackjack/inviteplayerdialog.ui ../blackjack/mainwindow.ui ../blackjack/onlineplayer.ui ../blackjack/player.ui ../blackjack/playwindow.ui ../blackjack/quitdialog.ui ../blackjack/roomitemwidget.ui ../blackjack/sidebar.ui $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/blackjack_en_GB.ts $(DISTDIR)/
 
@@ -1251,9 +1257,9 @@ qrc_qmake_qmake_qm_files.cpp: qmake_qmake_qm_files.qrc \
 		.qm/blackjack_en_GB.qm
 	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name qmake_qmake_qm_files --no-zstd qmake_qmake_qm_files.qrc -o qrc_qmake_qmake_qm_files.cpp
 
-compiler_moc_header_make_all: moc_card.cpp moc_inviteplayerdialog.cpp moc_mainwindow.cpp moc_onlineplayer.cpp moc_player.cpp moc_playwindow.cpp moc_quitdialog.cpp moc_roomitemwidget.cpp moc_socketmanager.cpp
+compiler_moc_header_make_all: moc_card.cpp moc_inviteplayerdialog.cpp moc_mainwindow.cpp moc_onlineplayer.cpp moc_player.cpp moc_playwindow.cpp moc_quitdialog.cpp moc_roomitemwidget.cpp moc_screencontroller.cpp moc_socketmanager.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_card.cpp moc_inviteplayerdialog.cpp moc_mainwindow.cpp moc_onlineplayer.cpp moc_player.cpp moc_playwindow.cpp moc_quitdialog.cpp moc_roomitemwidget.cpp moc_socketmanager.cpp
+	-$(DEL_FILE) moc_card.cpp moc_inviteplayerdialog.cpp moc_mainwindow.cpp moc_onlineplayer.cpp moc_player.cpp moc_playwindow.cpp moc_quitdialog.cpp moc_roomitemwidget.cpp moc_screencontroller.cpp moc_socketmanager.cpp
 moc_card.cpp: ../blackjack/card.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
@@ -1544,6 +1550,16 @@ moc_roomitemwidget.cpp: ../blackjack/roomitemwidget.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		../../../../Qt/6.7.0/macos/libexec/moc
 	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/roomitemwidget.h -o moc_roomitemwidget.cpp
+
+moc_screencontroller.cpp: ../blackjack/screencontroller.h \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../../../../Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/screencontroller.h -o moc_screencontroller.cpp
 
 moc_socketmanager.cpp: ../blackjack/socketmanager.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
@@ -2017,7 +2033,8 @@ mainwindow.o: ../blackjack/mainwindow.cpp ../blackjack/mainwindow.h \
 		../blackjack/playwindow.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../blackjack/roomitemwidget.h
+		../blackjack/roomitemwidget.h \
+		../blackjack/screencontroller.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../blackjack/mainwindow.cpp
 
 onlineplayer.o: ../blackjack/onlineplayer.cpp ../blackjack/onlineplayer.h \
@@ -2167,7 +2184,8 @@ playwindow.o: ../blackjack/playwindow.cpp ../blackjack/playwindow.h \
 		../blackjack/quitdialog.h \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
-		../blackjack/inviteplayerdialog.h
+		../blackjack/inviteplayerdialog.h \
+		../blackjack/screencontroller.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o playwindow.o ../blackjack/playwindow.cpp
 
 quitdialog.o: ../blackjack/quitdialog.cpp ../blackjack/quitdialog.h \
@@ -2183,6 +2201,15 @@ roomitemwidget.o: ../blackjack/roomitemwidget.cpp ../blackjack/roomitemwidget.h 
 		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
 		ui_roomitemwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o roomitemwidget.o ../blackjack/roomitemwidget.cpp
+
+screencontroller.o: ../blackjack/screencontroller.cpp ../blackjack/screencontroller.h \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o screencontroller.o ../blackjack/screencontroller.cpp
 
 socketmanager.o: ../blackjack/socketmanager.cpp ../blackjack/socketmanager.h \
 		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
@@ -2222,6 +2249,9 @@ moc_quitdialog.o: moc_quitdialog.cpp
 
 moc_roomitemwidget.o: moc_roomitemwidget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_roomitemwidget.o moc_roomitemwidget.cpp
+
+moc_screencontroller.o: moc_screencontroller.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_screencontroller.o moc_screencontroller.cpp
 
 moc_socketmanager.o: moc_socketmanager.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_socketmanager.o moc_socketmanager.cpp
