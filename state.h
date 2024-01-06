@@ -1,3 +1,6 @@
+#pragma once
+#include <string>
+
 enum class State 
 {
     UNLOGGED_IN,
@@ -9,4 +12,7 @@ enum class State
     PLAYING,
     DEALER_TURN,
     OUTCOME,
+    UNKNOWN,
 };
+
+std::string StateToString(State state);

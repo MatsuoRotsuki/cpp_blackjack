@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDebug>
 #include "mainwindow.h"
+
 namespace Ui {
 class PlayWindow;
 }

@@ -129,7 +129,6 @@ void MainWindow::on_login_btn_clicked()
 
 void MainWindow::on_to_login_page_btn_clicked()
 {
-    // ui->stackedWidget_main->setCurrentIndex(4);
     ScreenController::instance().switchToScreen(4);
 }
 
@@ -139,6 +138,7 @@ void MainWindow::on_to_signup_page_btn_clicked()
     // ui->stackedWidget_main->setCurrentIndex(3);
     ScreenController::instance().switchToScreen(3);
 }
+
 
 void MainWindow::on_readyRead()
 {
@@ -154,6 +154,28 @@ void MainWindow::on_signup_btn_clicked()
 {
 
 }
+void MainWindow::on_login_btn_clicked()
+{
+    // Get input data
+    QString q_Username = ui->usernameLineEdit->text();
+    QString q_Password = ui->passwordLineEdit->text();
+    
+    char username[64];
+    strcpy(username,q_Username.toLocal8Bit().data());
+    char password[64];
+    strcpy(password, q_Password.toLocal8Bit().data());
+
+    // Create request message
+    Message msg;
+    msg.type = MessageType::CLT_LOGIN_REQ;
+    strcpy(msg.payload.loginRequestData.username, username);
+    strcpy(msg.payload.loginRequestData.password, password);
+
+    // Send request message
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    socketManager->socket()->write(byteArray);
+}
 
 
 void MainWindow::on_startBtn_clicked()
@@ -166,5 +188,57 @@ void MainWindow::on_startBtn_clicked()
 void MainWindow::on_joinRandomBtn_clicked()
 {
     ScreenController::instance().switchToScreen(1);
+}
+
+void MainWindow::on_readyRead()
+{
+    QByteArray data = socketManager->socket()->read(sizeof(Message));
+    const Message* msgPtr = reinterpret_cast<const Message*>(data.constData());
+    Message msg;
+    memcpy(&msg, msgPtr, sizeof(Message));
+
+    qDebug() << QString::fromStdString(MessageTypeToString(msg.type));
+    switch(msg.type)
+    {
+    case MessageType::SRV_INVALID_REQUEST:
+        break;
+    case MessageType::SRV_LOGIN_RES:
+        break;
+    case MessageType::SRV_SIGNUP_RES:
+        break;
+    case MessageType::SRV_VIEWONLINE_RES:
+        break;
+    case MessageType::SRV_DISCONNECT:
+        break;
+    case MessageType::SRV_ROOMLIST_RES:
+        break;
+    case MessageType::SRV_ADDTOROOM:
+        break;
+    case MessageType::SRV_START_ROUND:
+        break;
+    case MessageType::SRV_BET_REQUEST:
+        break;
+    case MessageType::SRV_PLAYER_BET:
+        break;
+    case MessageType::SRV_GAME_STATE:
+        break;
+    case MessageType::SRV_ACTION_REQUEST:
+        break;
+    case MessageType::SRV_OUTCOME:
+        break;
+    case MessageType::SRV_READY_REQUEST:
+        break;
+    case MessageType::SRV_INVITE:
+        break;
+    case MessageType::SRV_INVITE_OUTCOME:
+        break;
+    default:
+        qDebug() << "INVALID";
+    }
+}
+
+void MainWindow::on_signup_btn_clicked()
+{
+
 }
 

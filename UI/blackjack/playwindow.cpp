@@ -57,7 +57,6 @@ void PlayWindow::on_cashout_btn_clicked()
     }
 }
 
-
 void PlayWindow::on_inviteBtn_clicked()
 {
     if(!isInvitePopupShown){

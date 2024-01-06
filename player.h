@@ -25,9 +25,9 @@ public:
     void printFirstHand();
 };
 
-class Player : public Person
+class Account : public Person
 {
 public:
-    Player();
+    Account();
     void makeDecision(Deck deck, Deck discard);
 };
