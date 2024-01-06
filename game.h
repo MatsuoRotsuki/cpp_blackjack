@@ -6,7 +6,7 @@ private:
     Deck deck;
     Deck discarded;
     Dealer dealer;
-    Player player;
+    Account player;
     int wins, losses, pushes;
 public:
     Game();

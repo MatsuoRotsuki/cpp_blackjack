@@ -94,6 +94,11 @@ void HandleSendingThread(int client_socket)
             strcpy(requestMsg.payload.signupRequestData.confirm_password, "123456");
             strcpy(requestMsg.payload.signupRequestData.name, "Loc Pham");
             break;
+        case 3:
+            requestMsg.type = MessageType::CLT_VIEWONLINE_REQ;
+            requestMsg.payload.clientViewOnlineData.limit = 10;
+            requestMsg.payload.clientViewOnlineData.offset = 0;
+            break;
         }
 
         // Check exit flag
@@ -134,15 +139,15 @@ void HandleReceivingThread(int client_socket)
                 break;
 
             case MessageType::SRV_INVALID_REQUEST:
-                // TODO
+                std::cout << "[Server] " << msgBuff.payload.invalidRequestData.message << "\n";
                 break;
 
             case MessageType::SRV_SIGNUP_RES:
-                // TODO
+                std::cout << "[Server] " << msgBuff.payload.signupResponseData.message << "\n";
                 break;
 
             case MessageType::SRV_LOGIN_RES:
-                // TODO
+                std::cout << "[Server] " << msgBuff.payload.loginResponseData.message << "\n";
                 break;
 
             case MessageType::SRV_VIEWONLINE_RES:

@@ -111,11 +111,10 @@ void MainWindow::on_login_btn_clicked()
     QString q_Username = ui->usernameLineEdit->text();
     QString q_Password = ui->passwordLineEdit->text();
     
-    const char *username = q_Username.toLocal8Bit().data();
-    const char *password = q_Password.toLocal8Bit().data();
-
-    qDebug() <<"QT " << q_Username.count();
-    qDebug() <<"C " <<strlen(username);
+    char username[64];
+    strcpy(username,q_Username.toLocal8Bit().data());
+    char password[64];
+    strcpy(password, q_Password.toLocal8Bit().data());
 
     // Create request message
     Message msg;
@@ -149,6 +148,43 @@ void MainWindow::on_readyRead()
     memcpy(&msg, msgPtr, sizeof(Message));
 
     qDebug() << QString::fromStdString(MessageTypeToString(msg.type));
+    switch(msg.type)
+    {
+    case MessageType::SRV_INVALID_REQUEST:
+        break;
+    case MessageType::SRV_LOGIN_RES:
+        break;
+    case MessageType::SRV_SIGNUP_RES:
+        break;
+    case MessageType::SRV_VIEWONLINE_RES:
+        break;
+    case MessageType::SRV_DISCONNECT:
+        break;
+    case MessageType::SRV_ROOMLIST_RES:
+        break;
+    case MessageType::SRV_ADDTOROOM:
+        break;
+    case MessageType::SRV_START_ROUND:
+        break;
+    case MessageType::SRV_BET_REQUEST:
+        break;
+    case MessageType::SRV_PLAYER_BET:
+        break;
+    case MessageType::SRV_GAME_STATE:
+        break;
+    case MessageType::SRV_ACTION_REQUEST:
+        break;
+    case MessageType::SRV_OUTCOME:
+        break;
+    case MessageType::SRV_READY_REQUEST:
+        break;
+    case MessageType::SRV_INVITE:
+        break;
+    case MessageType::SRV_INVITE_OUTCOME:
+        break;
+    default:
+        qDebug() << "INVALID";
+    }
 }
 
 void MainWindow::on_signup_btn_clicked()

@@ -61,12 +61,12 @@ void Dealer::printFirstHand()
     std::cout << "The second card is face down" << std::endl;
 }
 
-Player::Player()
+Account::Account()
 {
-    setName("Player");
+    setName("Account");
 }
 
-void Player::makeDecision(Deck deck, Deck discard)
+void Account::makeDecision(Deck deck, Deck discard)
 {
     int decision = 0;
     bool getNum = true;

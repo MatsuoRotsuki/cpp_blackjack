@@ -15,6 +15,7 @@
 #include <atomic>
 #include "UI/blackjack/message.h"
 #include "state.h"
+#include "accountmanager.h"
 
 #define BACK_LOG 10
 
@@ -24,11 +25,7 @@ struct Client
     int id;
     std::thread thread;
     State state;
-    // Client(int _socket, int _id, std::thread _thread) {
-    //     socket = _socket;
-    //     id  = _id;
-    //     thread = _thread;
-    // }
+    Account *player = nullptr;
 };
 /**
  * Function to handle on Ctrl + C
@@ -36,6 +33,9 @@ struct Client
 void HandleInterrupt(int signal);
 void HandleClient(int client_socket, int id);
 int FindClientSocketById(int id);
+std::vector<Client> *getAllClients();
+State getClientState(int id);
+void setClientState(int id, State state);
 
 /**
  * Handle function for CLT_DISCONNECT
@@ -60,4 +60,4 @@ void DispatchSignup(int id, Message signUpMsg);
 /**
  * Handle function for CLT_VIEWONLINE_REQ
 */
-void DispatchViewOnline(int id);
+void DispatchViewOnline(int id, Message reqMsg);

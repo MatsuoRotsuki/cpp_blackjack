@@ -65,10 +65,15 @@ int main(int argc, char const *argv[])
             exit(EXIT_FAILURE);
         }
 
+        // Print new connection address and port
+        char clientIP[INET_ADDRSTRLEN];
+        inet_ntop(AF_INET, &(client_addr.sin_addr), clientIP, INET_ADDRSTRLEN);
+        std::cout << "New connection accepted from " << clientIP << ":" << ntohs(client_addr.sin_port) << std::endl;
+
         // Create thread args, initialize client thread
         std::thread newThread(HandleClient, client_socket, ++seed);
         std::lock_guard<std::mutex> guard(clients_mtx);
-        clients.push_back({client_socket, seed, (move(newThread))});
+        clients.push_back({client_socket, seed, (move(newThread)), State::UNLOGGED_IN});
     }
 
     // Wait for client threads to finish, join all client threads
@@ -146,7 +151,7 @@ void HandleClient(int client_socket, int id)
                 break;
 
             case MessageType::CLT_VIEWONLINE_REQ:
-                DispatchViewOnline(id);
+                DispatchViewOnline(id, msgBuff);
                 break;
 
             case MessageType::CLT_ROOMLIST_REQ:
@@ -181,6 +186,7 @@ void HandleClient(int client_socket, int id)
 
 int FindClientSocketById(int id)
 {
+    std::lock_guard<std::mutex> guard(clients_mtx);
     for (std::vector<Client>::iterator p_Client = clients.begin(); p_Client != clients.end(); p_Client++)
     {
         if (p_Client->id == id)
@@ -189,22 +195,51 @@ int FindClientSocketById(int id)
     return -1; // NOT FOUND
 }
 
-void EndConnection(int id)
+std::vector<Client> *getAllClients()
 {
-    std::cout << "[Client " << id << "] disconnected\n";
+    return &clients;
+}
 
+State getClientState(int id)
+{
+    std::lock_guard<std::mutex> guard(clients_mtx);
+    for (std::vector<Client>::iterator p_Client = clients.begin(); p_Client != clients.end(); p_Client++)
+    {
+        if (p_Client->id == id)
+            return p_Client->state;
+    }
+    return State::UNKNOWN; // NOT FOUND
+}
+
+void setClientState(int id, State state)
+{
+    std::lock_guard<std::mutex> guard(clients_mtx);
     for (std::vector<Client>::iterator p_Client = clients.begin(); p_Client != clients.end(); p_Client++)
     {
         if (p_Client->id == id)
         {
-            // Mutex guard, remove client
-            std::lock_guard<std::mutex> guard(clients_mtx);
+            p_Client->state = state;
+            return;
+        }
+    }
+}
+
+void EndConnection(int id)
+{
+    std::cout << "[Client " << id << "] disconnected\n";
+    // Mutex guard
+    std::lock_guard<std::mutex> guard(clients_mtx);
+    for (std::vector<Client>::iterator p_Client = clients.begin(); p_Client != clients.end(); p_Client++)
+    {
+        if (p_Client->id == id)
+        {
+            // Remove client
             p_Client->thread.detach();
             clients.erase(p_Client);
 
             // Close client socket
             close(p_Client->socket);
-            break;
+            return;
         }
     }
 }

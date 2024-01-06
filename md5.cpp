@@ -1,5 +1,4 @@
 #include "md5.h"
-#include <openssl/md5.h>
 
 std::string md5(const std::string& str) {
     unsigned char digest[MD5_DIGEST_LENGTH];

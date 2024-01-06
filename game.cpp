@@ -6,7 +6,7 @@ Game::Game()
     discarded = Deck();
 
     dealer = Dealer();
-    player = Player();
+    player = Account();
 
     deck.shuffle();
     startRound();
