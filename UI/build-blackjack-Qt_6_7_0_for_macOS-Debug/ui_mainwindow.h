@@ -24,6 +24,7 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "onlineplayer.h"
 #include "playwindow.h"
 #include "roomitemwidget.h"
 
@@ -47,10 +48,14 @@ public:
     QSpacerItem *verticalSpacer;
     QWidget *widget;
     QGridLayout *gridLayout_3;
+    QHBoxLayout *horizontalLayout_5;
+    QSpacerItem *horizontalSpacer_7;
+    QLabel *label_9;
+    QSpacerItem *horizontalSpacer_8;
+    QPushButton *pushButton_6;
+    QSpacerItem *horizontalSpacer_9;
     QStackedWidget *stackedWidget;
     QWidget *room;
-    QPushButton *createNewRoomBtn;
-    QPushButton *joinRandomBtn;
     QWidget *layoutWidget_4;
     QGridLayout *gridLayout_2;
     RoomItemWidget *widget_5;
@@ -61,12 +66,24 @@ public:
     RoomItemWidget *widget_2;
     RoomItemWidget *widget_4;
     RoomItemWidget *widget_9;
-    QHBoxLayout *horizontalLayout_5;
-    QSpacerItem *horizontalSpacer_7;
-    QLabel *label_9;
-    QSpacerItem *horizontalSpacer_8;
-    QPushButton *pushButton_6;
-    QSpacerItem *horizontalSpacer_9;
+    QWidget *widget_13;
+    QVBoxLayout *verticalLayout_7;
+    QLabel *online_player_label;
+    OnlinePlayer *widget_14;
+    QWidget *widget_20;
+    QWidget *widget_22;
+    QWidget *widget_21;
+    QWidget *widget_19;
+    QWidget *widget_18;
+    OnlinePlayer *widget_17;
+    OnlinePlayer *widget_15;
+    QWidget *widget_23;
+    OnlinePlayer *widget_16;
+    QWidget *widget_24;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout_2;
+    QPushButton *createNewRoomBtn;
+    QPushButton *joinRandomBtn;
     QWidget *ready_screen;
     QWidget *widget_10;
     QWidget *layoutWidget;
@@ -134,7 +151,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1002, 590);
+        MainWindow->resize(1086, 672);
         MainWindow->setCursor(QCursor(Qt::ArrowCursor));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
@@ -196,32 +213,54 @@ public:
         widget->setMaximumSize(QSize(1600, 1600));
         gridLayout_3 = new QGridLayout(widget);
         gridLayout_3->setObjectName("gridLayout_3");
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(0);
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        horizontalSpacer_7 = new QSpacerItem(238, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_7);
+
+        label_9 = new QLabel(widget);
+        label_9->setObjectName("label_9");
+        label_9->setFrameShape(QFrame::NoFrame);
+
+        horizontalLayout_5->addWidget(label_9);
+
+        horizontalSpacer_8 = new QSpacerItem(13, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_8);
+
+        pushButton_6 = new QPushButton(widget);
+        pushButton_6->setObjectName("pushButton_6");
+        pushButton_6->setMinimumSize(QSize(50, 50));
+        pushButton_6->setMaximumSize(QSize(50, 50));
+        pushButton_6->setAutoFillBackground(false);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("../../../../Downloads/avatar.jpeg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_6->setIcon(icon);
+        pushButton_6->setIconSize(QSize(50, 50));
+        pushButton_6->setAutoRepeatInterval(300);
+
+        horizontalLayout_5->addWidget(pushButton_6);
+
+        horizontalSpacer_9 = new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_9);
+
+
+        gridLayout_3->addLayout(horizontalLayout_5, 0, 0, 1, 1);
+
         stackedWidget = new QStackedWidget(widget);
         stackedWidget->setObjectName("stackedWidget");
         room = new QWidget();
         room->setObjectName("room");
-        createNewRoomBtn = new QPushButton(room);
-        createNewRoomBtn->setObjectName("createNewRoomBtn");
-        createNewRoomBtn->setGeometry(QRect(10, 10, 200, 30));
-        createNewRoomBtn->setMinimumSize(QSize(200, 30));
-        createNewRoomBtn->setMaximumSize(QSize(200, 30));
-        createNewRoomBtn->setCursor(QCursor(Qt::PointingHandCursor));
-        createNewRoomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
-"border-radius: 10px;"));
-        joinRandomBtn = new QPushButton(room);
-        joinRandomBtn->setObjectName("joinRandomBtn");
-        joinRandomBtn->setGeometry(QRect(240, 10, 200, 30));
-        joinRandomBtn->setMinimumSize(QSize(200, 30));
-        joinRandomBtn->setMaximumSize(QSize(200, 30));
-        joinRandomBtn->setCursor(QCursor(Qt::PointingHandCursor));
-        joinRandomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
-"border-radius: 10px;"));
         layoutWidget_4 = new QWidget(room);
         layoutWidget_4->setObjectName("layoutWidget_4");
-        layoutWidget_4->setGeometry(QRect(0, 60, 731, 361));
+        layoutWidget_4->setGeometry(QRect(0, 60, 591, 361));
         gridLayout_2 = new QGridLayout(layoutWidget_4);
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName("gridLayout_2");
+        gridLayout_2->setSizeConstraint(QLayout::SetMaximumSize);
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         widget_5 = new RoomItemWidget(layoutWidget_4);
         widget_5->setObjectName("widget_5");
@@ -268,46 +307,100 @@ public:
 
         gridLayout_2->addWidget(widget_9, 2, 0, 1, 1);
 
+        widget_13 = new QWidget(room);
+        widget_13->setObjectName("widget_13");
+        widget_13->setGeometry(QRect(640, 0, 261, 421));
+        verticalLayout_7 = new QVBoxLayout(widget_13);
+        verticalLayout_7->setObjectName("verticalLayout_7");
+        online_player_label = new QLabel(widget_13);
+        online_player_label->setObjectName("online_player_label");
+
+        verticalLayout_7->addWidget(online_player_label);
+
+        widget_14 = new OnlinePlayer(widget_13);
+        widget_14->setObjectName("widget_14");
+
+        verticalLayout_7->addWidget(widget_14);
+
+        widget_20 = new QWidget(widget_13);
+        widget_20->setObjectName("widget_20");
+
+        verticalLayout_7->addWidget(widget_20);
+
+        widget_22 = new QWidget(widget_13);
+        widget_22->setObjectName("widget_22");
+
+        verticalLayout_7->addWidget(widget_22);
+
+        widget_21 = new QWidget(widget_13);
+        widget_21->setObjectName("widget_21");
+
+        verticalLayout_7->addWidget(widget_21);
+
+        widget_19 = new QWidget(widget_13);
+        widget_19->setObjectName("widget_19");
+
+        verticalLayout_7->addWidget(widget_19);
+
+        widget_18 = new QWidget(widget_13);
+        widget_18->setObjectName("widget_18");
+
+        verticalLayout_7->addWidget(widget_18);
+
+        widget_17 = new OnlinePlayer(widget_13);
+        widget_17->setObjectName("widget_17");
+
+        verticalLayout_7->addWidget(widget_17);
+
+        widget_15 = new OnlinePlayer(widget_13);
+        widget_15->setObjectName("widget_15");
+
+        verticalLayout_7->addWidget(widget_15);
+
+        widget_23 = new QWidget(widget_13);
+        widget_23->setObjectName("widget_23");
+
+        verticalLayout_7->addWidget(widget_23);
+
+        widget_16 = new OnlinePlayer(widget_13);
+        widget_16->setObjectName("widget_16");
+
+        verticalLayout_7->addWidget(widget_16);
+
+        widget_24 = new QWidget(widget_13);
+        widget_24->setObjectName("widget_24");
+
+        verticalLayout_7->addWidget(widget_24);
+
+        widget1 = new QWidget(room);
+        widget1->setObjectName("widget1");
+        widget1->setGeometry(QRect(10, 10, 416, 32));
+        horizontalLayout_2 = new QHBoxLayout(widget1);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        createNewRoomBtn = new QPushButton(widget1);
+        createNewRoomBtn->setObjectName("createNewRoomBtn");
+        createNewRoomBtn->setMinimumSize(QSize(200, 30));
+        createNewRoomBtn->setMaximumSize(QSize(200, 30));
+        createNewRoomBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        createNewRoomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+"border-radius: 10px;"));
+
+        horizontalLayout_2->addWidget(createNewRoomBtn);
+
+        joinRandomBtn = new QPushButton(widget1);
+        joinRandomBtn->setObjectName("joinRandomBtn");
+        joinRandomBtn->setMinimumSize(QSize(200, 30));
+        joinRandomBtn->setMaximumSize(QSize(200, 30));
+        joinRandomBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        joinRandomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+"border-radius: 10px;"));
+
+        horizontalLayout_2->addWidget(joinRandomBtn);
+
         stackedWidget->addWidget(room);
 
         gridLayout_3->addWidget(stackedWidget, 1, 0, 1, 1);
-
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setSpacing(0);
-        horizontalLayout_5->setObjectName("horizontalLayout_5");
-        horizontalSpacer_7 = new QSpacerItem(238, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_7);
-
-        label_9 = new QLabel(widget);
-        label_9->setObjectName("label_9");
-        label_9->setFrameShape(QFrame::NoFrame);
-
-        horizontalLayout_5->addWidget(label_9);
-
-        horizontalSpacer_8 = new QSpacerItem(13, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_8);
-
-        pushButton_6 = new QPushButton(widget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setMinimumSize(QSize(50, 50));
-        pushButton_6->setMaximumSize(QSize(50, 50));
-        pushButton_6->setAutoFillBackground(false);
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("../../../../Downloads/avatar.jpeg"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_6->setIcon(icon);
-        pushButton_6->setIconSize(QSize(50, 50));
-        pushButton_6->setAutoRepeatInterval(300);
-
-        horizontalLayout_5->addWidget(pushButton_6);
-
-        horizontalSpacer_9 = new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_9);
-
-
-        gridLayout_3->addLayout(horizontalLayout_5, 0, 0, 1, 1);
 
 
         gridLayout->addWidget(widget, 0, 1, 1, 1);
@@ -715,10 +808,11 @@ public:
         homeBtn->setText(QCoreApplication::translate("MainWindow", "Home", nullptr));
         roomBtn->setText(QCoreApplication::translate("MainWindow", "Room", nullptr));
         inviteBtn->setText(QCoreApplication::translate("MainWindow", "Invite", nullptr));
-        createNewRoomBtn->setText(QCoreApplication::translate("MainWindow", "Create new room", nullptr));
-        joinRandomBtn->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "Jemmy", nullptr));
         pushButton_6->setText(QString());
+        online_player_label->setText(QCoreApplication::translate("MainWindow", "Online Player", nullptr));
+        createNewRoomBtn->setText(QCoreApplication::translate("MainWindow", "Create new room", nullptr));
+        joinRandomBtn->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "Start Game", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Ready!!!", nullptr));
         cancelBtn->setText(QCoreApplication::translate("MainWindow", "Cancel", nullptr));

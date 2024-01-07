@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>245</width>
+    <width>300</width>
     <height>74</height>
    </rect>
   </property>
@@ -47,7 +47,7 @@
       <enum>Qt::PlainText</enum>
      </property>
      <property name="pixmap">
-      <pixmap resource="A_h.qrc">:/resource/avater.png</pixmap>
+      <pixmap resource="A_h.qrc">:/resource/avatar.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -78,7 +78,14 @@
     </spacer>
    </item>
    <item>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QLabel" name="statusLabel">
+     <property name="text">
+      <string>Playing</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="invitePlayBtn">
      <property name="minimumSize">
       <size>
        <width>50</width>

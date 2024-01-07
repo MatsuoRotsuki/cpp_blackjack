@@ -13,6 +13,8 @@ public:
     // static ScreenController* getInstance();
     static ScreenController& instance();
     void setStackedWidget(QStackedWidget* stackedWidget_main);
+    int getStackedWidgetIndex();
+    QStackedWidget* getStackedWidget() const;
 
 signals:
     // Thêm các signals dùng để điều hướng giữa các màn hình

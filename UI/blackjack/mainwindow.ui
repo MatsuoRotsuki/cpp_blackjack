@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1002</width>
-    <height>590</height>
+    <width>1086</width>
+    <height>672</height>
    </rect>
   </property>
   <property name="cursor">
@@ -127,141 +127,6 @@
            </size>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
-           <item row="1" column="0">
-            <widget class="QStackedWidget" name="stackedWidget">
-             <property name="currentIndex">
-              <number>1</number>
-             </property>
-             <widget class="QWidget" name="room">
-              <widget class="QPushButton" name="createNewRoomBtn">
-               <property name="geometry">
-                <rect>
-                 <x>10</x>
-                 <y>10</y>
-                 <width>200</width>
-                 <height>30</height>
-                </rect>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>200</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>200</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color: rgb(0, 178, 255);
-border-radius: 10px;</string>
-               </property>
-               <property name="text">
-                <string>Create new room</string>
-               </property>
-              </widget>
-              <widget class="QPushButton" name="joinRandomBtn">
-               <property name="geometry">
-                <rect>
-                 <x>240</x>
-                 <y>10</y>
-                 <width>200</width>
-                 <height>30</height>
-                </rect>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>200</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>200</width>
-                 <height>30</height>
-                </size>
-               </property>
-               <property name="cursor">
-                <cursorShape>PointingHandCursor</cursorShape>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">background-color: rgb(0, 178, 255);
-border-radius: 10px;</string>
-               </property>
-               <property name="text">
-                <string>Join random</string>
-               </property>
-              </widget>
-              <widget class="QWidget" name="layoutWidget_4">
-               <property name="geometry">
-                <rect>
-                 <x>0</x>
-                 <y>60</y>
-                 <width>731</width>
-                 <height>361</height>
-                </rect>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_2">
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <item row="3" column="0">
-                 <widget class="RoomItemWidget" name="widget_5" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 65);</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="RoomItemWidget" name="widget_6" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 85);</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="RoomItemWidget" name="widget_7" native="true"/>
-                </item>
-                <item row="2" column="1">
-                 <widget class="RoomItemWidget" name="widget_8" native="true"/>
-                </item>
-                <item row="3" column="1">
-                 <widget class="RoomItemWidget" name="widget_3" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(64, 255, 66);</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="RoomItemWidget" name="widget_2" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 4, 255);</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="RoomItemWidget" name="widget_4" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 67);</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="0">
-                 <widget class="RoomItemWidget" name="widget_9" native="true"/>
-                </item>
-               </layout>
-              </widget>
-             </widget>
-            </widget>
-           </item>
            <item row="0" column="0">
             <layout class="QHBoxLayout" name="horizontalLayout_5">
              <property name="spacing">
@@ -358,6 +223,196 @@ border-radius: 10px;</string>
               </spacer>
              </item>
             </layout>
+           </item>
+           <item row="1" column="0">
+            <widget class="QStackedWidget" name="stackedWidget">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="room">
+              <widget class="QWidget" name="layoutWidget_4">
+               <property name="geometry">
+                <rect>
+                 <x>0</x>
+                 <y>60</y>
+                 <width>591</width>
+                 <height>361</height>
+                </rect>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_2">
+                <property name="sizeConstraint">
+                 <enum>QLayout::SetMaximumSize</enum>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <item row="3" column="0">
+                 <widget class="RoomItemWidget" name="widget_5" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 65);</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="RoomItemWidget" name="widget_6" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 85);</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="RoomItemWidget" name="widget_7" native="true"/>
+                </item>
+                <item row="2" column="1">
+                 <widget class="RoomItemWidget" name="widget_8" native="true"/>
+                </item>
+                <item row="3" column="1">
+                 <widget class="RoomItemWidget" name="widget_3" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(64, 255, 66);</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="RoomItemWidget" name="widget_2" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 4, 255);</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="RoomItemWidget" name="widget_4" native="true">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(255, 255, 67);</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="RoomItemWidget" name="widget_9" native="true"/>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="widget_13" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>640</x>
+                 <y>0</y>
+                 <width>261</width>
+                 <height>421</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_7">
+                <item>
+                 <widget class="QLabel" name="online_player_label">
+                  <property name="text">
+                   <string>Online Player</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="OnlinePlayer" name="widget_14" native="true"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_20" native="true"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_22" native="true"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_21" native="true"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_19" native="true"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_18" native="true"/>
+                </item>
+                <item>
+                 <widget class="OnlinePlayer" name="widget_17" native="true"/>
+                </item>
+                <item>
+                 <widget class="OnlinePlayer" name="widget_15" native="true"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_23" native="true"/>
+                </item>
+                <item>
+                 <widget class="OnlinePlayer" name="widget_16" native="true"/>
+                </item>
+                <item>
+                 <widget class="QWidget" name="widget_24" native="true"/>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>10</y>
+                 <width>416</width>
+                 <height>32</height>
+                </rect>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_2">
+                <item>
+                 <widget class="QPushButton" name="createNewRoomBtn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>200</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>200</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(0, 178, 255);
+border-radius: 10px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Create new room</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="joinRandomBtn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>200</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>200</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(0, 178, 255);
+border-radius: 10px;</string>
+                  </property>
+                  <property name="text">
+                   <string>Join random</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </widget>
            </item>
           </layout>
          </widget>
@@ -1180,6 +1235,12 @@ color: white;</string>
    <class>PlayWindow</class>
    <extends>QWidget</extends>
    <header>playwindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>OnlinePlayer</class>
+   <extends>QWidget</extends>
+   <header>onlineplayer.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

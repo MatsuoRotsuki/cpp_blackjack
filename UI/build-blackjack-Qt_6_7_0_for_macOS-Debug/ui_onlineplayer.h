@@ -26,13 +26,14 @@ public:
     QLabel *avatar;
     QLabel *username;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton;
+    QLabel *statusLabel;
+    QPushButton *invitePlayBtn;
 
     void setupUi(QWidget *OnlinePlayer)
     {
         if (OnlinePlayer->objectName().isEmpty())
             OnlinePlayer->setObjectName("OnlinePlayer");
-        OnlinePlayer->resize(245, 74);
+        OnlinePlayer->resize(300, 74);
         OnlinePlayer->setMaximumSize(QSize(300, 300));
         horizontalLayout = new QHBoxLayout(OnlinePlayer);
         horizontalLayout->setObjectName("horizontalLayout");
@@ -42,7 +43,7 @@ public:
         avatar->setMaximumSize(QSize(50, 50));
         avatar->setSizeIncrement(QSize(50, 50));
         avatar->setTextFormat(Qt::PlainText);
-        avatar->setPixmap(QPixmap(QString::fromUtf8(":/resource/avater.png")));
+        avatar->setPixmap(QPixmap(QString::fromUtf8(":/resource/avatar.png")));
         avatar->setScaledContents(true);
         avatar->setAlignment(Qt::AlignCenter);
 
@@ -57,13 +58,18 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer);
 
-        pushButton = new QPushButton(OnlinePlayer);
-        pushButton->setObjectName("pushButton");
-        pushButton->setMinimumSize(QSize(50, 0));
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+        statusLabel = new QLabel(OnlinePlayer);
+        statusLabel->setObjectName("statusLabel");
+
+        horizontalLayout->addWidget(statusLabel);
+
+        invitePlayBtn = new QPushButton(OnlinePlayer);
+        invitePlayBtn->setObjectName("invitePlayBtn");
+        invitePlayBtn->setMinimumSize(QSize(50, 0));
+        invitePlayBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
 "border-radius: 5px;"));
 
-        horizontalLayout->addWidget(pushButton);
+        horizontalLayout->addWidget(invitePlayBtn);
 
 
         retranslateUi(OnlinePlayer);
@@ -76,7 +82,8 @@ public:
         OnlinePlayer->setWindowTitle(QCoreApplication::translate("OnlinePlayer", "Form", nullptr));
         avatar->setText(QString());
         username->setText(QCoreApplication::translate("OnlinePlayer", "Bryan", nullptr));
-        pushButton->setText(QCoreApplication::translate("OnlinePlayer", "Invite", nullptr));
+        statusLabel->setText(QCoreApplication::translate("OnlinePlayer", "Playing", nullptr));
+        invitePlayBtn->setText(QCoreApplication::translate("OnlinePlayer", "Invite", nullptr));
     } // retranslateUi
 
 };
