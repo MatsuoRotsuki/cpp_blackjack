@@ -21,7 +21,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_main">
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="main_screen">
        <layout class="QGridLayout" name="gridLayout">
@@ -130,7 +130,7 @@
            <item row="1" column="0">
             <widget class="QStackedWidget" name="stackedWidget">
              <property name="currentIndex">
-              <number>1</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="room">
               <widget class="QPushButton" name="createNewRoomBtn">
@@ -584,7 +584,7 @@ border-radius: 5px;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit">
+            <widget class="QLineEdit" name="fullnameLineEdit">
              <property name="minimumSize">
               <size>
                <width>200</width>
@@ -643,7 +643,7 @@ border-radius: 5px;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_2">
+            <widget class="QLineEdit" name="usernameLineEdit_2">
              <property name="minimumSize">
               <size>
                <width>200</width>
@@ -702,7 +702,7 @@ border-radius: 5px;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_5">
+            <widget class="QLineEdit" name="passwordLineEdit_2">
              <property name="minimumSize">
               <size>
                <width>200</width>
@@ -764,7 +764,7 @@ border-radius: 5px;</string>
             </spacer>
            </item>
            <item>
-            <widget class="QLineEdit" name="lineEdit_3">
+            <widget class="QLineEdit" name="confirmpasswordLineEdit">
              <property name="minimumSize">
               <size>
                <width>200</width>

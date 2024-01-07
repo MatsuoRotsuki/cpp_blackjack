@@ -43,6 +43,11 @@ void DispatchSignup(int id, Message signUpMsg)
     std::string confirm_password(signUpMsg.payload.signupRequestData.confirm_password);
     std::string name(signUpMsg.payload.signupRequestData.name);
 
+    std::cout << name << std::endl;
+    std::cout << username << std::endl;
+    std::cout << password << std::endl;
+    std::cout << confirm_password << std::endl;
+
     // Create response message
     Message responseMsg;
     responseMsg.type = MessageType::SRV_SIGNUP_RES;
