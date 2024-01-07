@@ -99,32 +99,6 @@ void MainWindow::on_cancelBtn_clicked()
 
 }
 
-void MainWindow::on_login_btn_clicked()
-{
-    // Get input data
-    QString q_Username = ui->usernameLineEdit->text();
-    QString q_Password = ui->passwordLineEdit->text();
-    
-    const char *username = q_Username.toLocal8Bit().data();
-    const char *password = q_Password.toLocal8Bit().data();
-
-    qDebug() <<"QT " << q_Username.count();
-    qDebug() <<"C " <<strlen(username);
-
-    // Create request message
-    Message msg;
-    msg.type = MessageType::CLT_LOGIN_REQ;
-    strcpy(msg.payload.loginRequestData.username, username);
-    strcpy(msg.payload.loginRequestData.password, password);
-
-    // Send request message
-    QByteArray byteArray;
-    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
-    socketManager->socket()->write(byteArray);
-
-    // ui->stackedWidget_main->setCurrentIndex(0);
-    ScreenController::instance().switchToScreen(0);
-}
 
 
 void MainWindow::on_to_login_page_btn_clicked()
@@ -140,20 +114,17 @@ void MainWindow::on_to_signup_page_btn_clicked()
 }
 
 
-void MainWindow::on_readyRead()
-{
-    QByteArray data = socketManager->socket()->read(sizeof(Message));
-    const Message* msgPtr = reinterpret_cast<const Message*>(data.constData());
-    Message msg;
-    memcpy(&msg, msgPtr, sizeof(Message));
+// void MainWindow::on_readyRead()
+// {
+//     QByteArray data = socketManager->socket()->read(sizeof(Message));
+//     const Message* msgPtr = reinterpret_cast<const Message*>(data.constData());
+//     Message msg;
+//     memcpy(&msg, msgPtr, sizeof(Message));
 
-    qDebug() << QString::fromStdString(MessageTypeToString(msg.type));
-}
+//     qDebug() << QString::fromStdString(MessageTypeToString(msg.type));
+// }
 
-void MainWindow::on_signup_btn_clicked()
-{
 
-}
 void MainWindow::on_login_btn_clicked()
 {
     // Get input data
@@ -239,6 +210,29 @@ void MainWindow::on_readyRead()
 
 void MainWindow::on_signup_btn_clicked()
 {
-
+    // Get input data
+    QString q_name = ui->fullnameLineEdit->text();
+    QString q_Username = ui->usernameLineEdit_2->text();
+    QString q_Password = ui->passwordLineEdit_2->text();
+    QString q_ConfirmPassword = ui->confirmpasswordLineEdit->text();
+    char name[64];
+    strcpy(name,q_name.toLocal8Bit().data());
+    char username[64];
+    strcpy(username,q_Username.toLocal8Bit().data());
+    char password[64];
+    strcpy(password, q_Password.toLocal8Bit().data());
+    char confirm_password[64];
+    strcpy(confirm_password, q_ConfirmPassword.toLocal8Bit().data());
+    // Create request message
+    Message msg;
+    msg.type = MessageType::CLT_SIGNUP_REQ;
+    strcpy(msg.payload.signupRequestData.name, name);
+    strcpy(msg.payload.signupRequestData.username, username);
+    strcpy(msg.payload.signupRequestData.password, password);
+    strcpy(msg.payload.signupRequestData.confirm_password, confirm_password);
+    // Send request message
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    socketManager->socket()->write(byteArray);
 }
 
