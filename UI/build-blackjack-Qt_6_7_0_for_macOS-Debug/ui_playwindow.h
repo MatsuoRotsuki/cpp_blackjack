@@ -75,12 +75,13 @@ public:
     QPushButton *stand_btn;
     QPushButton *hit_btn;
     QSpacerItem *horizontalSpacer_12;
+    QLabel *Notification;
 
     void setupUi(QWidget *PlayWindow)
     {
         if (PlayWindow->objectName().isEmpty())
             PlayWindow->setObjectName("PlayWindow");
-        PlayWindow->resize(1020, 579);
+        PlayWindow->resize(1020, 686);
         frame_2 = new QFrame(PlayWindow);
         frame_2->setObjectName("frame_2");
         frame_2->setGeometry(QRect(400, 0, 251, 51));
@@ -223,7 +224,7 @@ public:
 
         layoutWidget2 = new QWidget(PlayWindow);
         layoutWidget2->setObjectName("layoutWidget2");
-        layoutWidget2->setGeometry(QRect(50, 211, 956, 251));
+        layoutWidget2->setGeometry(QRect(50, 291, 956, 271));
         listPlayer = new QHBoxLayout(layoutWidget2);
         listPlayer->setSpacing(0);
         listPlayer->setObjectName("listPlayer");
@@ -274,7 +275,7 @@ public:
 
         layoutWidget3 = new QWidget(PlayWindow);
         layoutWidget3->setObjectName("layoutWidget3");
-        layoutWidget3->setGeometry(QRect(270, 470, 557, 104));
+        layoutWidget3->setGeometry(QRect(270, 580, 557, 104));
         horizontalLayout = new QHBoxLayout(layoutWidget3);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -372,6 +373,14 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_12);
 
+        Notification = new QLabel(PlayWindow);
+        Notification->setObjectName("Notification");
+        Notification->setGeometry(QRect(357, 195, 331, 61));
+        QFont font;
+        font.setPointSize(18);
+        font.setBold(true);
+        Notification->setFont(font);
+        Notification->setAlignment(Qt::AlignCenter);
 
         retranslateUi(PlayWindow);
 
@@ -399,6 +408,7 @@ public:
         credits->setText(QCoreApplication::translate("PlayWindow", "CREDITS: 100", nullptr));
         stand_btn->setText(QCoreApplication::translate("PlayWindow", "STAND", nullptr));
         hit_btn->setText(QCoreApplication::translate("PlayWindow", "HIT", nullptr));
+        Notification->setText(QCoreApplication::translate("PlayWindow", "Start New Round", nullptr));
     } // retranslateUi
 
 };

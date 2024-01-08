@@ -21,7 +21,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_main">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="main_screen">
        <layout class="QGridLayout" name="gridLayout">
@@ -316,38 +316,17 @@
                  <widget class="OnlinePlayer" name="widget_14" native="true"/>
                 </item>
                 <item>
-                 <widget class="QWidget" name="widget_20" native="true"/>
-                </item>
-                <item>
-                 <widget class="QWidget" name="widget_22" native="true"/>
-                </item>
-                <item>
-                 <widget class="QWidget" name="widget_21" native="true"/>
-                </item>
-                <item>
-                 <widget class="QWidget" name="widget_19" native="true"/>
-                </item>
-                <item>
-                 <widget class="QWidget" name="widget_18" native="true"/>
-                </item>
-                <item>
                  <widget class="OnlinePlayer" name="widget_17" native="true"/>
                 </item>
                 <item>
                  <widget class="OnlinePlayer" name="widget_15" native="true"/>
                 </item>
                 <item>
-                 <widget class="QWidget" name="widget_23" native="true"/>
-                </item>
-                <item>
                  <widget class="OnlinePlayer" name="widget_16" native="true"/>
-                </item>
-                <item>
-                 <widget class="QWidget" name="widget_24" native="true"/>
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="">
+              <widget class="QWidget" name="layoutWidget">
                <property name="geometry">
                 <rect>
                  <x>10</x>
