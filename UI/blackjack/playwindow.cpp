@@ -12,6 +12,7 @@ PlayWindow::PlayWindow(QWidget *parent)
 {
     ui->setupUi(this);
     // this->mainWindow = mainWindow;
+
 }
 
 PlayWindow::~PlayWindow()
@@ -128,4 +129,6 @@ void PlayWindow::back_to_home_screen()
 {
     ScreenController::instance().switchToScreen(0);
 }
+
+
 

@@ -42,6 +42,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *userInfo;
+    QLabel *label;
     QLabel *avatar;
     QLabel *username;
     QLabel *money;
@@ -51,7 +52,7 @@ public:
     {
         if (player->objectName().isEmpty())
             player->setObjectName("player");
-        player->resize(336, 312);
+        player->resize(336, 365);
         player->setLayoutDirection(Qt::LeftToRight);
         verticalLayout_2 = new QVBoxLayout(player);
         verticalLayout_2->setObjectName("verticalLayout_2");
@@ -177,6 +178,16 @@ public:
         userInfo = new QVBoxLayout();
         userInfo->setSpacing(6);
         userInfo->setObjectName("userInfo");
+        label = new QLabel(player);
+        label->setObjectName("label");
+        QFont font1;
+        font1.setBold(true);
+        label->setFont(font1);
+        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 249, 100);"));
+        label->setAlignment(Qt::AlignCenter);
+
+        userInfo->addWidget(label);
+
         avatar = new QLabel(player);
         avatar->setObjectName("avatar");
         avatar->setMinimumSize(QSize(50, 50));
@@ -194,6 +205,8 @@ public:
 
         money = new QLabel(player);
         money->setObjectName("money");
+        money->setFont(font1);
+        money->setStyleSheet(QString::fromUtf8("color: rgb(255, 249, 100);"));
         money->setAlignment(Qt::AlignCenter);
 
         userInfo->addWidget(money);
@@ -224,6 +237,7 @@ public:
         label_39->setText(QString());
         label_40->setText(QString());
         point->setText(QCoreApplication::translate("player", "6", nullptr));
+        label->setText(QCoreApplication::translate("player", "5K", nullptr));
         avatar->setText(QString());
         username->setText(QCoreApplication::translate("player", "Username", nullptr));
         money->setText(QCoreApplication::translate("player", "65K", nullptr));

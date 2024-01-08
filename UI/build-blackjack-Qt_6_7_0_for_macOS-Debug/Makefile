@@ -15,9 +15,9 @@ EQ            = =
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
-CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
-CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
-INCPATH       = -I../blackjack -I. -I../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers -I../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/AGL.framework/Headers -I../../../../Qt/6.7.0/macos/mkspecs/macx-clang -F/Users/nghiann/Qt/6.7.0/macos/lib
+CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
+CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=11.0 -Wall -Wextra $(DEFINES)
+INCPATH       = -I../blackjack -I. -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/System/Library/Frameworks/AGL.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -F/Users/nghiann/Qt/6.7.0/macos/lib
 QMAKE         = /Users/nghiann/Qt/6.7.0/macos/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -37,9 +37,9 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = blackjack1.0.0
-DISTDIR = /Users/nghiann/Desktop/cpp_blackjack/UI/build-blackjack-Qt_6_7_0_for_macOS-Debug/.tmp/blackjack1.0.0
+DISTDIR = /Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/build-blackjack-Qt_6_7_0_for_macOS-Debug/.tmp/blackjack1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -mmacosx-version-min=11.0 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/nghiann/Qt/6.7.0/macos/lib
+LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -mmacosx-version-min=11.0 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/nghiann/Qt/6.7.0/macos/lib
 LIBS          = $(SUBLIBS) -F/Users/nghiann/Qt/6.7.0/macos/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtNetwork -framework QtCore -framework IOKit -framework DiskArbitration -framework AGL -framework OpenGL   
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
@@ -99,328 +99,328 @@ OBJECTS       = card.o \
 		moc_roomitemwidget.o \
 		moc_screencontroller.o \
 		moc_socketmanager.o
-DIST          = ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/device_config.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/unix.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/mac.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/macx.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/sanitize.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/gcc-base.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/gcc-base-mac.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/clang.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/clang-mac.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/qconfig.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_freetype.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_libjpeg.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_libpng.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bodymovin_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_example_icons_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_fb_support_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_freetype_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_harfbuzz_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_help.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_help_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_jpeg_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_jsonrpc_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_languageserver_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_linguist.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_location.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_location_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediaquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_network.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_network_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_png_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatch_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldom_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlls_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltyperegistrar_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dglslparser_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrolstestutilsprivate_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickeffects_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickshapes_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_tools_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uiplugin.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinbluetoothpermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincalendarpermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincamerapermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincontactspermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinlocationpermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinmicrophonepermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qt_functions.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qt_config.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/spec_post.prf \
+DIST          = /Users/nghiann/Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/device_config.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/unix.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/mac.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/macx.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/sanitize.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/gcc-base.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/gcc-base-mac.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/clang.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/clang-mac.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/qconfig.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_freetype.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_libjpeg.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_libpng.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bodymovin_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_example_icons_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_fb_support_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_freetype_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_harfbuzz_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_help.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_help_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_jpeg_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_jsonrpc_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_languageserver_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_linguist.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_location.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_location_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediaquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_network.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_network_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_png_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatch_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldom_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlls_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltyperegistrar_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dglslparser_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrolstestutilsprivate_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickeffects_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickshapes_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_tools_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uiplugin.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinbluetoothpermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincalendarpermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincamerapermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincontactspermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinlocationpermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinmicrophonepermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt_functions.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt_config.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/spec_post.prf \
 		../blackjack/.qmake.stash \
-		../../../../Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/toolchain.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/toolchain.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/default_pre.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/default_pre.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/resolve_config.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/default_post.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/default_post.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/objective_c.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/lrelease.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qml_debug.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/mac.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/warn_on.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/permissions.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qt.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/resources_functions.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/resources.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/moc.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/unix/opengl.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/uic.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/unix/thread.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qmake_use.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/file_copies.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/rez.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/asset_catalogs.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/testcase_targets.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/exceptions.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/yacc.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/lex.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/toolchain.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/toolchain.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/default_pre.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/default_pre.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resolve_config.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/default_post.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/default_post.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/objective_c.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/lrelease.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qml_debug.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/mac.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/warn_on.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/permissions.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resources_functions.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resources.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/moc.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/unix/opengl.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/uic.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/unix/thread.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qmake_use.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/file_copies.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/rez.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/asset_catalogs.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/testcase_targets.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/exceptions.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/yacc.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/lex.prf \
 		../blackjack/blackjack.pro ../blackjack/card.h \
 		../blackjack/inviteplayerdialog.h \
 		../blackjack/mainwindow.h \
@@ -449,14 +449,14 @@ TARGET        = blackjack.app/Contents/MacOS/blackjack
 
 ####### Custom Variables
 EXPORT_QMAKE_MAC_SDK = macosx
-EXPORT_QMAKE_MAC_SDK_VERSION = 13.3
+EXPORT_QMAKE_MAC_SDK_VERSION = 14.2
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = /Users/nghiann/Desktop/cpp_blackjack/UI/build-blackjack-Qt_6_7_0_for_macOS-Debug/.qmake.stash
+EXPORT__QMAKE_STASH_ = /Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/build-blackjack-Qt_6_7_0_for_macOS-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64 arm64
 EXPORT_DEFAULT_ARCHS = x86_64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
 EXPORT_ARCH_ARGS = $(foreach arch, $(if $(EXPORT_ARCHS), $(EXPORT_ARCHS), $(EXPORT_VALID_ARCHS)), -arch $(arch))
-EXPORT__PRO_FILE_ = /Users/nghiann/Desktop/cpp_blackjack/UI/blackjack/blackjack.pro
+EXPORT__PRO_FILE_ = /Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack/blackjack.pro
 
 
 include /Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/sdk.mk
@@ -467,665 +467,665 @@ blackjack.app/Contents/MacOS/blackjack: ui_card.h ui_inviteplayerdialog.h ui_mai
 	@test -d blackjack.app/Contents/MacOS/ || mkdir -p blackjack.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET)  $(OBJECTS) $(OBJCOMP) $(LIBS)
 
-Makefile: ../blackjack/blackjack.pro ../../../../Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf ../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/device_config.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/unix.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/mac.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/macx.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/sanitize.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/gcc-base.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/gcc-base-mac.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/clang.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/common/clang-mac.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/qconfig.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_freetype.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_libjpeg.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_libpng.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bodymovin_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_example_icons_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_fb_support_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_freetype_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_harfbuzz_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_help.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_help_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_jpeg_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_jsonrpc_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_languageserver_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_linguist.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_location.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_location_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediaquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_network.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_network_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_png_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatch_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldom_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlls_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltyperegistrar_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dglslparser_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrolstestutilsprivate_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickeffects_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickshapes_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_tools_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uiplugin.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinbluetoothpermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincalendarpermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincamerapermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincontactspermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinlocationpermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinmicrophonepermission.pri \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qt_functions.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qt_config.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/spec_post.prf \
+Makefile: ../blackjack/blackjack.pro /Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf /Users/nghiann/Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/device_config.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/unix.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/mac.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/macx.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/sanitize.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/gcc-base.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/gcc-base-mac.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/clang.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/clang-mac.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/qconfig.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_freetype.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_libjpeg.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_libpng.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bodymovin_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_devicediscovery_support_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_example_icons_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_fb_support_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_freetype_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_harfbuzz_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_help.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_help_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_jpeg_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_jsonrpc_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_languageserver_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_linguist.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_location.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_location_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediaquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_network.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_network_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_png_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatch_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldom_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlls_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltyperegistrar_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dglslparser_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrolstestutilsprivate_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickeffects_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickshapes_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_tools_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uiplugin.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml_private.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinbluetoothpermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincalendarpermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincamerapermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincontactspermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinlocationpermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinmicrophonepermission.pri \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt_functions.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt_config.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/spec_post.prf \
 		.qmake.stash \
-		../../../../Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/toolchain.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/toolchain.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/default_pre.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/default_pre.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/resolve_config.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/default_post.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/default_post.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/objective_c.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/lrelease.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qml_debug.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/mac.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/warn_on.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/permissions.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qt.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/resources_functions.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/resources.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/moc.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/unix/opengl.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/uic.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/unix/thread.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/qmake_use.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/file_copies.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/rez.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/mac/asset_catalogs.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/testcase_targets.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/exceptions.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/yacc.prf \
-		../../../../Qt/6.7.0/macos/mkspecs/features/lex.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/toolchain.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/toolchain.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/default_pre.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/default_pre.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resolve_config.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/default_post.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/default_post.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/objective_c.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/lrelease.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qml_debug.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/mac.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/warn_on.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/permissions.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resources_functions.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resources.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/moc.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/unix/opengl.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/uic.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/unix/thread.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qmake_use.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/file_copies.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/rez.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/asset_catalogs.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/testcase_targets.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/exceptions.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/yacc.prf \
+		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/lex.prf \
 		../blackjack/blackjack.pro \
 		../blackjack/A_h.qrc \
 		qmake_qmake_qm_files.qrc \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Resources/QtGui.prl \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Resources/QtNetwork.prl \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Resources/QtCore.prl
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Resources/QtGui.prl \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Resources/QtNetwork.prl \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Resources/QtCore.prl
 	$(QMAKE) -o Makefile ../blackjack/blackjack.pro -spec macx-clang CONFIG+=debug CONFIG+=qml_debug
-../../../../Qt/6.7.0/macos/mkspecs/features/spec_pre.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/device_config.prf:
-../../../../Qt/6.7.0/macos/mkspecs/common/unix.conf:
-../../../../Qt/6.7.0/macos/mkspecs/common/mac.conf:
-../../../../Qt/6.7.0/macos/mkspecs/common/macx.conf:
-../../../../Qt/6.7.0/macos/mkspecs/common/sanitize.conf:
-../../../../Qt/6.7.0/macos/mkspecs/common/gcc-base.conf:
-../../../../Qt/6.7.0/macos/mkspecs/common/gcc-base-mac.conf:
-../../../../Qt/6.7.0/macos/mkspecs/common/clang.conf:
-../../../../Qt/6.7.0/macos/mkspecs/common/clang-mac.conf:
-../../../../Qt/6.7.0/macos/mkspecs/qconfig.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_freetype.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_libjpeg.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_ext_libpng.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_bodymovin_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_core_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_designercomponents_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_example_icons_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_fb_support_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_freetype_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_harfbuzz_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_help.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_help_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_jpeg_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_jsonrpc_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_languageserver_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_linguist.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_location.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_location_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediaquick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_network.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_network_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_packetprotocol_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_png_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatch_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldebug_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldom_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlls_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltyperegistrar_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dglslparser_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrolstestutilsprivate_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickeffects_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickparticles_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickshapes_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_tools_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uiplugin.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml_private.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinbluetoothpermission.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincalendarpermission.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincamerapermission.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincontactspermission.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinlocationpermission.pri:
-../../../../Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinmicrophonepermission.pri:
-../../../../Qt/6.7.0/macos/mkspecs/features/qt_functions.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/qt_config.prf:
-../../../../Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf:
-../../../../Qt/6.7.0/macos/mkspecs/features/spec_post.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/spec_pre.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/device_config.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/unix.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/mac.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/macx.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/sanitize.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/gcc-base.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/gcc-base-mac.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/clang.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/common/clang-mac.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/qconfig.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_freetype.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_libjpeg.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_ext_libpng.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3danimation_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dcore_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dextras_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dinput_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dlogic_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickanimation_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickextras_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickinput_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickrender_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3dquickscene2d_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_3drender_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bluetooth_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_bodymovin_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_charts_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_chartsqml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_concurrent_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core5compat_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_core_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualization_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_datavisualizationqml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_dbus_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designer_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_designercomponents_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_devicediscovery_support_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_example_icons_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_fb_support_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_freetype_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_graphs_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpc_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_grpcquick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_gui_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_harfbuzz_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_help.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_help_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_httpserver_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttracker_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_insighttrackerqml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_jpeg_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_jsonrpc_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsanimation_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsfolderlistmodel_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labsqmlmodels_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssettings_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labssharedimage_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_labswavefrontmesh_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_languageserver_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_linguist.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_location.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_location_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimedia_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediaquick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_network.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_network_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_networkauth_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_nfc_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_opengl_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_openglwidgets_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_packetprotocol_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdf_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfquick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_pdfwidgets_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_png_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioning_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_positioningquick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_printsupport_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobuf_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtcoretypes_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatch_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchconversions_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qdoccatchgenerators_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcompiler_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlcore_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldebug_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmldom_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlintegration_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmllocalstorage_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlls_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlmodels_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlnetwork_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltest_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltoolingsettings_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmltyperegistrar_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlworkerscript_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_qmlxmllistmodel_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3d_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetimport_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dassetutils_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3deffects_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dglslparser_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpers_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dhelpersimpl_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3diblbaker_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticleeffects_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dparticles_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysics_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dphysicshelpers_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3druntimerender_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dspatialaudio_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick3dutils_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrols2impl_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickcontrolstestutilsprivate_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2quickimpl_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickdialogs2utils_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickeffects_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicklayouts_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickparticles_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickshapes_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktestutilsprivate_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quicktimeline_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_quickwidgets_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjects_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_remoteobjectsqml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_repparser_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_scxmlqml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensors_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sensorsquick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialbus_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_serialport_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_shadertools_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_spatialaudio_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_sql_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachine_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_statemachineqml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svg_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_svgwidgets_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_testlib_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_texttospeech_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_tools_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uiplugin.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_uitools_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_virtualkeyboard_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannel_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webchannelquick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginecore_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginequickdelegatesqml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webenginewidgets_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_websockets_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webview_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_webviewquick_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_widgets_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_lib_xml_private.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinbluetoothpermission.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincalendarpermission.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincamerapermission.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwincontactspermission.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinlocationpermission.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/modules/qt_plugin_qdarwinmicrophonepermission.pri:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt_functions.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt_config.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang/qmake.conf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/spec_post.prf:
 .qmake.stash:
-../../../../Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/toolchain.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/mac/toolchain.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/default_pre.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/mac/default_pre.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/resolve_config.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/default_post.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/mac/default_post.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/mac/objective_c.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/lrelease.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/qml_debug.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/mac/mac.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/warn_on.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/permissions.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/qt.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/resources_functions.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/resources.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/moc.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/unix/opengl.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/uic.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/unix/thread.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/qmake_use.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/file_copies.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/mac/rez.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/mac/asset_catalogs.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/testcase_targets.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/exceptions.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/yacc.prf:
-../../../../Qt/6.7.0/macos/mkspecs/features/lex.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/exclusive_builds.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/sdk.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/toolchain.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/toolchain.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/default_pre.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/default_pre.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resolve_config.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/default_post.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/default_post.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/objective_c.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/lrelease.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qml_debug.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/mac.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/warn_on.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/permissions.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qt.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resources_functions.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/resources.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/moc.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/unix/opengl.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/uic.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/unix/thread.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/qmake_use.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/file_copies.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/rez.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/mac/asset_catalogs.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/testcase_targets.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/exceptions.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/yacc.prf:
+/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/lex.prf:
 ../blackjack/blackjack.pro:
 ../blackjack/A_h.qrc:
 qmake_qmake_qm_files.qrc:
-../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl:
-../../../../Qt/6.7.0/macos/lib/QtGui.framework/Resources/QtGui.prl:
-../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Resources/QtNetwork.prl:
-../../../../Qt/6.7.0/macos/lib/QtCore.framework/Resources/QtCore.prl:
+/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl:
+/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Resources/QtGui.prl:
+/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Resources/QtNetwork.prl:
+/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Resources/QtCore.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../blackjack/blackjack.pro -spec macx-clang CONFIG+=debug CONFIG+=qml_debug
 
@@ -1138,7 +1138,7 @@ blackjack.app/Contents/PkgInfo:
 blackjack.app/Contents/Info.plist: 
 	@test -d blackjack.app/Contents || mkdir -p blackjack.app/Contents
 	@$(DEL_FILE) blackjack.app/Contents/Info.plist
-	@plutil -convert xml1 -o - ../../../../Qt/6.7.0/macos/mkspecs/macx-clang/Info.plist.app | sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,persional.blackjack,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},persional.blackjack,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},11.0,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,\$${IOS_LAUNCH_SCREEN},LaunchScreen,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,blackjack,g" -e "s,@LIBRARY@,blackjack,g" -e "s,\$${EXECUTABLE_NAME},blackjack,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" >blackjack.app/Contents/Info.plist
+	@plutil -convert xml1 -o - /Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang/Info.plist.app | sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,\$${QMAKE_SHORT_VERSION},1.0,g" -e "s,@FULL_VERSION@,1.0.0,g" -e "s,\$${QMAKE_FULL_VERSION},1.0.0,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" -e "s,@BUNDLEIDENTIFIER@,persional.blackjack,g" -e "s,\$${PRODUCT_BUNDLE_IDENTIFIER},persional.blackjack,g" -e "s,\$${MACOSX_DEPLOYMENT_TARGET},11.0,g" -e "s,\$${IPHONEOS_DEPLOYMENT_TARGET},,g" -e "s,\$${TVOS_DEPLOYMENT_TARGET},,g" -e "s,\$${WATCHOS_DEPLOYMENT_TARGET},,g" -e "s,\$${IOS_LAUNCH_SCREEN},LaunchScreen,g" -e "s,@ICON@,,g" -e "s,\$${ASSETCATALOG_COMPILER_APPICON_NAME},,g" -e "s,@EXECUTABLE@,blackjack,g" -e "s,@LIBRARY@,blackjack,g" -e "s,\$${EXECUTABLE_NAME},blackjack,g" -e "s,@TYPEINFO@,????,g" -e "s,\$${QMAKE_PKGINFO_TYPEINFO},????,g" >blackjack.app/Contents/Info.plist
 
 all: Makefile \
 		blackjack.app/Contents/PkgInfo \
@@ -1192,68 +1192,11 @@ compiler_rcc_make_all: qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 qrc_A_h.cpp: ../blackjack/A_h.qrc \
-		../../../../Qt/6.7.0/macos/libexec/rcc \
-		../blackjack/8♦.png \
-		../blackjack/Q♦.png \
-		../blackjack/4♦.png \
-		../blackjack/A♦.png \
-		../blackjack/3♦.png \
-		../blackjack/5♦.png \
-		../blackjack/J♦.png \
-		../blackjack/9♦.png \
-		../blackjack/6♦.png \
-		../blackjack/7♦.png \
-		../blackjack/10♦.png \
-		../blackjack/K♦.png \
-		../blackjack/2♦.png \
-		../blackjack/A_h.png \
-		../blackjack/back.png \
-		../blackjack/K_h.png \
-		../blackjack/10♥.png \
-		../blackjack/avatar.png \
-		../blackjack/avater.png \
-		../blackjack/K♣.png \
-		../blackjack/3♣.png \
-		../blackjack/7♣.png \
-		../blackjack/9♣.png \
-		../blackjack/J♣.png \
-		../blackjack/Q♣.png \
-		../blackjack/10♣.png \
-		../blackjack/4♣.png \
-		../blackjack/A♣.png \
-		../blackjack/5♣.png \
-		../blackjack/8♣.png \
-		../blackjack/6♣.png \
-		../blackjack/2♣.png \
-		../blackjack/9♥.png \
-		../blackjack/3♥.png \
-		../blackjack/10♥.png \
-		../blackjack/5♥.png \
-		../blackjack/K♥.png \
-		../blackjack/Q♥.png \
-		../blackjack/4♥.png \
-		../blackjack/6♥.png \
-		../blackjack/J♥.png \
-		../blackjack/2♥.png \
-		../blackjack/8♥.png \
-		../blackjack/7♥.png \
-		../blackjack/10♠.png \
-		../blackjack/7♠.png \
-		../blackjack/J♠.png \
-		../blackjack/9♠.png \
-		../blackjack/K♠.png \
-		../blackjack/3♠.png \
-		../blackjack/8♠.png \
-		../blackjack/6♠.png \
-		../blackjack/Q♠.png \
-		../blackjack/4♠.png \
-		../blackjack/A♠.png \
-		../blackjack/2♠.png \
-		../blackjack/5♠.png
+		/Users/nghiann/Qt/6.7.0/macos/libexec/rcc
 	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name A_h --no-zstd ../blackjack/A_h.qrc -o qrc_A_h.cpp
 
 qrc_qmake_qmake_qm_files.cpp: qmake_qmake_qm_files.qrc \
-		../../../../Qt/6.7.0/macos/libexec/rcc \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/rcc \
 		.qm/blackjack_en_GB.qm
 	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name qmake_qmake_qm_files --no-zstd qmake_qmake_qm_files.qrc -o qrc_qmake_qmake_qm_files.cpp
 
@@ -1261,315 +1204,315 @@ compiler_moc_header_make_all: moc_card.cpp moc_inviteplayerdialog.cpp moc_mainwi
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_card.cpp moc_inviteplayerdialog.cpp moc_mainwindow.cpp moc_onlineplayer.cpp moc_player.cpp moc_playwindow.cpp moc_quitdialog.cpp moc_roomitemwidget.cpp moc_screencontroller.cpp moc_socketmanager.cpp
 moc_card.cpp: ../blackjack/card.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/card.h -o moc_card.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/card.h -o moc_card.cpp
 
 moc_inviteplayerdialog.cpp: ../blackjack/inviteplayerdialog.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/inviteplayerdialog.h -o moc_inviteplayerdialog.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/inviteplayerdialog.h -o moc_inviteplayerdialog.cpp
 
 moc_mainwindow.cpp: ../blackjack/mainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../blackjack/message.h \
 		../blackjack/socketmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/mainwindow.h -o moc_mainwindow.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/mainwindow.h -o moc_mainwindow.cpp
 
 moc_onlineplayer.cpp: ../blackjack/onlineplayer.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/onlineplayer.h -o moc_onlineplayer.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/onlineplayer.h -o moc_onlineplayer.cpp
 
 moc_player.cpp: ../blackjack/player.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/player.h -o moc_player.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/player.h -o moc_player.cpp
 
 moc_playwindow.cpp: ../blackjack/playwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
 		../blackjack/mainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../blackjack/message.h \
 		../blackjack/socketmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/playwindow.h -o moc_playwindow.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/playwindow.h -o moc_playwindow.cpp
 
 moc_quitdialog.cpp: ../blackjack/quitdialog.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/quitdialog.h -o moc_quitdialog.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/quitdialog.h -o moc_quitdialog.cpp
 
 moc_roomitemwidget.cpp: ../blackjack/roomitemwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/roomitemwidget.h -o moc_roomitemwidget.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/roomitemwidget.h -o moc_roomitemwidget.cpp
 
 moc_screencontroller.cpp: ../blackjack/screencontroller.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/screencontroller.h -o moc_screencontroller.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/screencontroller.h -o moc_screencontroller.cpp
 
 moc_socketmanager.cpp: ../blackjack/socketmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
-		../../../../Qt/6.7.0/macos/libexec/moc
-	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=14 -D__clang_minor__=0 -D__clang_patchlevel__=3 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/socketmanager.h -o moc_socketmanager.cpp
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/moc
+	/Users/nghiann/Qt/6.7.0/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=15 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/nghiann/Qt/6.7.0/macos/mkspecs/macx-clang -I/Users/nghiann/Desktop/cpp_blackjack_v2/cpp_blackjack/UI/blackjack -I/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers -I/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/nghiann/Qt/6.7.0/macos/lib ../blackjack/socketmanager.h -o moc_socketmanager.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1579,175 +1522,178 @@ compiler_uic_make_all: ui_card.h ui_inviteplayerdialog.h ui_mainwindow.h ui_onli
 compiler_uic_clean:
 	-$(DEL_FILE) ui_card.h ui_inviteplayerdialog.h ui_mainwindow.h ui_onlineplayer.h ui_player.h ui_playwindow.h ui_quitdialog.h ui_roomitemwidget.h ui_sidebar.h
 ui_card.h: ../blackjack/card.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/card.ui -o ui_card.h
 
 ui_inviteplayerdialog.h: ../blackjack/inviteplayerdialog.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic \
 		../blackjack/onlineplayer.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/inviteplayerdialog.ui -o ui_inviteplayerdialog.h
 
 ui_mainwindow.h: ../blackjack/mainwindow.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic \
 		../blackjack/roomitemwidget.h \
 		../blackjack/playwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		../blackjack/onlineplayer.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
 		../blackjack/mainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../blackjack/message.h \
 		../blackjack/socketmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/mainwindow.ui -o ui_mainwindow.h
 
 ui_onlineplayer.h: ../blackjack/onlineplayer.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/onlineplayer.ui -o ui_onlineplayer.h
 
 ui_player.h: ../blackjack/player.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/player.ui -o ui_player.h
 
 ui_playwindow.h: ../blackjack/playwindow.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic \
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic \
 		../blackjack/player.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/playwindow.ui -o ui_playwindow.h
 
 ui_quitdialog.h: ../blackjack/quitdialog.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/quitdialog.ui -o ui_quitdialog.h
 
 ui_roomitemwidget.h: ../blackjack/roomitemwidget.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/roomitemwidget.ui -o ui_roomitemwidget.h
 
 ui_sidebar.h: ../blackjack/sidebar.ui \
-		../../../../Qt/6.7.0/macos/libexec/uic
+		/Users/nghiann/Qt/6.7.0/macos/libexec/uic
 	/Users/nghiann/Qt/6.7.0/macos/libexec/uic ../blackjack/sidebar.ui -o ui_sidebar.h
 
 compiler_rez_source_make_all:
@@ -1763,461 +1709,478 @@ compiler_clean: compiler_lrelease_clean compiler_rcc_clean compiler_moc_header_c
 ####### Compile
 
 card.o: ../blackjack/card.cpp ../blackjack/card.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
 		ui_card.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o card.o ../blackjack/card.cpp
 
 inviteplayerdialog.o: ../blackjack/inviteplayerdialog.cpp ../blackjack/inviteplayerdialog.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
 		ui_inviteplayerdialog.h \
 		../blackjack/onlineplayer.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o inviteplayerdialog.o ../blackjack/inviteplayerdialog.cpp
 
 main.o: ../blackjack/main.cpp ../blackjack/mainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../blackjack/message.h \
 		../blackjack/socketmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QApplication \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qapplication.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QLocale \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qlocale.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTranslator \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtranslator.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QApplication \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qapplication.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QLocale \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qlocale.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QTranslator \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qtranslator.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../blackjack/main.cpp
 
 mainwindow.o: ../blackjack/mainwindow.cpp ../blackjack/mainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../blackjack/message.h \
 		../blackjack/socketmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
 		ui_mainwindow.h \
+		../blackjack/onlineplayer.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
 		../blackjack/playwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
 		../blackjack/roomitemwidget.h \
 		../blackjack/screencontroller.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../blackjack/mainwindow.cpp
 
 onlineplayer.o: ../blackjack/onlineplayer.cpp ../blackjack/onlineplayer.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		ui_onlineplayer.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		ui_onlineplayer.h \
+		../blackjack/screencontroller.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o onlineplayer.o ../blackjack/onlineplayer.cpp
 
 message.o: ../blackjack/message.cpp ../blackjack/message.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o message.o ../blackjack/message.cpp
 
 player.o: ../blackjack/player.cpp ../blackjack/player.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
 		ui_player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../blackjack/player.cpp
 
 playwindow.o: ../blackjack/playwindow.cpp ../blackjack/playwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
 		../blackjack/mainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
-		../../../../Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/QtGui \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiglobal.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstractfileiconprovider.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qabstracttextdocumentlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessible.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessiblebridge.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaccessibleplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qaction.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qactiongroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbackingstore.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbitmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qbrush.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qclipboard.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolorspace.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcolortransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdesktopservices.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qdrag.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qevent.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qeventpoint.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfilesystemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontdatabase.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontinfo.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qfontmetrics.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericmatrix.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qgenericpluginfactory.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qglyphrun.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qguiapplication.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qicon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qiconengineplugin.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimage.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimageiohandler.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagereader.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qimagewriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qinputmethod.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qkeysequence.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmatrix4x4.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qmovie.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qoffscreensurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopengl.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglcontext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglextrafunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qopenglfunctions.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagedpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagelayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpageranges.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpagesize.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintdevicewindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpaintengine.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpainterpath.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpalette.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpdfwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpicture.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixelformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmap.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpixmapcache.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpointingdevice.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qpolygon.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qquaternion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrasterwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrawfont.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qregion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgb.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgba64.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qrgbafloat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qscreen.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsessionmanager.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qshortcut.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstatictext.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qstylehints.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurface.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsurfaceformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qsyntaxhighlighter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextcursor.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocument.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentfragment.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextdocumentwriter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextformat.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextlist.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtextoption.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtexttable.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtguiversion.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qtransform.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundogroup.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qundostack.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qutimimeconverter.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvalidator.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector2d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector3d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvector4d.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qvectornd.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindow.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtGui.framework/Headers/qwindowdefs.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QByteArray \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qbytearray.h \
 		../blackjack/message.h \
 		../blackjack/socketmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
 		ui_playwindow.h \
 		../blackjack/player.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QVBoxLayout \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qboxlayout.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QVBoxLayout \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qboxlayout.h \
 		../blackjack/quitdialog.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
 		../blackjack/inviteplayerdialog.h \
 		../blackjack/screencontroller.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o playwindow.o ../blackjack/playwindow.cpp
 
 quitdialog.o: ../blackjack/quitdialog.cpp ../blackjack/quitdialog.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
 		ui_quitdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o quitdialog.o ../blackjack/quitdialog.cpp
 
 roomitemwidget.o: ../blackjack/roomitemwidget.cpp ../blackjack/roomitemwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
-		../../../../Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
-		ui_roomitemwidget.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QPushButton \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qpushbutton.h \
+		ui_roomitemwidget.h \
+		../blackjack/screencontroller.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o roomitemwidget.o ../blackjack/roomitemwidget.cpp
 
 screencontroller.o: ../blackjack/screencontroller.cpp ../blackjack/screencontroller.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QStackedWidget \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qstackedwidget.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o screencontroller.o ../blackjack/screencontroller.cpp
 
 socketmanager.o: ../blackjack/socketmanager.cpp ../blackjack/socketmanager.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
-		../../../../Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
-		../../../../Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QObject \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qobject.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/QTcpSocket \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtNetwork.framework/Headers/qtcpsocket.h \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/QDebug \
+		/Users/nghiann/Qt/6.7.0/macos/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o socketmanager.o ../blackjack/socketmanager.cpp
 
 qrc_A_h.o: qrc_A_h.cpp 

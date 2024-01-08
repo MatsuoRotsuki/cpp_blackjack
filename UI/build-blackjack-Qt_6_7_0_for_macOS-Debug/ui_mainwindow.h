@@ -70,23 +70,16 @@ public:
     QVBoxLayout *verticalLayout_7;
     QLabel *online_player_label;
     OnlinePlayer *widget_14;
-    QWidget *widget_20;
-    QWidget *widget_22;
-    QWidget *widget_21;
-    QWidget *widget_19;
-    QWidget *widget_18;
     OnlinePlayer *widget_17;
     OnlinePlayer *widget_15;
-    QWidget *widget_23;
     OnlinePlayer *widget_16;
-    QWidget *widget_24;
-    QWidget *widget1;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *createNewRoomBtn;
     QPushButton *joinRandomBtn;
     QWidget *ready_screen;
     QWidget *widget_10;
-    QWidget *layoutWidget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_5;
     QLabel *label_11;
     QLabel *label_10;
@@ -322,31 +315,6 @@ public:
 
         verticalLayout_7->addWidget(widget_14);
 
-        widget_20 = new QWidget(widget_13);
-        widget_20->setObjectName("widget_20");
-
-        verticalLayout_7->addWidget(widget_20);
-
-        widget_22 = new QWidget(widget_13);
-        widget_22->setObjectName("widget_22");
-
-        verticalLayout_7->addWidget(widget_22);
-
-        widget_21 = new QWidget(widget_13);
-        widget_21->setObjectName("widget_21");
-
-        verticalLayout_7->addWidget(widget_21);
-
-        widget_19 = new QWidget(widget_13);
-        widget_19->setObjectName("widget_19");
-
-        verticalLayout_7->addWidget(widget_19);
-
-        widget_18 = new QWidget(widget_13);
-        widget_18->setObjectName("widget_18");
-
-        verticalLayout_7->addWidget(widget_18);
-
         widget_17 = new OnlinePlayer(widget_13);
         widget_17->setObjectName("widget_17");
 
@@ -357,28 +325,18 @@ public:
 
         verticalLayout_7->addWidget(widget_15);
 
-        widget_23 = new QWidget(widget_13);
-        widget_23->setObjectName("widget_23");
-
-        verticalLayout_7->addWidget(widget_23);
-
         widget_16 = new OnlinePlayer(widget_13);
         widget_16->setObjectName("widget_16");
 
         verticalLayout_7->addWidget(widget_16);
 
-        widget_24 = new QWidget(widget_13);
-        widget_24->setObjectName("widget_24");
-
-        verticalLayout_7->addWidget(widget_24);
-
-        widget1 = new QWidget(room);
-        widget1->setObjectName("widget1");
-        widget1->setGeometry(QRect(10, 10, 416, 32));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+        layoutWidget = new QWidget(room);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(10, 10, 416, 32));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        createNewRoomBtn = new QPushButton(widget1);
+        createNewRoomBtn = new QPushButton(layoutWidget);
         createNewRoomBtn->setObjectName("createNewRoomBtn");
         createNewRoomBtn->setMinimumSize(QSize(200, 30));
         createNewRoomBtn->setMaximumSize(QSize(200, 30));
@@ -388,7 +346,7 @@ public:
 
         horizontalLayout_2->addWidget(createNewRoomBtn);
 
-        joinRandomBtn = new QPushButton(widget1);
+        joinRandomBtn = new QPushButton(layoutWidget);
         joinRandomBtn->setObjectName("joinRandomBtn");
         joinRandomBtn->setMinimumSize(QSize(200, 30));
         joinRandomBtn->setMaximumSize(QSize(200, 30));
@@ -411,13 +369,13 @@ public:
         widget_10 = new QWidget(ready_screen);
         widget_10->setObjectName("widget_10");
         widget_10->setGeometry(QRect(200, 40, 638, 421));
-        layoutWidget = new QWidget(widget_10);
-        layoutWidget->setObjectName("layoutWidget");
-        layoutWidget->setGeometry(QRect(180, 100, 278, 122));
-        verticalLayout_5 = new QVBoxLayout(layoutWidget);
+        layoutWidget1 = new QWidget(widget_10);
+        layoutWidget1->setObjectName("layoutWidget1");
+        layoutWidget1->setGeometry(QRect(180, 100, 278, 122));
+        verticalLayout_5 = new QVBoxLayout(layoutWidget1);
         verticalLayout_5->setObjectName("verticalLayout_5");
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        label_11 = new QLabel(layoutWidget);
+        label_11 = new QLabel(layoutWidget1);
         label_11->setObjectName("label_11");
         QFont font;
         font.setFamilies({QString::fromUtf8("Academy Engraved LET")});
@@ -427,7 +385,7 @@ public:
 
         verticalLayout_5->addWidget(label_11);
 
-        label_10 = new QLabel(layoutWidget);
+        label_10 = new QLabel(layoutWidget1);
         label_10->setObjectName("label_10");
         QFont font1;
         font1.setFamilies({QString::fromUtf8("Kannada MN")});
@@ -794,7 +752,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget_main->setCurrentIndex(1);
+        stackedWidget_main->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(0);
 
 
