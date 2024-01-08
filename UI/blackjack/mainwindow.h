@@ -36,9 +36,9 @@ private slots:
 
     void setTappedMode(QPushButton *mode1, QPushButton *mode2);
 
-    void on_playGame_clicked();
+    // void on_playGame_clicked();
 
-    void on_cancelBtn_clicked();
+    // void on_cancelBtn_clicked();
 
     /**
      * Slot for Login button
@@ -53,7 +53,6 @@ private slots:
 
     void on_signup_btn_clicked();
 
-    void on_startBtn_clicked();
 
     void on_joinRandomBtn_clicked();
 

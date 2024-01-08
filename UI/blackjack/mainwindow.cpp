@@ -99,7 +99,15 @@ void MainWindow::on_cancelBtn_clicked()
 
 }
 
+// void MainWindow::on_playGame_clicked()
+// {
+//     ScreenController::instance().switchToScreen(1);
+// }
 
+// void MainWindow::on_cancelBtn_clicked()
+// {
+//     ScreenController::instance().switchToScreen(0);
+// }
 
 void MainWindow::on_to_login_page_btn_clicked()
 {
@@ -109,7 +117,6 @@ void MainWindow::on_to_login_page_btn_clicked()
 
 void MainWindow::on_to_signup_page_btn_clicked()
 {
-    // ui->stackedWidget_main->setCurrentIndex(3);
     ScreenController::instance().switchToScreen(3);
 }
 
@@ -123,7 +130,6 @@ void MainWindow::on_to_signup_page_btn_clicked()
 
 //     qDebug() << QString::fromStdString(MessageTypeToString(msg.type));
 // }
-
 
 void MainWindow::on_login_btn_clicked()
 {
@@ -146,19 +152,14 @@ void MainWindow::on_login_btn_clicked()
     QByteArray byteArray;
     byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
     socketManager->socket()->write(byteArray);
+
+    //switch to home screen
+    ScreenController::instance().switchToScreen(0);
 }
-
-
-void MainWindow::on_startBtn_clicked()
-{
-    ui->stackedWidget_main->setCurrentIndex(2);
-}
-
-
 
 void MainWindow::on_joinRandomBtn_clicked()
 {
-    ScreenController::instance().switchToScreen(1);
+    ScreenController::instance().switchToScreen(2);
 }
 
 void MainWindow::on_readyRead()

@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -23,6 +24,11 @@ class Ui_player
 {
 public:
     QVBoxLayout *verticalLayout_2;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_3;
+    QPushButton *readyBtn;
+    QSpacerItem *horizontalSpacer_4;
     QLabel *label_2;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer_13;
@@ -31,8 +37,8 @@ public:
     QLabel *label_38;
     QLabel *label_39;
     QLabel *label_40;
-    QSpacerItem *horizontalSpacer_14;
     QLabel *point;
+    QSpacerItem *horizontalSpacer_5;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *userInfo;
@@ -49,6 +55,38 @@ public:
         player->setLayoutDirection(Qt::LeftToRight);
         verticalLayout_2 = new QVBoxLayout(player);
         verticalLayout_2->setObjectName("verticalLayout_2");
+        verticalLayout_2->setContentsMargins(11, -1, -1, -1);
+        widget = new QWidget(player);
+        widget->setObjectName("widget");
+        horizontalLayout_3 = new QHBoxLayout(widget);
+        horizontalLayout_3->setSpacing(0);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        horizontalSpacer_3 = new QSpacerItem(119, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_3);
+
+        readyBtn = new QPushButton(widget);
+        readyBtn->setObjectName("readyBtn");
+        readyBtn->setMinimumSize(QSize(70, 20));
+        QFont font;
+        font.setPointSize(14);
+        font.setBold(true);
+        readyBtn->setFont(font);
+        readyBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        readyBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(242, 78, 30);\n"
+"border-radius:10px;\n"
+"color: rgb(255, 255, 255);"));
+
+        horizontalLayout_3->addWidget(readyBtn);
+
+        horizontalSpacer_4 = new QSpacerItem(118, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_4);
+
+
+        verticalLayout_2->addWidget(widget);
+
         label_2 = new QLabel(player);
         label_2->setObjectName("label_2");
         label_2->setAlignment(Qt::AlignCenter);
@@ -58,7 +96,7 @@ public:
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(5);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
-        horizontalSpacer_13 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer_13 = new QSpacerItem(30, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
         horizontalLayout_2->addItem(horizontalSpacer_13);
 
@@ -117,15 +155,15 @@ public:
 
         horizontalLayout_2->addLayout(list_card_5);
 
-        horizontalSpacer_14 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_2->addItem(horizontalSpacer_14);
-
         point = new QLabel(player);
         point->setObjectName("point");
         point->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
         horizontalLayout_2->addWidget(point);
+
+        horizontalSpacer_5 = new QSpacerItem(30, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_5);
 
 
         verticalLayout_2->addLayout(horizontalLayout_2);
@@ -137,7 +175,7 @@ public:
         horizontalLayout->addItem(horizontalSpacer);
 
         userInfo = new QVBoxLayout();
-        userInfo->setSpacing(12);
+        userInfo->setSpacing(6);
         userInfo->setObjectName("userInfo");
         avatar = new QLabel(player);
         avatar->setObjectName("avatar");
@@ -179,6 +217,7 @@ public:
     void retranslateUi(QWidget *player)
     {
         player->setWindowTitle(QCoreApplication::translate("player", "Form", nullptr));
+        readyBtn->setText(QCoreApplication::translate("player", "Ready", nullptr));
         label_2->setText(QCoreApplication::translate("player", "Status", nullptr));
         label_37->setText(QString());
         label_38->setText(QString());

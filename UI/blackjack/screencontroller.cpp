@@ -24,3 +24,21 @@ void ScreenController::switchToScreen(int screenIndex)
         m_stackedWidget->setCurrentIndex(screenIndex);
     }
 }
+
+QStackedWidget* ScreenController::getStackedWidget() const
+{
+    return m_stackedWidget;
+}
+
+
+
+int ScreenController::getStackedWidgetIndex()
+{
+    if (m_stackedWidget){
+        return m_stackedWidget->currentIndex();
+    }else{
+        return 0;
+    }
+
+}
+
