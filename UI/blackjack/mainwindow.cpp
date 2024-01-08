@@ -17,14 +17,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->homeBtn, &QPushButton::clicked, this, &MainWindow::on_homeBtn_clicked);
     connect(ui->roomBtn, &QPushButton::clicked, this, &MainWindow::on_roomBtn_clicked);
     connect(ui->inviteBtn, &QPushButton::clicked, this, &MainWindow::on_inviteBtn_clicked);
-    // connect(ui->playGame, &QPushButton::clicked, this, &MainWindow::on_playGame_clicked);
     connect(socketManager->socket(), &QTcpSocket::readyRead, this, &MainWindow::on_readyRead);
 
     socketManager->socket()->connectToHost("127.0.0.1", 5500);
 
     ui->stackedWidget_main->setCurrentIndex(4);
     // Hiển thị màn hình đầu tiên
-    // setCentralWidget(ui->stackedWidget);
     ScreenController::instance().setStackedWidget(ui->stackedWidget_main);
 }
 
@@ -82,17 +80,6 @@ void MainWindow::setTappedMode(QPushButton *mode1, QPushButton *mode2){
                                 "border-radius: 10px;"
                                 "}");
 }
-
-
-// void MainWindow::on_playGame_clicked()
-// {
-//     ScreenController::instance().switchToScreen(1);
-// }
-
-// void MainWindow::on_cancelBtn_clicked()
-// {
-//     ScreenController::instance().switchToScreen(0);
-// }
 
 void MainWindow::on_to_login_page_btn_clicked()
 {

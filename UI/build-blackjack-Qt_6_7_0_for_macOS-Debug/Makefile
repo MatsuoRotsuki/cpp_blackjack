@@ -1192,64 +1192,7 @@ compiler_rcc_make_all: qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 qrc_A_h.cpp: ../blackjack/A_h.qrc \
-		/Users/nghiann/Qt/6.7.0/macos/libexec/rcc \
-		../blackjack/8♦.png \
-		../blackjack/Q♦.png \
-		../blackjack/4♦.png \
-		../blackjack/A♦.png \
-		../blackjack/3♦.png \
-		../blackjack/5♦.png \
-		../blackjack/J♦.png \
-		../blackjack/9♦.png \
-		../blackjack/6♦.png \
-		../blackjack/7♦.png \
-		../blackjack/10♦.png \
-		../blackjack/K♦.png \
-		../blackjack/2♦.png \
-		../blackjack/A_h.png \
-		../blackjack/back.png \
-		../blackjack/K_h.png \
-		../blackjack/10♥.png \
-		../blackjack/avatar.png \
-		../blackjack/avater.png \
-		../blackjack/K♣.png \
-		../blackjack/3♣.png \
-		../blackjack/7♣.png \
-		../blackjack/9♣.png \
-		../blackjack/J♣.png \
-		../blackjack/Q♣.png \
-		../blackjack/10♣.png \
-		../blackjack/4♣.png \
-		../blackjack/A♣.png \
-		../blackjack/5♣.png \
-		../blackjack/8♣.png \
-		../blackjack/6♣.png \
-		../blackjack/2♣.png \
-		../blackjack/9♥.png \
-		../blackjack/3♥.png \
-		../blackjack/10♥.png \
-		../blackjack/5♥.png \
-		../blackjack/K♥.png \
-		../blackjack/Q♥.png \
-		../blackjack/4♥.png \
-		../blackjack/6♥.png \
-		../blackjack/J♥.png \
-		../blackjack/2♥.png \
-		../blackjack/8♥.png \
-		../blackjack/7♥.png \
-		../blackjack/10♠.png \
-		../blackjack/7♠.png \
-		../blackjack/J♠.png \
-		../blackjack/9♠.png \
-		../blackjack/K♠.png \
-		../blackjack/3♠.png \
-		../blackjack/8♠.png \
-		../blackjack/6♠.png \
-		../blackjack/Q♠.png \
-		../blackjack/4♠.png \
-		../blackjack/A♠.png \
-		../blackjack/2♠.png \
-		../blackjack/5♠.png
+		/Users/nghiann/Qt/6.7.0/macos/libexec/rcc
 	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name A_h --no-zstd ../blackjack/A_h.qrc -o qrc_A_h.cpp
 
 qrc_qmake_qmake_qm_files.cpp: qmake_qmake_qm_files.qrc \
