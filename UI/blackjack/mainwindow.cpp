@@ -20,8 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(socketManager->socket(), &QTcpSocket::readyRead, this, &MainWindow::on_readyRead);
 
     socketManager->socket()->connectToHost("127.0.0.1", 5500);
-
-    ui->stackedWidget_main->setCurrentIndex(4);
     // Hiển thị màn hình đầu tiên
     ScreenController::instance().setStackedWidget(ui->stackedWidget_main);
 }
@@ -129,10 +127,6 @@ void MainWindow::on_login_btn_clicked()
     ScreenController::instance().switchToScreen(0);
 }
 
-void MainWindow::on_joinRandomBtn_clicked()
-{
-    ScreenController::instance().switchToScreen(2);
-}
 
 void MainWindow::on_readyRead()
 {
@@ -207,5 +201,13 @@ void MainWindow::on_signup_btn_clicked()
     QByteArray byteArray;
     byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
     socketManager->socket()->write(byteArray);
+}
+
+
+
+
+void MainWindow::on_joinRandomBtn_clicked()
+{
+    qDebug() << "play game";
 }
 

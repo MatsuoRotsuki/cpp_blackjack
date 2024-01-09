@@ -53,12 +53,14 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../blackjack/card.cpp \
+		../blackjack/gamecontroller.cpp \
 		../blackjack/inviteplayerdialog.cpp \
 		../blackjack/main.cpp \
 		../blackjack/mainwindow.cpp \
 		../blackjack/onlineplayer.cpp \
 		../blackjack/message.cpp \
 		../blackjack/player.cpp \
+		../blackjack/playerinfo.cpp \
 		../blackjack/playwindow.cpp \
 		../blackjack/quitdialog.cpp \
 		../blackjack/roomitemwidget.cpp \
@@ -76,12 +78,14 @@ SOURCES       = ../blackjack/card.cpp \
 		moc_screencontroller.cpp \
 		moc_socketmanager.cpp
 OBJECTS       = card.o \
+		gamecontroller.o \
 		inviteplayerdialog.o \
 		main.o \
 		mainwindow.o \
 		onlineplayer.o \
 		message.o \
 		player.o \
+		playerinfo.o \
 		playwindow.o \
 		quitdialog.o \
 		roomitemwidget.o \
@@ -422,22 +426,26 @@ DIST          = /Users/nghiann/Qt/6.7.0/macos/mkspecs/features/spec_pre.prf \
 		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/yacc.prf \
 		/Users/nghiann/Qt/6.7.0/macos/mkspecs/features/lex.prf \
 		../blackjack/blackjack.pro ../blackjack/card.h \
+		../blackjack/gamecontroller.h \
 		../blackjack/inviteplayerdialog.h \
 		../blackjack/mainwindow.h \
 		../blackjack/onlineplayer.h \
 		../blackjack/player.h \
+		../blackjack/playerinfo.h \
 		../blackjack/playwindow.h \
 		../blackjack/quitdialog.h \
 		../blackjack/roomitemwidget.h \
 		../blackjack/message.h \
 		../blackjack/screencontroller.h \
 		../blackjack/socketmanager.h ../blackjack/card.cpp \
+		../blackjack/gamecontroller.cpp \
 		../blackjack/inviteplayerdialog.cpp \
 		../blackjack/main.cpp \
 		../blackjack/mainwindow.cpp \
 		../blackjack/onlineplayer.cpp \
 		../blackjack/message.cpp \
 		../blackjack/player.cpp \
+		../blackjack/playerinfo.cpp \
 		../blackjack/playwindow.cpp \
 		../blackjack/quitdialog.cpp \
 		../blackjack/roomitemwidget.cpp \
@@ -1152,8 +1160,8 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/blackjack_en_GB.ts $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/A_h.qrc qmake_qmake_qm_files.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../blackjack/card.h ../blackjack/inviteplayerdialog.h ../blackjack/mainwindow.h ../blackjack/onlineplayer.h ../blackjack/player.h ../blackjack/playwindow.h ../blackjack/quitdialog.h ../blackjack/roomitemwidget.h ../blackjack/message.h ../blackjack/screencontroller.h ../blackjack/socketmanager.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../blackjack/card.cpp ../blackjack/inviteplayerdialog.cpp ../blackjack/main.cpp ../blackjack/mainwindow.cpp ../blackjack/onlineplayer.cpp ../blackjack/message.cpp ../blackjack/player.cpp ../blackjack/playwindow.cpp ../blackjack/quitdialog.cpp ../blackjack/roomitemwidget.cpp ../blackjack/screencontroller.cpp ../blackjack/socketmanager.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../blackjack/card.h ../blackjack/gamecontroller.h ../blackjack/inviteplayerdialog.h ../blackjack/mainwindow.h ../blackjack/onlineplayer.h ../blackjack/player.h ../blackjack/playerinfo.h ../blackjack/playwindow.h ../blackjack/quitdialog.h ../blackjack/roomitemwidget.h ../blackjack/message.h ../blackjack/screencontroller.h ../blackjack/socketmanager.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../blackjack/card.cpp ../blackjack/gamecontroller.cpp ../blackjack/inviteplayerdialog.cpp ../blackjack/main.cpp ../blackjack/mainwindow.cpp ../blackjack/onlineplayer.cpp ../blackjack/message.cpp ../blackjack/player.cpp ../blackjack/playerinfo.cpp ../blackjack/playwindow.cpp ../blackjack/quitdialog.cpp ../blackjack/roomitemwidget.cpp ../blackjack/screencontroller.cpp ../blackjack/socketmanager.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/card.ui ../blackjack/inviteplayerdialog.ui ../blackjack/mainwindow.ui ../blackjack/onlineplayer.ui ../blackjack/player.ui ../blackjack/playwindow.ui ../blackjack/quitdialog.ui ../blackjack/roomitemwidget.ui ../blackjack/sidebar.ui $(DISTDIR)/
 	$(COPY_FILE) --parents ../blackjack/blackjack_en_GB.ts $(DISTDIR)/
 
@@ -1192,7 +1200,64 @@ compiler_rcc_make_all: qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_A_h.cpp qrc_qmake_qmake_qm_files.cpp
 qrc_A_h.cpp: ../blackjack/A_h.qrc \
-		/Users/nghiann/Qt/6.7.0/macos/libexec/rcc
+		/Users/nghiann/Qt/6.7.0/macos/libexec/rcc \
+		../blackjack/8♦.png \
+		../blackjack/Q♦.png \
+		../blackjack/4♦.png \
+		../blackjack/A♦.png \
+		../blackjack/3♦.png \
+		../blackjack/5♦.png \
+		../blackjack/J♦.png \
+		../blackjack/9♦.png \
+		../blackjack/6♦.png \
+		../blackjack/7♦.png \
+		../blackjack/10♦.png \
+		../blackjack/K♦.png \
+		../blackjack/2♦.png \
+		../blackjack/A_h.png \
+		../blackjack/back.png \
+		../blackjack/K_h.png \
+		../blackjack/10♥.png \
+		../blackjack/avatar.png \
+		../blackjack/avater.png \
+		../blackjack/K♣.png \
+		../blackjack/3♣.png \
+		../blackjack/7♣.png \
+		../blackjack/9♣.png \
+		../blackjack/J♣.png \
+		../blackjack/Q♣.png \
+		../blackjack/10♣.png \
+		../blackjack/4♣.png \
+		../blackjack/A♣.png \
+		../blackjack/5♣.png \
+		../blackjack/8♣.png \
+		../blackjack/6♣.png \
+		../blackjack/2♣.png \
+		../blackjack/9♥.png \
+		../blackjack/3♥.png \
+		../blackjack/10♥.png \
+		../blackjack/5♥.png \
+		../blackjack/K♥.png \
+		../blackjack/Q♥.png \
+		../blackjack/4♥.png \
+		../blackjack/6♥.png \
+		../blackjack/J♥.png \
+		../blackjack/2♥.png \
+		../blackjack/8♥.png \
+		../blackjack/7♥.png \
+		../blackjack/10♠.png \
+		../blackjack/7♠.png \
+		../blackjack/J♠.png \
+		../blackjack/9♠.png \
+		../blackjack/K♠.png \
+		../blackjack/3♠.png \
+		../blackjack/8♠.png \
+		../blackjack/6♠.png \
+		../blackjack/Q♠.png \
+		../blackjack/4♠.png \
+		../blackjack/A♠.png \
+		../blackjack/2♠.png \
+		../blackjack/5♠.png
 	/Users/nghiann/Qt/6.7.0/macos/libexec/rcc -name A_h --no-zstd ../blackjack/A_h.qrc -o qrc_A_h.cpp
 
 qrc_qmake_qmake_qm_files.cpp: qmake_qmake_qm_files.qrc \
@@ -1714,6 +1779,9 @@ card.o: ../blackjack/card.cpp ../blackjack/card.h \
 		ui_card.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o card.o ../blackjack/card.cpp
 
+gamecontroller.o: ../blackjack/gamecontroller.cpp ../blackjack/gamecontroller.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gamecontroller.o ../blackjack/gamecontroller.cpp
+
 inviteplayerdialog.o: ../blackjack/inviteplayerdialog.cpp ../blackjack/inviteplayerdialog.h \
 		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QDialog \
 		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qdialog.h \
@@ -2005,6 +2073,9 @@ player.o: ../blackjack/player.cpp ../blackjack/player.h \
 		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/qwidget.h \
 		ui_player.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../blackjack/player.cpp
+
+playerinfo.o: ../blackjack/playerinfo.cpp ../blackjack/playerinfo.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o playerinfo.o ../blackjack/playerinfo.cpp
 
 playwindow.o: ../blackjack/playwindow.cpp ../blackjack/playwindow.h \
 		/Users/nghiann/Qt/6.7.0/macos/lib/QtWidgets.framework/Headers/QWidget \

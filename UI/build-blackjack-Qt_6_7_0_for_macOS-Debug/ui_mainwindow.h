@@ -48,14 +48,10 @@ public:
     QSpacerItem *verticalSpacer;
     QWidget *widget;
     QGridLayout *gridLayout_3;
-    QHBoxLayout *horizontalLayout_5;
-    QSpacerItem *horizontalSpacer_7;
-    QLabel *label_9;
-    QSpacerItem *horizontalSpacer_8;
-    QPushButton *pushButton_6;
-    QSpacerItem *horizontalSpacer_9;
     QStackedWidget *stackedWidget;
     QWidget *room;
+    QPushButton *createNewRoomBtn;
+    QPushButton *joinRandomBtn;
     QWidget *layoutWidget_4;
     QGridLayout *gridLayout_2;
     RoomItemWidget *widget_5;
@@ -66,6 +62,24 @@ public:
     RoomItemWidget *widget_2;
     RoomItemWidget *widget_4;
     RoomItemWidget *widget_9;
+    QHBoxLayout *horizontalLayout_5;
+    QSpacerItem *horizontalSpacer_7;
+    QLabel *label_9;
+    QSpacerItem *horizontalSpacer_8;
+    QPushButton *pushButton_6;
+    QSpacerItem *horizontalSpacer_9;
+    QStackedWidget *stackedWidget1;
+    QWidget *room1;
+    QWidget *layoutWidget_41;
+    QGridLayout *gridLayout_21;
+    RoomItemWidget *widget_51;
+    RoomItemWidget *widget_61;
+    RoomItemWidget *widget_71;
+    RoomItemWidget *widget_81;
+    RoomItemWidget *widget_31;
+    RoomItemWidget *widget_21;
+    RoomItemWidget *widget_41;
+    RoomItemWidget *widget_91;
     QWidget *widget_13;
     QVBoxLayout *verticalLayout_7;
     QLabel *online_player_label;
@@ -75,8 +89,8 @@ public:
     OnlinePlayer *widget_16;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
-    QPushButton *createNewRoomBtn;
-    QPushButton *joinRandomBtn;
+    QPushButton *createNewRoomBtn1;
+    QPushButton *joinRandomBtn1;
     QWidget *ready_screen;
     QWidget *widget_10;
     QWidget *layoutWidget1;
@@ -96,19 +110,19 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *label_6;
     QSpacerItem *horizontalSpacer_3;
-    QLineEdit *lineEdit;
+    QLineEdit *fullnameLineEdit;
     QHBoxLayout *horizontalLayout_7;
     QLabel *label_7;
     QSpacerItem *horizontalSpacer_4;
-    QLineEdit *lineEdit_2;
+    QLineEdit *usernameLineEdit_2;
     QHBoxLayout *horizontalLayout_8;
     QLabel *label_8;
     QSpacerItem *horizontalSpacer_5;
-    QLineEdit *lineEdit_5;
+    QLineEdit *passwordLineEdit_2;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_12;
     QSpacerItem *horizontalSpacer_6;
-    QLineEdit *lineEdit_3;
+    QLineEdit *confirmpasswordLineEdit;
     QHBoxLayout *horizontalLayout_10;
     QSpacerItem *horizontalSpacer_10;
     QPushButton *signup_btn;
@@ -206,54 +220,32 @@ public:
         widget->setMaximumSize(QSize(1600, 1600));
         gridLayout_3 = new QGridLayout(widget);
         gridLayout_3->setObjectName("gridLayout_3");
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setSpacing(0);
-        horizontalLayout_5->setObjectName("horizontalLayout_5");
-        horizontalSpacer_7 = new QSpacerItem(238, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_7);
-
-        label_9 = new QLabel(widget);
-        label_9->setObjectName("label_9");
-        label_9->setFrameShape(QFrame::NoFrame);
-
-        horizontalLayout_5->addWidget(label_9);
-
-        horizontalSpacer_8 = new QSpacerItem(13, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_8);
-
-        pushButton_6 = new QPushButton(widget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setMinimumSize(QSize(50, 50));
-        pushButton_6->setMaximumSize(QSize(50, 50));
-        pushButton_6->setAutoFillBackground(false);
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("../../../../Downloads/avatar.jpeg"), QSize(), QIcon::Normal, QIcon::Off);
-        pushButton_6->setIcon(icon);
-        pushButton_6->setIconSize(QSize(50, 50));
-        pushButton_6->setAutoRepeatInterval(300);
-
-        horizontalLayout_5->addWidget(pushButton_6);
-
-        horizontalSpacer_9 = new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
-
-        horizontalLayout_5->addItem(horizontalSpacer_9);
-
-
-        gridLayout_3->addLayout(horizontalLayout_5, 0, 0, 1, 1);
-
         stackedWidget = new QStackedWidget(widget);
         stackedWidget->setObjectName("stackedWidget");
         room = new QWidget();
         room->setObjectName("room");
+        createNewRoomBtn = new QPushButton(room);
+        createNewRoomBtn->setObjectName("createNewRoomBtn");
+        createNewRoomBtn->setGeometry(QRect(10, 10, 200, 30));
+        createNewRoomBtn->setMinimumSize(QSize(200, 30));
+        createNewRoomBtn->setMaximumSize(QSize(200, 30));
+        createNewRoomBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        createNewRoomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+"border-radius: 10px;"));
+        joinRandomBtn = new QPushButton(room);
+        joinRandomBtn->setObjectName("joinRandomBtn");
+        joinRandomBtn->setGeometry(QRect(240, 10, 200, 30));
+        joinRandomBtn->setMinimumSize(QSize(200, 30));
+        joinRandomBtn->setMaximumSize(QSize(200, 30));
+        joinRandomBtn->setCursor(QCursor(Qt::PointingHandCursor));
+        joinRandomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+"border-radius: 10px;"));
         layoutWidget_4 = new QWidget(room);
         layoutWidget_4->setObjectName("layoutWidget_4");
-        layoutWidget_4->setGeometry(QRect(0, 60, 591, 361));
+        layoutWidget_4->setGeometry(QRect(0, 60, 731, 361));
         gridLayout_2 = new QGridLayout(layoutWidget_4);
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName("gridLayout_2");
-        gridLayout_2->setSizeConstraint(QLayout::SetMaximumSize);
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         widget_5 = new RoomItemWidget(layoutWidget_4);
         widget_5->setObjectName("widget_5");
@@ -300,7 +292,105 @@ public:
 
         gridLayout_2->addWidget(widget_9, 2, 0, 1, 1);
 
-        widget_13 = new QWidget(room);
+        stackedWidget->addWidget(room);
+
+        gridLayout_3->addWidget(stackedWidget, 1, 0, 1, 1);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(0);
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
+        horizontalSpacer_7 = new QSpacerItem(238, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_7);
+
+        label_9 = new QLabel(widget);
+        label_9->setObjectName("label_9");
+        label_9->setFrameShape(QFrame::NoFrame);
+
+        horizontalLayout_5->addWidget(label_9);
+
+        horizontalSpacer_8 = new QSpacerItem(13, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_8);
+
+        pushButton_6 = new QPushButton(widget);
+        pushButton_6->setObjectName("pushButton_6");
+        pushButton_6->setMinimumSize(QSize(50, 50));
+        pushButton_6->setMaximumSize(QSize(50, 50));
+        pushButton_6->setAutoFillBackground(false);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("../../../../Downloads/avatar.jpeg"), QSize(), QIcon::Normal, QIcon::Off);
+        pushButton_6->setIcon(icon);
+        pushButton_6->setIconSize(QSize(50, 50));
+        pushButton_6->setAutoRepeatInterval(300);
+
+        horizontalLayout_5->addWidget(pushButton_6);
+
+        horizontalSpacer_9 = new QSpacerItem(0, 20, QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_9);
+
+
+        gridLayout_3->addLayout(horizontalLayout_5, 0, 0, 1, 1);
+
+        stackedWidget1 = new QStackedWidget(widget);
+        stackedWidget1->setObjectName("stackedWidget1");
+        room1 = new QWidget();
+        room1->setObjectName("room1");
+        layoutWidget_41 = new QWidget(room1);
+        layoutWidget_41->setObjectName("layoutWidget_41");
+        layoutWidget_41->setGeometry(QRect(0, 60, 591, 361));
+        gridLayout_21 = new QGridLayout(layoutWidget_41);
+        gridLayout_21->setSpacing(0);
+        gridLayout_21->setObjectName("gridLayout_21");
+        gridLayout_21->setSizeConstraint(QLayout::SetMaximumSize);
+        gridLayout_21->setContentsMargins(0, 0, 0, 0);
+        widget_51 = new RoomItemWidget(layoutWidget_41);
+        widget_51->setObjectName("widget_51");
+        widget_51->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 65);"));
+
+        gridLayout_21->addWidget(widget_51, 3, 0, 1, 1);
+
+        widget_61 = new RoomItemWidget(layoutWidget_41);
+        widget_61->setObjectName("widget_61");
+        widget_61->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 85);"));
+
+        gridLayout_21->addWidget(widget_61, 1, 0, 1, 1);
+
+        widget_71 = new RoomItemWidget(layoutWidget_41);
+        widget_71->setObjectName("widget_71");
+
+        gridLayout_21->addWidget(widget_71, 1, 1, 1, 1);
+
+        widget_81 = new RoomItemWidget(layoutWidget_41);
+        widget_81->setObjectName("widget_81");
+
+        gridLayout_21->addWidget(widget_81, 2, 1, 1, 1);
+
+        widget_31 = new RoomItemWidget(layoutWidget_41);
+        widget_31->setObjectName("widget_31");
+        widget_31->setStyleSheet(QString::fromUtf8("background-color: rgb(64, 255, 66);"));
+
+        gridLayout_21->addWidget(widget_31, 3, 1, 1, 1);
+
+        widget_21 = new RoomItemWidget(layoutWidget_41);
+        widget_21->setObjectName("widget_21");
+        widget_21->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 4, 255);"));
+
+        gridLayout_21->addWidget(widget_21, 0, 0, 1, 1);
+
+        widget_41 = new RoomItemWidget(layoutWidget_41);
+        widget_41->setObjectName("widget_41");
+        widget_41->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 67);"));
+
+        gridLayout_21->addWidget(widget_41, 0, 1, 1, 1);
+
+        widget_91 = new RoomItemWidget(layoutWidget_41);
+        widget_91->setObjectName("widget_91");
+
+        gridLayout_21->addWidget(widget_91, 2, 0, 1, 1);
+
+        widget_13 = new QWidget(room1);
         widget_13->setObjectName("widget_13");
         widget_13->setGeometry(QRect(640, 0, 261, 421));
         verticalLayout_7 = new QVBoxLayout(widget_13);
@@ -330,35 +420,35 @@ public:
 
         verticalLayout_7->addWidget(widget_16);
 
-        layoutWidget = new QWidget(room);
+        layoutWidget = new QWidget(room1);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(10, 10, 416, 32));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget);
         horizontalLayout_2->setObjectName("horizontalLayout_2");
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        createNewRoomBtn = new QPushButton(layoutWidget);
-        createNewRoomBtn->setObjectName("createNewRoomBtn");
-        createNewRoomBtn->setMinimumSize(QSize(200, 30));
-        createNewRoomBtn->setMaximumSize(QSize(200, 30));
-        createNewRoomBtn->setCursor(QCursor(Qt::PointingHandCursor));
-        createNewRoomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+        createNewRoomBtn1 = new QPushButton(layoutWidget);
+        createNewRoomBtn1->setObjectName("createNewRoomBtn1");
+        createNewRoomBtn1->setMinimumSize(QSize(200, 30));
+        createNewRoomBtn1->setMaximumSize(QSize(200, 30));
+        createNewRoomBtn1->setCursor(QCursor(Qt::PointingHandCursor));
+        createNewRoomBtn1->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
 "border-radius: 10px;"));
 
-        horizontalLayout_2->addWidget(createNewRoomBtn);
+        horizontalLayout_2->addWidget(createNewRoomBtn1);
 
-        joinRandomBtn = new QPushButton(layoutWidget);
-        joinRandomBtn->setObjectName("joinRandomBtn");
-        joinRandomBtn->setMinimumSize(QSize(200, 30));
-        joinRandomBtn->setMaximumSize(QSize(200, 30));
-        joinRandomBtn->setCursor(QCursor(Qt::PointingHandCursor));
-        joinRandomBtn->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
+        joinRandomBtn1 = new QPushButton(layoutWidget);
+        joinRandomBtn1->setObjectName("joinRandomBtn1");
+        joinRandomBtn1->setMinimumSize(QSize(200, 30));
+        joinRandomBtn1->setMaximumSize(QSize(200, 30));
+        joinRandomBtn1->setCursor(QCursor(Qt::PointingHandCursor));
+        joinRandomBtn1->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 178, 255);\n"
 "border-radius: 10px;"));
 
-        horizontalLayout_2->addWidget(joinRandomBtn);
+        horizontalLayout_2->addWidget(joinRandomBtn1);
 
-        stackedWidget->addWidget(room);
+        stackedWidget1->addWidget(room1);
 
-        gridLayout_3->addWidget(stackedWidget, 1, 0, 1, 1);
+        gridLayout_3->addWidget(stackedWidget1, 1, 0, 1, 1);
 
 
         gridLayout->addWidget(widget, 0, 1, 1, 1);
@@ -475,17 +565,17 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
-        lineEdit = new QLineEdit(widget_11);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setMinimumSize(QSize(200, 0));
-        lineEdit->setMaximumSize(QSize(200, 16777215));
+        fullnameLineEdit = new QLineEdit(widget_11);
+        fullnameLineEdit->setObjectName("fullnameLineEdit");
+        fullnameLineEdit->setMinimumSize(QSize(200, 0));
+        fullnameLineEdit->setMaximumSize(QSize(200, 16777215));
         QFont font4;
         font4.setFamilies({QString::fromUtf8("Ubuntu Mono")});
         font4.setPointSize(14);
-        lineEdit->setFont(font4);
-        lineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
+        fullnameLineEdit->setFont(font4);
+        fullnameLineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
 
-        horizontalLayout->addWidget(lineEdit);
+        horizontalLayout->addWidget(fullnameLineEdit);
 
 
         verticalLayout_4->addLayout(horizontalLayout);
@@ -503,14 +593,14 @@ public:
 
         horizontalLayout_7->addItem(horizontalSpacer_4);
 
-        lineEdit_2 = new QLineEdit(widget_11);
-        lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setMinimumSize(QSize(200, 0));
-        lineEdit_2->setMaximumSize(QSize(200, 16777215));
-        lineEdit_2->setFont(font4);
-        lineEdit_2->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
+        usernameLineEdit_2 = new QLineEdit(widget_11);
+        usernameLineEdit_2->setObjectName("usernameLineEdit_2");
+        usernameLineEdit_2->setMinimumSize(QSize(200, 0));
+        usernameLineEdit_2->setMaximumSize(QSize(200, 16777215));
+        usernameLineEdit_2->setFont(font4);
+        usernameLineEdit_2->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
 
-        horizontalLayout_7->addWidget(lineEdit_2);
+        horizontalLayout_7->addWidget(usernameLineEdit_2);
 
 
         verticalLayout_4->addLayout(horizontalLayout_7);
@@ -528,15 +618,15 @@ public:
 
         horizontalLayout_8->addItem(horizontalSpacer_5);
 
-        lineEdit_5 = new QLineEdit(widget_11);
-        lineEdit_5->setObjectName("lineEdit_5");
-        lineEdit_5->setMinimumSize(QSize(200, 0));
-        lineEdit_5->setMaximumSize(QSize(200, 16777215));
-        lineEdit_5->setFont(font4);
-        lineEdit_5->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
-        lineEdit_5->setEchoMode(QLineEdit::Password);
+        passwordLineEdit_2 = new QLineEdit(widget_11);
+        passwordLineEdit_2->setObjectName("passwordLineEdit_2");
+        passwordLineEdit_2->setMinimumSize(QSize(200, 0));
+        passwordLineEdit_2->setMaximumSize(QSize(200, 16777215));
+        passwordLineEdit_2->setFont(font4);
+        passwordLineEdit_2->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
+        passwordLineEdit_2->setEchoMode(QLineEdit::Password);
 
-        horizontalLayout_8->addWidget(lineEdit_5);
+        horizontalLayout_8->addWidget(passwordLineEdit_2);
 
 
         verticalLayout_4->addLayout(horizontalLayout_8);
@@ -554,15 +644,15 @@ public:
 
         horizontalLayout_9->addItem(horizontalSpacer_6);
 
-        lineEdit_3 = new QLineEdit(widget_11);
-        lineEdit_3->setObjectName("lineEdit_3");
-        lineEdit_3->setMinimumSize(QSize(200, 0));
-        lineEdit_3->setMaximumSize(QSize(200, 16777215));
-        lineEdit_3->setFont(font4);
-        lineEdit_3->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
-        lineEdit_3->setEchoMode(QLineEdit::Password);
+        confirmpasswordLineEdit = new QLineEdit(widget_11);
+        confirmpasswordLineEdit->setObjectName("confirmpasswordLineEdit");
+        confirmpasswordLineEdit->setMinimumSize(QSize(200, 0));
+        confirmpasswordLineEdit->setMaximumSize(QSize(200, 16777215));
+        confirmpasswordLineEdit->setFont(font4);
+        confirmpasswordLineEdit->setStyleSheet(QString::fromUtf8("border: 2px solid white; color: white;"));
+        confirmpasswordLineEdit->setEchoMode(QLineEdit::Password);
 
-        horizontalLayout_9->addWidget(lineEdit_3);
+        horizontalLayout_9->addWidget(confirmpasswordLineEdit);
 
 
         verticalLayout_4->addLayout(horizontalLayout_9);
@@ -754,6 +844,7 @@ public:
 
         stackedWidget_main->setCurrentIndex(0);
         stackedWidget->setCurrentIndex(0);
+        stackedWidget1->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -766,11 +857,13 @@ public:
         homeBtn->setText(QCoreApplication::translate("MainWindow", "Home", nullptr));
         roomBtn->setText(QCoreApplication::translate("MainWindow", "Room", nullptr));
         inviteBtn->setText(QCoreApplication::translate("MainWindow", "Invite", nullptr));
+        createNewRoomBtn->setText(QCoreApplication::translate("MainWindow", "Create new room", nullptr));
+        joinRandomBtn->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "Jemmy", nullptr));
         pushButton_6->setText(QString());
         online_player_label->setText(QCoreApplication::translate("MainWindow", "Online Player", nullptr));
-        createNewRoomBtn->setText(QCoreApplication::translate("MainWindow", "Create new room", nullptr));
-        joinRandomBtn->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
+        createNewRoomBtn1->setText(QCoreApplication::translate("MainWindow", "Create new room", nullptr));
+        joinRandomBtn1->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "Start Game", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Ready!!!", nullptr));
         cancelBtn->setText(QCoreApplication::translate("MainWindow", "Cancel", nullptr));

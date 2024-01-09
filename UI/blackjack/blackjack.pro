@@ -11,12 +11,14 @@ CONFIG += c++17
 
 SOURCES += \
     card.cpp \
+    gamecontroller.cpp \
     inviteplayerdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     onlineplayer.cpp \
     message.cpp \
     player.cpp \
+    playerinfo.cpp \
     playwindow.cpp \
     quitdialog.cpp \
     roomitemwidget.cpp \
@@ -25,10 +27,12 @@ SOURCES += \
 
 HEADERS += \
     card.h \
+    gamecontroller.h \
     inviteplayerdialog.h \
     mainwindow.h \
     onlineplayer.h \
     player.h \
+    playerinfo.h \
     playwindow.h \
     quitdialog.h \
     roomitemwidget.h \

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDebug>
 #include "mainwindow.h"
+#include "socketmanager.h"
 
 namespace Ui {
 class PlayWindow;
@@ -30,10 +31,14 @@ private slots:
 
     void back_to_home_screen();
 
+    // read flag from server
+    void on_readFlag();
+
 private:
     Ui::PlayWindow *ui;
     bool isInvitePopupShown;
     bool isQuitPopupShown;
+    SocketManager *socketManager;
     // MainWindow *mainWindow;
 };
 

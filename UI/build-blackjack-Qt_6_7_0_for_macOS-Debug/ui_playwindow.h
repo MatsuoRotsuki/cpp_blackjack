@@ -53,8 +53,6 @@ public:
     QFormLayout *formLayout_3;
     player *widget_5;
     QFormLayout *formLayout_6;
-    player *widget_4;
-    QFormLayout *formLayout_4;
     QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer_11;
@@ -63,10 +61,10 @@ public:
     QHBoxLayout *horizontalLayout_15;
     QSpacerItem *horizontalSpacer_9;
     QHBoxLayout *horizontalLayout_16;
-    QPushButton *pushButton_33;
-    QPushButton *pushButton_34;
-    QPushButton *pushButton_35;
-    QPushButton *pushButton_36;
+    QPushButton *coin_10;
+    QPushButton *coin_25;
+    QPushButton *coin_50;
+    QPushButton *coin_100;
     QSpacerItem *horizontalSpacer_10;
     QHBoxLayout *horizontalLayout_17;
     QPushButton *cashout_btn;
@@ -81,7 +79,7 @@ public:
     {
         if (PlayWindow->objectName().isEmpty())
             PlayWindow->setObjectName("PlayWindow");
-        PlayWindow->resize(1020, 686);
+        PlayWindow->resize(1045, 686);
         frame_2 = new QFrame(PlayWindow);
         frame_2->setObjectName("frame_2");
         frame_2->setGeometry(QRect(400, 0, 251, 51));
@@ -224,7 +222,7 @@ public:
 
         layoutWidget2 = new QWidget(PlayWindow);
         layoutWidget2->setObjectName("layoutWidget2");
-        layoutWidget2->setGeometry(QRect(50, 291, 956, 271));
+        layoutWidget2->setGeometry(QRect(5, 291, 1061, 271));
         listPlayer = new QHBoxLayout(layoutWidget2);
         listPlayer->setSpacing(0);
         listPlayer->setObjectName("listPlayer");
@@ -262,17 +260,6 @@ public:
 
         listPlayer->addWidget(widget_5);
 
-        widget_4 = new player(layoutWidget2);
-        widget_4->setObjectName("widget_4");
-        formLayout_4 = new QFormLayout(widget_4);
-        formLayout_4->setObjectName("formLayout_4");
-        formLayout_4->setSizeConstraint(QLayout::SetDefaultConstraint);
-        formLayout_4->setLabelAlignment(Qt::AlignCenter);
-        formLayout_4->setVerticalSpacing(10);
-        formLayout_4->setContentsMargins(0, 0, 0, 0);
-
-        listPlayer->addWidget(widget_4);
-
         layoutWidget3 = new QWidget(PlayWindow);
         layoutWidget3->setObjectName("layoutWidget3");
         layoutWidget3->setGeometry(QRect(270, 580, 557, 104));
@@ -298,28 +285,49 @@ public:
 
         horizontalLayout_16 = new QHBoxLayout();
         horizontalLayout_16->setObjectName("horizontalLayout_16");
-        pushButton_33 = new QPushButton(frame_5);
-        pushButton_33->setObjectName("pushButton_33");
-        pushButton_33->setMinimumSize(QSize(0, 0));
-        pushButton_33->setSizeIncrement(QSize(30, 30));
-        pushButton_33->setBaseSize(QSize(30, 30));
+        coin_10 = new QPushButton(frame_5);
+        coin_10->setObjectName("coin_10");
+        coin_10->setMinimumSize(QSize(25, 0));
+        coin_10->setSizeIncrement(QSize(30, 30));
+        coin_10->setBaseSize(QSize(30, 30));
+        QFont font;
+        font.setBold(true);
+        coin_10->setFont(font);
+        coin_10->setCursor(QCursor(Qt::PointingHandCursor));
+        coin_10->setStyleSheet(QString::fromUtf8("border-radius: 5px;\n"
+"background-color: rgb(228, 192, 0);"));
 
-        horizontalLayout_16->addWidget(pushButton_33);
+        horizontalLayout_16->addWidget(coin_10);
 
-        pushButton_34 = new QPushButton(frame_5);
-        pushButton_34->setObjectName("pushButton_34");
+        coin_25 = new QPushButton(frame_5);
+        coin_25->setObjectName("coin_25");
+        coin_25->setMinimumSize(QSize(25, 0));
+        coin_25->setFont(font);
+        coin_25->setCursor(QCursor(Qt::PointingHandCursor));
+        coin_25->setStyleSheet(QString::fromUtf8("border-radius: 5px;\n"
+"background-color: rgb(0, 194, 8);"));
 
-        horizontalLayout_16->addWidget(pushButton_34);
+        horizontalLayout_16->addWidget(coin_25);
 
-        pushButton_35 = new QPushButton(frame_5);
-        pushButton_35->setObjectName("pushButton_35");
+        coin_50 = new QPushButton(frame_5);
+        coin_50->setObjectName("coin_50");
+        coin_50->setMinimumSize(QSize(25, 0));
+        coin_50->setFont(font);
+        coin_50->setCursor(QCursor(Qt::PointingHandCursor));
+        coin_50->setStyleSheet(QString::fromUtf8("border-radius:5px;\n"
+"background-color: rgb(0, 113, 177);"));
 
-        horizontalLayout_16->addWidget(pushButton_35);
+        horizontalLayout_16->addWidget(coin_50);
 
-        pushButton_36 = new QPushButton(frame_5);
-        pushButton_36->setObjectName("pushButton_36");
+        coin_100 = new QPushButton(frame_5);
+        coin_100->setObjectName("coin_100");
+        coin_100->setMinimumSize(QSize(25, 0));
+        coin_100->setFont(font);
+        coin_100->setCursor(QCursor(Qt::PointingHandCursor));
+        coin_100->setStyleSheet(QString::fromUtf8("border-radius: 5px;\n"
+"background-color: rgb(204, 19, 196);"));
 
-        horizontalLayout_16->addWidget(pushButton_36);
+        horizontalLayout_16->addWidget(coin_100);
 
 
         horizontalLayout_15->addLayout(horizontalLayout_16);
@@ -376,10 +384,10 @@ public:
         Notification = new QLabel(PlayWindow);
         Notification->setObjectName("Notification");
         Notification->setGeometry(QRect(357, 195, 331, 61));
-        QFont font;
-        font.setPointSize(18);
-        font.setBold(true);
-        Notification->setFont(font);
+        QFont font1;
+        font1.setPointSize(18);
+        font1.setBold(true);
+        Notification->setFont(font1);
         Notification->setAlignment(Qt::AlignCenter);
 
         retranslateUi(PlayWindow);
@@ -399,10 +407,10 @@ public:
         label_75->setText(QString());
         quitBtn->setText(QCoreApplication::translate("PlayWindow", "Quit", nullptr));
         inviteBtn->setText(QCoreApplication::translate("PlayWindow", "Invite", nullptr));
-        pushButton_33->setText(QCoreApplication::translate("PlayWindow", "10", nullptr));
-        pushButton_34->setText(QCoreApplication::translate("PlayWindow", "25", nullptr));
-        pushButton_35->setText(QCoreApplication::translate("PlayWindow", "50", nullptr));
-        pushButton_36->setText(QCoreApplication::translate("PlayWindow", "100", nullptr));
+        coin_10->setText(QCoreApplication::translate("PlayWindow", "10", nullptr));
+        coin_25->setText(QCoreApplication::translate("PlayWindow", "25", nullptr));
+        coin_50->setText(QCoreApplication::translate("PlayWindow", "50", nullptr));
+        coin_100->setText(QCoreApplication::translate("PlayWindow", "100", nullptr));
         cashout_btn->setText(QCoreApplication::translate("PlayWindow", "CASH OUT", nullptr));
         bet_btn->setText(QCoreApplication::translate("PlayWindow", "BET", nullptr));
         credits->setText(QCoreApplication::translate("PlayWindow", "CREDITS: 100", nullptr));

@@ -5,14 +5,19 @@
 #include "quitdialog.h"
 #include "inviteplayerdialog.h"
 #include "screencontroller.h"
+#include "message.h"
+#include "socketmanager.h"
+#include <QTcpSocket>
+#include <QListWidgetItem>
 
 PlayWindow::PlayWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PlayWindow)
+    , socketManager(SocketManager::GetInstance())
 {
     ui->setupUi(this);
     // this->mainWindow = mainWindow;
-
+    connect(socketManager->socket(), &QTcpSocket::readyRead, this, &PlayWindow::on_readFlag);
 }
 
 PlayWindow::~PlayWindow()
@@ -130,5 +135,60 @@ void PlayWindow::back_to_home_screen()
     ScreenController::instance().switchToScreen(0);
 }
 
+void PlayWindow::on_readFlag(){
+    // player *currentPlayer = ui->listPlayer->itemAt(2);
+
+    QByteArray data = socketManager->socket()->read(sizeof(Message));
+    const Message* msgPtr = reinterpret_cast<const Message*>(data.constData());
+    Message msg;
+    memcpy(&msg, msgPtr, sizeof(Message));
+
+    qDebug() << QString::fromStdString(MessageTypeToString(msg.type));
+    switch(msg.type)
+    {
+    case MessageType::SRV_INVALID_REQUEST:
+        break;
+    case MessageType::SRV_LOGIN_RES:
+        break;
+    case MessageType::SRV_SIGNUP_RES:
+        break;
+    case MessageType::SRV_VIEWONLINE_RES:
+        break;
+    case MessageType::SRV_DISCONNECT:
+        break;
+    case MessageType::SRV_ROOMLIST_RES:
+        break;
+    case MessageType::SRV_ADDTOROOM:
+        break;
+    case MessageType::SRV_START_ROUND:
+        break;
+    case MessageType::SRV_BET_REQUEST:
+        break;
+    case MessageType::SRV_PLAYER_BET:
+       // QListWidgetItem *item = ui->listPlayer->item(2);
+
+
+       //  ui->listPlayer->addWidget(newPlayer);
+        ui->bet_btn->setDisabled(true);
+        break;
+    case MessageType::SRV_GAME_STATE:
+        for(int i = 0; i<=3;i++){
+            player *player = ui->listPlayer->itemAt(i)->widget();
+        }
+        break;
+    case MessageType::SRV_ACTION_REQUEST:
+        break;
+    case MessageType::SRV_OUTCOME:
+        break;
+    case MessageType::SRV_READY_REQUEST:
+        break;
+    case MessageType::SRV_INVITE:
+        break;
+    case MessageType::SRV_INVITE_OUTCOME:
+        break;
+    default:
+        qDebug() << "INVALID";
+    }
+}
 
 
