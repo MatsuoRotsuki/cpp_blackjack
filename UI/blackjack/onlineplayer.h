@@ -14,6 +14,8 @@ class OnlinePlayer : public QWidget
 public:
     explicit OnlinePlayer(QWidget *parent = nullptr);
     ~OnlinePlayer();
+    void setUsername(QString username);
+    void setStatusLabel(QString status);
 
 private:
     Ui::OnlinePlayer *ui;

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>116</width>
+    <width>122</width>
     <height>78</height>
    </rect>
   </property>
@@ -27,8 +27,15 @@
      </property>
      <property name="font">
       <font>
+       <pointsize>16</pointsize>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;</string>
      </property>
      <property name="text">
       <string>Online players</string>
@@ -39,42 +46,10 @@
     </widget>
    </item>
    <item>
-    <widget class="QWidget" name="list_player" native="true">
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="sizeConstraint">
-       <enum>QLayout::SetFixedSize</enum>
-      </property>
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="OnlinePlayer" name="widget_2" native="true"/>
-      </item>
-      <item>
-       <widget class="OnlinePlayer" name="widget_3" native="true"/>
-      </item>
-     </layout>
-    </widget>
+    <layout class="QVBoxLayout" name="readyList"/>
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>OnlinePlayer</class>
-   <extends>QWidget</extends>
-   <header>onlineplayer.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

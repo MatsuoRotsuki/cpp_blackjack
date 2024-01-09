@@ -1,10 +1,11 @@
 #ifndef SCREENCONTROLLER_H
 #define SCREENCONTROLLER_H
-#include <QObject>
-#include <QTcpSocket>
-#include <QDebug>
 
-class QStackedWidget;
+#include <QObject>
+#include <QStackedWidget>
+#include <QDebug>
+#include <QVBoxLayout>
+#include "message.h"
 
 class ScreenController : public QObject
 {
@@ -15,6 +16,14 @@ public:
     void setStackedWidget(QStackedWidget* stackedWidget_main);
     int getStackedWidgetIndex();
     QStackedWidget* getStackedWidget() const;
+    QVBoxLayout* m_readyList;
+    void UpdateReadyList(Message message);
+    void UpdateRoomList(Message message);
+    void UpdateGameState(Message message);
+    void StartRound(Message message);
+    void BetRequest(Message message);
+    void PlayerBet(Message message);
+    void ActionRequest(Message message);
 
 signals:
     // Thêm các signals dùng để điều hướng giữa các màn hình
@@ -27,7 +36,7 @@ public slots:
 
 private:
     explicit ScreenController(QObject *parent = nullptr);
-
+    ~ScreenController();
     QStackedWidget* m_stackedWidget;
     Q_DISABLE_COPY(ScreenController)
     // static ScreenController* instance;

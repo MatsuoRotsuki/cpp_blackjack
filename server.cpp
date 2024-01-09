@@ -71,9 +71,12 @@ int main(int argc, char const *argv[])
         std::cout << "New connection accepted from " << clientIP << ":" << ntohs(client_addr.sin_port) << std::endl;
 
         // Create thread args, initialize client thread
-        std::thread newThread(HandleClient, client_socket, ++seed);
-        std::lock_guard<std::mutex> guard(clients_mtx);
-        clients.push_back({client_socket, seed, (move(newThread)), State::UNLOGGED_IN});
+        int currentClientId = ClientManager::instance().GetNextId();
+        std::thread newThread(HandleClient, client_socket, currentClientId);
+        
+        // Create new client context
+        ClientContext *client = new ClientContext(client_socket, currentClientId, (move(newThread)), new StateUnloggedIn);
+        ClientManager::instance().AddClient(client);
     }
 
     // Wait for client threads to finish, join all client threads
@@ -100,13 +103,12 @@ int main(int argc, char const *argv[])
 
 void HandleClient(int client_socket, int id)
 {
-    // Thread detach
-
     Message msgBuff;
     ssize_t received_bytes;
 
     while (1)
     {
+        ClientContext* currentClient = ClientManager::instance().getClientById(id);
         // Check for exit flag
         if (exit_flag)
         {
@@ -118,9 +120,6 @@ void HandleClient(int client_socket, int id)
             // Send SRV_DISCONNECT
             send(client_socket, &disconnectMsg, sizeof(disconnectMsg), 0);
 
-            // End connection
-            EndConnection(id);
-
             // Exit client handler thread
             std::cout << "Client handler thread terminated.\n";
             return;
@@ -130,41 +129,78 @@ void HandleClient(int client_socket, int id)
         received_bytes = recv(client_socket, &msgBuff, sizeof(Message), MSG_DONTWAIT);
         if (received_bytes > 0)
         {
-            // Validate
 
             // Handle message
             switch (msgBuff.type)
             {
             case MessageType::CLT_DISCONNECT:
-                // End connection
-                EndConnection(id);
-                // Terminate thread
+                // Remove client
+                currentClient->state_->HandleDisconnect(msgBuff);
+                // End Connection
+                close(client_socket);
+                // Terminate 
                 std::cout << "Client handler thread " << id << " terminated.\n";
                 return;
 
             case MessageType::CLT_SIGNUP_REQ:
-                DispatchSignup(id, msgBuff);
+                currentClient->state_->HandleSignUpRequest(msgBuff);
                 break;
 
             case MessageType::CLT_LOGIN_REQ:
-                DispatchLogin(id, msgBuff);
+                currentClient->state_->HandleLoginRequest(msgBuff);
                 break;
 
-            case MessageType::CLT_VIEWONLINE_REQ:
-                DispatchViewOnline(id, msgBuff);
+            case MessageType::CLT_READYLIST_REQ:
+                currentClient->state_->HandleReadyListRequest(msgBuff);
                 break;
 
             case MessageType::CLT_ROOMLIST_REQ:
+                currentClient->state_->HandleRoomListRequest(msgBuff);
+                break;
+
+            case MessageType::CLT_JOIN_ROOM_REQ:
+                currentClient->state_->HandleJoinRoomRequest(msgBuff);
+                break;
+
+            case MessageType::CLT_CREATE_ROOM_REQ:
+                currentClient->state_->HandleCreateRoomRequest(msgBuff);
+                break;
+
+            case MessageType::CLT_PLAYER_BET:
+                break;
+
+            case MessageType::CLT_PLAYER_ACTION:
+                break;
+
+            case MessageType::CLT_PLAYER_READY:
+                break;
+
+            case MessageType::CLT_LEAVE_ROOM:
+                break;
+
+            case MessageType::CLT_INVITE:
+                break;
+
+            case MessageType::CLT_INVITE_REPLY:
                 break;
 
             default:
-                DispatchInvalid(client_socket, id);
+                //INVALID
+                Message responseMsg;
+                responseMsg.type = MessageType::SRV_INVALID_REQUEST;
+                strcpy(responseMsg.payload.invalidRequestData.message, "Bad request");
+
+                send(client_socket, &responseMsg, sizeof(Message), 0);
             }
         }
         else if (received_bytes == 0)
         {
-            // Close connection
-            EndConnection(id);
+            // Force close connection
+            // Logout and destroy client
+            currentClient->state_->HandleDisconnect(msgBuff);
+            close(client_socket);
+
+            // Terminate thread
             std::cout << "Client handler thread " << id << " terminated.\n";
             return;
         }
@@ -219,26 +255,6 @@ void setClientState(int id, State state)
         if (p_Client->id == id)
         {
             p_Client->state = state;
-            return;
-        }
-    }
-}
-
-void EndConnection(int id)
-{
-    std::cout << "[Client " << id << "] disconnected\n";
-    // Mutex guard
-    std::lock_guard<std::mutex> guard(clients_mtx);
-    for (std::vector<Client>::iterator p_Client = clients.begin(); p_Client != clients.end(); p_Client++)
-    {
-        if (p_Client->id == id)
-        {
-            // Remove client
-            p_Client->thread.detach();
-            clients.erase(p_Client);
-
-            // Close client socket
-            close(p_Client->socket);
             return;
         }
     }

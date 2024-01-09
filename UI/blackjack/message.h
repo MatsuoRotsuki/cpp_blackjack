@@ -12,8 +12,8 @@ enum class MessageType
     CLT_LOGIN_REQ, //OK
     SRV_SIGNUP_RES, //OK
     SRV_LOGIN_RES, //OK
-    CLT_VIEWONLINE_REQ, //OK
-    SRV_VIEWONLINE_RES, //OK
+    CLT_READYLIST_REQ, //OK
+    SRV_READYLIST_RES, //OK
     CLT_ROOMLIST_REQ, //OK
     SRV_ROOMLIST_RES, //OK
     CLT_JOIN_ROOM_REQ,
@@ -37,6 +37,57 @@ enum class MessageType
 };
 
 std::string MessageTypeToString(MessageType type);
+
+/*
+============================================================================
+Các cấu trúc được sử dụng chung
+============================================================================
+*/
+
+struct PlayerData {
+    int id;
+    char username[64];
+    char name[64];
+    int wins;
+    int loses;
+    int pushes;
+    int money;
+    int state;
+};
+
+struct RoomData {
+    int id;
+    int num_of_players;
+    int min_credits;
+};
+
+enum class Suit {
+    CLUB = 0,
+    DIAMOND,
+    HEART,
+    SPADE,
+};
+
+enum class Rank {
+    ACE = 1,
+    TWO,
+    THREE,
+    FOUR,
+    FIVE,
+    SIX,
+    SEVEN,
+    EIGHT,
+    NINE,
+    TEN,
+    JACK,
+    QUEEN,
+    KING
+};
+
+struct CardData {
+    Suit suit;
+    Rank rank;
+};
 
 /*
 ============================================================================
@@ -104,9 +155,15 @@ struct SignupRequestPayload
 */
 struct LoginResponsePayload
 {
-    char message[128];
-    uint8_t success;
-    // Set state
+    char message[64];
+    int success;
+    int id;
+    char username[64];
+    char name[64];
+    int wins;
+    int loses;
+    int pushes;
+    int money;
 };
 
 /**
@@ -117,7 +174,7 @@ struct LoginResponsePayload
 struct SignupResponsePayload
 {
     char message[128];
-    uint8_t success;
+    int success;
 };
 
 /**
@@ -127,8 +184,7 @@ struct SignupResponsePayload
  */
 struct ViewOnlineRequestPayload
 {
-    uint8_t limit;
-    uint8_t offset;
+    // Empty payload
 };
 
 /**
@@ -139,30 +195,31 @@ struct ViewOnlineRequestPayload
  */
 struct ViewOnlineResponsePayload
 {
-    uint8_t limit;
-    uint8_t offset;
-    // players
+    int success;
+    int num_of_players;
+    struct PlayerData players[10];
 };
 
 struct RoomListRequestPayload
 {
-    uint8_t limit;
-    uint8_t offset;
+    // Empty payload
 };
 
 struct RoomListResponsePayload
 {
-    uint8_t limit;
-    uint8_t offset;
-    // rooms
+    int success;
+    int num_of_rooms;
+    struct RoomData rooms[10];
+    int num_of_players;
+    struct PlayerData players[10];
 };
 
-struct JoinRoomRequest {
-
+struct JoinRoomRequestPayload {
+    int room_id;
 };
 
-struct CreateRoomRequest {
-
+struct CreateRoomRequestPayload {
+    // Empty payload
 };
 
 struct AddToRoomPayload {
@@ -186,6 +243,23 @@ struct PlayerBetPayload {
  */
 struct GameStatePayload
 {
+    int num_of_players;
+    struct Player {
+        char username[32];
+        char outcome[32];
+        int score;
+        int num_of_cards;
+        struct CardData cards[10];
+        int money;
+        int bet;
+        int current;
+    } players[4];
+    int canBet;
+    int canAction;
+    int dealer_num_of_cards;
+    struct CardData dealer_cards[10];
+    int dealer_score;
+    int start_round;
 };
 
 struct ActionRequestPayload {
@@ -242,7 +316,12 @@ typedef struct Message_
         struct SignupRequestPayload signupRequestData;
         struct LoginResponsePayload loginResponseData;
         struct SignupResponsePayload signupResponseData;
-        struct ViewOnlineRequestPayload clientViewOnlineData;
+        struct ViewOnlineRequestPayload readyListRequestData;
+        struct ViewOnlineResponsePayload readyListResponseData;
+        struct RoomListRequestPayload roomListRequestData;
+        struct RoomListResponsePayload roomListResponseData;
+        struct JoinRoomRequestPayload joinRoomRequestData;
+        struct CreateRoomRequestPayload createRoomRequestData;
     } payload;
 } Message;
 

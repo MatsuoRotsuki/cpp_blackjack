@@ -11,8 +11,8 @@ std::string MessageTypeToString(MessageType type)
         case MessageType::CLT_LOGIN_REQ: return "CLT_LOGIN_REQ";
         case MessageType::SRV_SIGNUP_RES: return "SRV_SIGNUP_RES";
         case MessageType::SRV_LOGIN_RES: return "SRV_LOGIN_RES";
-        case MessageType::CLT_VIEWONLINE_REQ: return "CLT_VIEWONLINE_REQ";
-        case MessageType::SRV_VIEWONLINE_RES: return "SRV_VIEWONLINE_RES";
+        case MessageType::CLT_READYLIST_REQ: return "CLT_READYLIST_REQ";
+        case MessageType::SRV_READYLIST_RES: return "SRV_READYLIST_RES";
         case MessageType::CLT_ROOMLIST_REQ: return "CLT_ROOMLIST_REQ";
         case MessageType::SRV_ROOMLIST_RES: return "SRV_ROOMLIST_RES";
         case MessageType::CLT_JOIN_ROOM_REQ: return "CLT_JOIN_ROOM_REQ";
