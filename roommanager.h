@@ -24,7 +24,7 @@ protected:
 public:
     RoomManager(RoomManager &other) = delete;
     void operator=(const RoomManager &) = delete;
-    static RoomManager *GetInstance();
+    static RoomManager *instance();
     void all();
     void create();
     void destroy();

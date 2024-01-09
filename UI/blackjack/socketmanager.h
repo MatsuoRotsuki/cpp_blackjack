@@ -9,8 +9,7 @@ class SocketManager : public QObject
 {
     Q_OBJECT
 public:
-    static SocketManager *GetInstance();
-    ~SocketManager();
+    static SocketManager& instance();
     QTcpSocket *socket() const;
 
 signals:
@@ -19,8 +18,9 @@ public slots:
 
 private:
     SocketManager(QObject *parent = nullptr);
-    static SocketManager *instance_;
+    ~SocketManager();
     QTcpSocket *socket_;
+    Q_DISABLE_COPY(SocketManager)
 };
 
 #endif // SOCKETMANAGER_H

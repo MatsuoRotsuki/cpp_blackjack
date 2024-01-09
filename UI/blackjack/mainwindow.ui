@@ -21,7 +21,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_main">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="main_screen">
        <layout class="QGridLayout" name="gridLayout">
@@ -364,7 +364,7 @@ border-radius: 10px;</string>
              <property name="currentIndex">
               <number>0</number>
              </property>
-             <widget class="QWidget" name="room">
+             <widget class="QWidget" name="room_2">
               <widget class="QWidget" name="layoutWidget_4">
                <property name="geometry">
                 <rect>
@@ -427,37 +427,6 @@ border-radius: 10px;</string>
                 </item>
                 <item row="2" column="0">
                  <widget class="RoomItemWidget" name="widget_9" native="true"/>
-                </item>
-               </layout>
-              </widget>
-              <widget class="QWidget" name="widget_13" native="true">
-               <property name="geometry">
-                <rect>
-                 <x>640</x>
-                 <y>0</y>
-                 <width>261</width>
-                 <height>421</height>
-                </rect>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_7">
-                <item>
-                 <widget class="QLabel" name="online_player_label">
-                  <property name="text">
-                   <string>Online Player</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="OnlinePlayer" name="widget_14" native="true"/>
-                </item>
-                <item>
-                 <widget class="OnlinePlayer" name="widget_17" native="true"/>
-                </item>
-                <item>
-                 <widget class="OnlinePlayer" name="widget_15" native="true"/>
-                </item>
-                <item>
-                 <widget class="OnlinePlayer" name="widget_16" native="true"/>
                 </item>
                </layout>
               </widget>
@@ -524,6 +493,17 @@ border-radius: 10px;</string>
                  </widget>
                 </item>
                </layout>
+              </widget>
+              <widget class="QWidget" name="verticalLayoutWidget">
+               <property name="geometry">
+                <rect>
+                 <x>620</x>
+                 <y>60</y>
+                 <width>191</width>
+                 <height>361</height>
+                </rect>
+               </property>
+               <layout class="QVBoxLayout" name="onlineList"/>
               </widget>
              </widget>
             </widget>
@@ -1015,6 +995,26 @@ color: white;</string>
           </layout>
          </item>
          <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <item>
+            <widget class="QLabel" name="signUpError">
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color:white;</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
             <spacer name="horizontalSpacer_12">
@@ -1276,6 +1276,15 @@ color: white;</string>
           <layout class="QHBoxLayout" name="horizontalLayout_6">
            <item>
             <widget class="QLabel" name="loginError">
+             <property name="font">
+              <font>
+               <family>Ubuntu Mono</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color:white;</string>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -1349,12 +1358,6 @@ color: white;</string>
    <class>PlayWindow</class>
    <extends>QWidget</extends>
    <header>playwindow.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>OnlinePlayer</class>
-   <extends>QWidget</extends>
-   <header>onlineplayer.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

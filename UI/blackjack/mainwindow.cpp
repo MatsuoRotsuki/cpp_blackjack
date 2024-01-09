@@ -3,11 +3,11 @@
 #include "ui_mainwindow.h"
 #include "playwindow.h"
 #include "screencontroller.h"
+#include "onlineplayer.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , socketManager(SocketManager::GetInstance())
 {
     ui->setupUi(this);
 
@@ -17,9 +17,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->homeBtn, &QPushButton::clicked, this, &MainWindow::on_homeBtn_clicked);
     connect(ui->roomBtn, &QPushButton::clicked, this, &MainWindow::on_roomBtn_clicked);
     connect(ui->inviteBtn, &QPushButton::clicked, this, &MainWindow::on_inviteBtn_clicked);
-    connect(socketManager->socket(), &QTcpSocket::readyRead, this, &MainWindow::on_readyRead);
-
-    socketManager->socket()->connectToHost("127.0.0.1", 5500);
+    connect(SocketManager::instance().socket(), &QTcpSocket::readyRead, this, &MainWindow::on_readyRead);
+    
+    SocketManager::instance().socket()->connectToHost("127.0.0.1", 5500);
 
     ui->stackedWidget_main->setCurrentIndex(4);
     // Hiển thị màn hình đầu tiên
@@ -29,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
-    delete socketManager;
 }
 
 // set action for sidebar button
@@ -123,10 +122,9 @@ void MainWindow::on_login_btn_clicked()
     // Send request message
     QByteArray byteArray;
     byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
-    socketManager->socket()->write(byteArray);
-
+    SocketManager::instance().socket()->write(byteArray);
     //switch to home screen
-    ScreenController::instance().switchToScreen(0);
+    ScreenController::instance().switchToScreen(2);
 }
 
 void MainWindow::on_joinRandomBtn_clicked()
@@ -136,7 +134,7 @@ void MainWindow::on_joinRandomBtn_clicked()
 
 void MainWindow::on_readyRead()
 {
-    QByteArray data = socketManager->socket()->read(sizeof(Message));
+    QByteArray data = SocketManager::instance().socket()->read(sizeof(Message));
     const Message* msgPtr = reinterpret_cast<const Message*>(data.constData());
     Message msg;
     memcpy(&msg, msgPtr, sizeof(Message));
@@ -147,26 +145,38 @@ void MainWindow::on_readyRead()
     case MessageType::SRV_INVALID_REQUEST:
         break;
     case MessageType::SRV_LOGIN_RES:
+        if (msg.payload.loginResponseData.success) {
+            ScreenController::instance().switchToScreen(2);
+        }
+        ui->loginError->setText(QString::fromStdString(std::string(msg.payload.loginResponseData.message)));
         break;
+
     case MessageType::SRV_SIGNUP_RES:
+        ui->signUpError->setText(QString::fromStdString(std::string(msg.payload.signupResponseData.message)));
         break;
-    case MessageType::SRV_VIEWONLINE_RES:
-        break;
-    case MessageType::SRV_DISCONNECT:
+        
+    case MessageType::SRV_READYLIST_RES:
+        ScreenController::instance().UpdateReadyList(msg);
         break;
     case MessageType::SRV_ROOMLIST_RES:
+        ScreenController::instance().UpdateRoomList(msg);
         break;
     case MessageType::SRV_ADDTOROOM:
         break;
     case MessageType::SRV_START_ROUND:
+        ScreenController::instance().StartRound(msg);
         break;
     case MessageType::SRV_BET_REQUEST:
+        ScreenController::instance().BetRequest(msg);
         break;
     case MessageType::SRV_PLAYER_BET:
+        ScreenController::instance().PlayerBet(msg);
         break;
     case MessageType::SRV_GAME_STATE:
+        ScreenController::instance().UpdateGameState(msg);
         break;
     case MessageType::SRV_ACTION_REQUEST:
+        ScreenController::instance().ActionRequest(msg);
         break;
     case MessageType::SRV_OUTCOME:
         break;
@@ -177,7 +187,7 @@ void MainWindow::on_readyRead()
     case MessageType::SRV_INVITE_OUTCOME:
         break;
     default:
-        qDebug() << "INVALID";
+        qDebug() << "INVALID SERVER RESPONSE";
     }
 }
 
@@ -206,6 +216,12 @@ void MainWindow::on_signup_btn_clicked()
     // Send request message
     QByteArray byteArray;
     byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
-    socketManager->socket()->write(byteArray);
+    SocketManager::instance().socket()->write(byteArray);
+}
+
+
+void MainWindow::on_createNewRoomBtn_clicked()
+{
+
 }
 

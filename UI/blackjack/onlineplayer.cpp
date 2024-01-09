@@ -8,12 +8,6 @@ OnlinePlayer::OnlinePlayer(QWidget *parent)
     ui->setupUi(this);
 
     int index = ScreenController::instance().getStackedWidgetIndex();
-
-    if (index == 1) {
-        ui->invitePlayBtn->setVisible(true);
-    } else {
-        ui->invitePlayBtn->setVisible(false);
-    }
 }
 
 OnlinePlayer::~OnlinePlayer()
@@ -21,3 +15,12 @@ OnlinePlayer::~OnlinePlayer()
     delete ui;
 }
 
+void OnlinePlayer::setUsername(QString username)
+{
+    ui->username->setText(username);
+}
+
+void OnlinePlayer::setStatusLabel(QString status)
+{
+    ui->statusLabel->setText(status);
+}

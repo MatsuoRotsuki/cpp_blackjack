@@ -72,6 +72,12 @@ void PlayWindow::on_inviteBtn_clicked()
         invitePlayerDialog->show();
         isInvitePopupShown = true;
 
+        Message msg;
+        msg.type = MessageType::CLT_READYLIST_REQ;
+        QByteArray byteArray;
+        byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+        SocketManager::instance().socket()->write(byteArray);
+
         // Connect the dialog's destroyed signal to a slot that will reset the flag when the dialog is closed
         // connect(invitePlayerDialog, &InvitePlayerDialog::destroyed, this, [&]() {
         //     isInvitePopupShown = false;

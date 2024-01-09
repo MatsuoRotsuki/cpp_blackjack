@@ -95,10 +95,16 @@ void HandleSendingThread(int client_socket)
             strcpy(requestMsg.payload.signupRequestData.name, "Loc Pham");
             break;
         case 3:
-            requestMsg.type = MessageType::CLT_VIEWONLINE_REQ;
-            requestMsg.payload.clientViewOnlineData.limit = 10;
-            requestMsg.payload.clientViewOnlineData.offset = 0;
+            requestMsg.type = MessageType::CLT_READYLIST_REQ;
             break;
+        case 4:
+            requestMsg.type = MessageType::CLT_ROOMLIST_REQ;
+
+        case 5:
+            requestMsg.type = MessageType::CLT_JOIN_ROOM_REQ;
+
+        case 6:
+            requestMsg.type = MessageType::CLT_CREATE_ROOM_REQ;
         }
 
         // Check exit flag
@@ -150,8 +156,10 @@ void HandleReceivingThread(int client_socket)
                 std::cout << "[Server] " << msgBuff.payload.loginResponseData.message << "\n";
                 break;
 
-            case MessageType::SRV_VIEWONLINE_RES:
-                // TODO
+            case MessageType::SRV_READYLIST_RES:
+                DispatchReadyList(msgBuff);
+                break;
+            case MessageType::SRV_ROOMLIST_RES:
                 break;
             }
         }

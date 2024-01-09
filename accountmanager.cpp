@@ -1,7 +1,6 @@
 #include "accountmanager.h"
 #include "md5.h"
 
-AccountManager *AccountManager::s_instance{nullptr};
 std::mutex AccountManager::mutex;
 int AccountManager::nextId;
 
@@ -45,13 +44,9 @@ AccountManager::~AccountManager()
     this->accounts.clear();
 }
 
-AccountManager *AccountManager::GetInstance()
+AccountManager& AccountManager::instance()
 {
-    std::lock_guard<std::mutex> lock(mutex);
-    if (s_instance == nullptr)
-    {
-        s_instance = new AccountManager();
-    }
+    static AccountManager s_instance;
     return s_instance;
 }
 
@@ -132,6 +127,9 @@ bool AccountManager::SignUp(const std::string &username, std::string &password, 
     Json::Value root;
     inputFile >> root;
     inputFile.close();
+
+    // Store new account into list
+    this->accounts.push_back(newAcc);
 
     // Store new account into json
     Json::Value newAccountJson;
@@ -219,11 +217,6 @@ void AccountManager::Save(Account *p_Account)
     }
 }
 
-void AccountManager::Destroy()
-{
-    delete s_instance;
-}
-
 void Account::setPassword(const std::string &pass)
 {
     password = pass;
@@ -236,7 +229,18 @@ std::string Account::getPassword() const
 
 void Account::save()
 {
-    AccountManager::GetInstance()->Save(this);
+    AccountManager::instance().Save(this);
+}
+
+void Account::printAccount()
+{
+    std::cout << "username: " << username << std::endl;
+    std::cout << "password: " << password << std::endl;
+    std::cout << "name: " << name << std::endl;
+    std::cout << "money: " << money << std::endl;
+    std::cout << "wins: " << wins << std::endl;
+    std::cout << "loses: " << loses << std::endl;
+    std::cout << "pushes: " << pushes << std::endl;
 }
 
 // void ThreadBar()
@@ -245,14 +249,14 @@ void Account::save()
 //     std::string username("antonylouis");
 //     std::string password("123456");
     
-//     if (AccountManager::GetInstance()->Login(username, password, temp)) {
+//     if (AccountManager::instance().Login(username, password, temp)) {
 //         std::cout << "Welcome " << temp->name << std::endl;
 //     } else {
 //         std::cout << "login failed" << std::endl;
 //     }
 
-//     temp->money = 0;
-//     temp->wins = 0;
+//     temp->money = 100;
+//     temp->wins = 1244;
 //     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 //     temp->save();
 // }
@@ -263,15 +267,15 @@ void Account::save()
 //     std::string username("anton");
 //     std::string password("anton");
     
-//     if (AccountManager::GetInstance()->Login(username, password, temp)) {
+//     if (AccountManager::instance().Login(username, password, temp)) {
 //         std::cout << "Welcome " << temp->name << std::endl;
 //     } else {
 //         std::cout << "login failed" << std::endl;
 //     }
 
-//     temp->money = 0;
-//     temp->loses = 0;
-//     temp->wins = 0;
+//     temp->money = 3232;
+//     temp->loses = 3453;
+//     temp->wins = ;
 //     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 //     temp->save();
 // }
@@ -282,7 +286,5 @@ void Account::save()
 //     std::thread t2(ThreadFoo);
 //     t1.join();
 //     t2.join();
-
-//     AccountManager::GetInstance()->Destroy();
 //     return 0;
 // }
