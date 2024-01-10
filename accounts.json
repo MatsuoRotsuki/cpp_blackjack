@@ -23,23 +23,23 @@
 		},
 		{
 			"id" : 3,
-			"loses" : 233,
-			"money" : 1003,
+			"loses" : 238,
+			"money" : 1043,
 			"name" : "Loc Pham",
 			"password" : "e10adc3949ba59abbe56e057f20f883e",
-			"pushes" : 100,
+			"pushes" : 105,
 			"username" : "antonylouis",
-			"wins" : 5355
+			"wins" : 5364
 		},
 		{
 			"id" : 4,
-			"loses" : 232,
-			"money" : 1000,
+			"loses" : 234,
+			"money" : 1080,
 			"name" : "anton",
 			"password" : "784742a66a3a0c271feced5b149ff8db",
-			"pushes" : 45,
+			"pushes" : 48,
 			"username" : "anton",
-			"wins" : 46
+			"wins" : 56
 		}
 	]
 }

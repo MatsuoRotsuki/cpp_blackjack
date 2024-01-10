@@ -21,3 +21,4 @@ void HandleReceivingThread(int client_socket);
 
 void DispatchDisconnect();
 void DispatchReadyList(Message message);
+void DispatchGameState(Message message);

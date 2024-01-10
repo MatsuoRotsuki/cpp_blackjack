@@ -71,7 +71,7 @@ ClientManager::ClientManager()
 }
 
 ClientContext::ClientContext(int socket, int id, std::thread &&thread, ClientState *state)
-    : socket_(socket), id_(id), thread_(std::move(thread)), state_(nullptr), account_(nullptr)
+    : socket_(socket), id_(id), thread_(std::move(thread)), state_(nullptr), account_(nullptr), turn_(-1)
 {
     this->SetState(state);
 }
@@ -194,6 +194,61 @@ void ClientState::HandleJoinRoomRequest(Message message)
     send(this->context_->socket_, &responseMsg, sizeof(Message), 0);
 }
 
+void ClientState::HandlePlayerBet(Message message)
+{
+    // Default behavior
+    Message responseMsg;
+    responseMsg.type = MessageType::SRV_INVALID_REQUEST;
+    strcpy(responseMsg.payload.invalidRequestData.message, "Bad request");
+
+    // Send
+    send(this->context_->socket_, &responseMsg, sizeof(Message), 0);
+}
+
+void ClientState::HandlePlayerAction(Message message)
+{
+    // Default behavior
+    Message responseMsg;
+    responseMsg.type = MessageType::SRV_INVALID_REQUEST;
+    strcpy(responseMsg.payload.invalidRequestData.message, "Bad request");
+
+    // Send
+    send(this->context_->socket_, &responseMsg, sizeof(Message), 0);
+}
+
+void ClientState::HandleLeaveRoom(Message message)
+{
+    // Default behavior
+    Message responseMsg;
+    responseMsg.type = MessageType::SRV_INVALID_REQUEST;
+    strcpy(responseMsg.payload.invalidRequestData.message, "Bad request");
+
+    // Send
+    send(this->context_->socket_, &responseMsg, sizeof(Message), 0);
+}
+
+void ClientState::HandleInvite(Message message)
+{
+    // Default behavior
+    Message responseMsg;
+    responseMsg.type = MessageType::SRV_INVALID_REQUEST;
+    strcpy(responseMsg.payload.invalidRequestData.message, "Bad request");
+
+    // Send
+    send(this->context_->socket_, &responseMsg, sizeof(Message), 0);
+}
+
+void ClientState::HandleInviteReply(Message message)
+{
+    // Default behavior
+    Message responseMsg;
+    responseMsg.type = MessageType::SRV_INVALID_REQUEST;
+    strcpy(responseMsg.payload.invalidRequestData.message, "Bad request");
+
+    // Send
+    send(this->context_->socket_, &responseMsg, sizeof(Message), 0);
+}
+
 void StateUnloggedIn::HandleSignUpRequest(Message message)
 {
     // Override behavior
@@ -302,6 +357,8 @@ void StateReady::HandleRoomListRequest(Message message)
     Message responseMsg;
     responseMsg.type = MessageType::SRV_ROOMLIST_RES;
 
+
+
     send(this->context_->socket_, &responseMsg, sizeof(responseMsg), 0);
 }
 
@@ -315,7 +372,7 @@ void StateReady::HandleReadyListRequest(Message message)
 
     // Get list of ready players
     std::list<ClientContext *> allLoggedClients = ClientManager::instance().GetLoggedClients();
-    
+    allLoggedClients.remove(this->context_);
     int index = 0;
     for (auto it = allLoggedClients.begin(); it != allLoggedClients.end(); it++)
     {
@@ -343,9 +400,55 @@ void StateReady::HandleReadyListRequest(Message message)
 void StateReady::HandleCreateRoomRequest(Message message)
 {
     std::cout << "[Client " << this->context_->id_ << "] sent CREATE_ROOM.\n";
+
+    //Create game context
+    GameContext *newGame = new GameContext();
+
+    newGame->AddClient(this->context_);
+
+    this->context_->SetState(new StatePlaying);
 }
 
 void StateReady::HandleJoinRoomRequest(Message message)
 {
     std::cout << "[Client " << this->context_->id_ << "] sent JOIN_ROOM.\n";
+
+    GameContext* game = RoomManager::instance().FindById(1);
+    
+    game->AddClient(this->context_);
+
+    this->context_->SetState(new StatePlaying);
+}
+
+void StateReady::HandleInviteReply(Message message)
+{
+    std::cout << "[Client " << this->context_->id_ << "] sent INVITE_REPLY.\n";
+}
+
+void StatePlaying::HandlePlayerBet(Message message)
+{
+    std::cout << "[Client " << this->context_->id_ << "] sent PLAYER_BET.\n";
+
+    GameContext *game = this->context_->game_;
+
+    game->state_->HandlePlayerBet(this->context_->turn_, message);
+}
+
+void StatePlaying::HandlePlayerAction(Message message)
+{
+    std::cout << "[Client " << this->context_->id_ << "] sent PLAYER_ACTION.\n";
+
+    GameContext *game = this->context_->game_;
+
+    game->state_->HandlePlayerAction(this->context_->turn_, message);
+}
+
+void StatePlaying::HandleLeaveRoom(Message message)
+{
+    std::cout << "[Client " << this->context_->id_ << "] sent LEAVE_ROOM.\n";
+}
+
+void StatePlaying::HandleInvite(Message message)
+{
+    std::cout << "[Client " << this->context_->id_ << "] sent INVITE.\n";
 }

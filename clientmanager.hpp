@@ -13,10 +13,13 @@
 #include <sys/socket.h>
 #include "accountmanager.h"
 #include "UI/blackjack/message.h"
+#include "roommanager.hpp"
 
 class ClientContext;
 
 class Account;
+
+class GameContext;
 
 class ClientState
 {
@@ -43,6 +46,11 @@ public:
     virtual void HandleReadyListRequest(Message message);
     virtual void HandleCreateRoomRequest(Message message);
     virtual void HandleJoinRoomRequest(Message message);
+    virtual void HandlePlayerBet(Message message);
+    virtual void HandlePlayerAction(Message message);
+    virtual void HandleLeaveRoom(Message message);
+    virtual void HandleInvite(Message message);
+    virtual void HandleInviteReply(Message message);
 };
 
 class ClientContext
@@ -56,6 +64,8 @@ public:
     std::thread thread_;
     ClientState *state_;
     Account *account_;
+    int turn_;
+    GameContext *game_;
 };
 
 class StateUnloggedIn : public ClientState
@@ -73,10 +83,15 @@ class StateReady : public ClientState
     void HandleReadyListRequest(Message message) override;
     void HandleCreateRoomRequest(Message message) override;
     void HandleJoinRoomRequest(Message message) override;
+    void HandleInviteReply(Message message);
 };
 
 class StatePlaying : public ClientState
 {
+    void HandlePlayerBet(Message message) override;
+    void HandlePlayerAction(Message message) override;
+    void HandleLeaveRoom(Message message) override;
+    void HandleInvite(Message message) override;
 };
 
 /**

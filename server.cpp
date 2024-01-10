@@ -167,21 +167,26 @@ void HandleClient(int client_socket, int id)
                 break;
 
             case MessageType::CLT_PLAYER_BET:
+                currentClient->state_->HandlePlayerBet(msgBuff);
                 break;
 
             case MessageType::CLT_PLAYER_ACTION:
+                currentClient->state_->HandlePlayerAction(msgBuff);
                 break;
 
             case MessageType::CLT_PLAYER_READY:
                 break;
 
             case MessageType::CLT_LEAVE_ROOM:
+                currentClient->state_->HandleLeaveRoom(msgBuff);
                 break;
 
             case MessageType::CLT_INVITE:
+                currentClient->state_->HandleInvite(msgBuff);
                 break;
 
             case MessageType::CLT_INVITE_REPLY:
+                currentClient->state_->HandleInviteReply(msgBuff);
                 break;
 
             default:

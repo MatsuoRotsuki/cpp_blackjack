@@ -1,10 +1,23 @@
 #include <iostream>
-#include "hand.h"
-#include "game.h"
+#include "blackjack.hpp"
 
 int main()
 {
-    Deck deck = Deck(2);
-    deck.shuffle();
-    std::cout << deck.toString();
+    Deck *deck = new Deck(1);
+    deck->Shuffle();
+    Deck *discard = new Deck();
+    Hand *hand = new Hand();
+    
+    hand->TakeCardFromDeck(deck);
+    hand->TakeCardFromDeck(deck);
+    hand->TakeCardFromDeck(deck);
+    std::cout << hand->ToString() << std::endl;
+
+    hand->DiscardHandToDeck(discard);
+    std::cout << hand->ToString() << std::endl;
+    std::cout << discard->ToString() << std::endl;
+
+    delete hand;
+    delete discard;
+    delete deck;
 }
