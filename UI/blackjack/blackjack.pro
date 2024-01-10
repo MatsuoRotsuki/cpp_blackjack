@@ -10,7 +10,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    card.cpp \
+    carditem.cpp \
     gamecontroller.cpp \
     inviteplayerdialog.cpp \
     main.cpp \
@@ -18,7 +18,6 @@ SOURCES += \
     onlineplayer.cpp \
     message.cpp \
     player.cpp \
-    playerinfo.cpp \
     playwindow.cpp \
     quitdialog.cpp \
     roomitemwidget.cpp \
@@ -26,13 +25,12 @@ SOURCES += \
     socketmanager.cpp
 
 HEADERS += \
-    card.h \
+    carditem.h \
     gamecontroller.h \
     inviteplayerdialog.h \
     mainwindow.h \
     onlineplayer.h \
     player.h \
-    playerinfo.h \
     playwindow.h \
     quitdialog.h \
     roomitemwidget.h \
@@ -41,7 +39,7 @@ HEADERS += \
     socketmanager.h
 
 FORMS += \
-    card.ui \
+    carditem.ui \
     inviteplayerdialog.ui \
     mainwindow.ui \
     onlineplayer.ui \

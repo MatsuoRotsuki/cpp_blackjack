@@ -35,17 +35,14 @@ public:
     QLabel *status;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer_13;
-    QHBoxLayout *list_card_5;
+    QHBoxLayout *list_card;
     QLabel *label_37;
-    QLabel *label_38;
-    QLabel *label_39;
-    QLabel *label_40;
-    QLabel *point;
+    QLabel *score;
     QSpacerItem *horizontalSpacer_5;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QVBoxLayout *userInfo;
-    QLabel *label;
+    QLabel *betting;
     QLabel *avatar;
     QLabel *username;
     QLabel *money;
@@ -109,9 +106,9 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_13);
 
-        list_card_5 = new QHBoxLayout();
-        list_card_5->setSpacing(1);
-        list_card_5->setObjectName("list_card_5");
+        list_card = new QHBoxLayout();
+        list_card->setSpacing(1);
+        list_card->setObjectName("list_card");
         label_37 = new QLabel(widget_2);
         label_37->setObjectName("label_37");
         label_37->setMinimumSize(QSize(0, 0));
@@ -121,54 +118,16 @@ public:
         label_37->setPixmap(QPixmap(QString::fromUtf8(":/resource/A_h.png")));
         label_37->setScaledContents(true);
 
-        list_card_5->addWidget(label_37);
+        list_card->addWidget(label_37);
 
-        label_38 = new QLabel(widget_2);
-        label_38->setObjectName("label_38");
-        label_38->setMinimumSize(QSize(0, 0));
-        label_38->setMaximumSize(QSize(50, 70));
-        label_38->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);\n"
-"border-width: 1px;"));
-        label_38->setPixmap(QPixmap(QString::fromUtf8(":/resource/A_h.png")));
-        label_38->setScaledContents(true);
+        score = new QLabel(widget_2);
+        score->setObjectName("score");
+        score->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
 
-        list_card_5->addWidget(label_38);
-
-        label_39 = new QLabel(widget_2);
-        label_39->setObjectName("label_39");
-        label_39->setMinimumSize(QSize(0, 0));
-        label_39->setMaximumSize(QSize(50, 70));
-        label_39->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);\n"
-"border-width: 1px;"));
-        label_39->setPixmap(QPixmap(QString::fromUtf8(":/resource/A_h.png")));
-        label_39->setScaledContents(true);
-
-        list_card_5->addWidget(label_39);
-
-        label_40 = new QLabel(widget_2);
-        label_40->setObjectName("label_40");
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(label_40->sizePolicy().hasHeightForWidth());
-        label_40->setSizePolicy(sizePolicy);
-        label_40->setMinimumSize(QSize(0, 0));
-        label_40->setMaximumSize(QSize(50, 70));
-        label_40->setStyleSheet(QString::fromUtf8("border-color: rgb(0, 0, 0);\n"
-"border-width: 1px;"));
-        label_40->setPixmap(QPixmap(QString::fromUtf8(":/resource/A_h.png")));
-        label_40->setScaledContents(true);
-
-        list_card_5->addWidget(label_40);
-
-        point = new QLabel(widget_2);
-        point->setObjectName("point");
-        point->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-
-        list_card_5->addWidget(point);
+        list_card->addWidget(score);
 
 
-        horizontalLayout_2->addLayout(list_card_5);
+        horizontalLayout_2->addLayout(list_card);
 
         horizontalSpacer_5 = new QSpacerItem(30, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
 
@@ -186,15 +145,15 @@ public:
         userInfo = new QVBoxLayout();
         userInfo->setSpacing(6);
         userInfo->setObjectName("userInfo");
-        label = new QLabel(widget_2);
-        label->setObjectName("label");
+        betting = new QLabel(widget_2);
+        betting->setObjectName("betting");
         QFont font1;
         font1.setBold(true);
-        label->setFont(font1);
-        label->setStyleSheet(QString::fromUtf8("color: rgb(255, 249, 100);"));
-        label->setAlignment(Qt::AlignCenter);
+        betting->setFont(font1);
+        betting->setStyleSheet(QString::fromUtf8("color: rgb(255, 249, 100);"));
+        betting->setAlignment(Qt::AlignCenter);
 
-        userInfo->addWidget(label);
+        userInfo->addWidget(betting);
 
         avatar = new QLabel(widget_2);
         avatar->setObjectName("avatar");
@@ -244,11 +203,8 @@ public:
         readyBtn->setText(QCoreApplication::translate("player", "Ready", nullptr));
         status->setText(QCoreApplication::translate("player", "Status", nullptr));
         label_37->setText(QString());
-        label_38->setText(QString());
-        label_39->setText(QString());
-        label_40->setText(QString());
-        point->setText(QCoreApplication::translate("player", "6", nullptr));
-        label->setText(QCoreApplication::translate("player", "5K", nullptr));
+        score->setText(QCoreApplication::translate("player", "6", nullptr));
+        betting->setText(QCoreApplication::translate("player", "5K", nullptr));
         avatar->setText(QString());
         username->setText(QCoreApplication::translate("player", "Username", nullptr));
         money->setText(QCoreApplication::translate("player", "65K", nullptr));

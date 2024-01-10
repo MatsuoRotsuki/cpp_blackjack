@@ -2,7 +2,7 @@
 #define PLAYER_H
 
 #include <QWidget>
-#include "card.h"
+#include "message.h"
 
 namespace Ui {
 class player;
@@ -22,9 +22,15 @@ public:
 
     void setCurrentMoney(const QString &currentMoney);
 
-    void setStatus(const QString &status);
+    void setStatus(const int status);
 
-    void setCard(const )
+    // void setCard(const Card *card);
+
+    void setScore(const int score);
+
+    void setBetting(const int bet);
+
+    void setCards(const CardData data[],int num_of_cards);
 
 private:
     Ui::player *ui;

@@ -24,7 +24,6 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "onlineplayer.h"
 #include "playwindow.h"
 #include "roomitemwidget.h"
 
@@ -69,7 +68,7 @@ public:
     QPushButton *pushButton_6;
     QSpacerItem *horizontalSpacer_9;
     QStackedWidget *stackedWidget1;
-    QWidget *room1;
+    QWidget *room_2;
     QWidget *layoutWidget_41;
     QGridLayout *gridLayout_21;
     RoomItemWidget *widget_51;
@@ -80,17 +79,12 @@ public:
     RoomItemWidget *widget_21;
     RoomItemWidget *widget_41;
     RoomItemWidget *widget_91;
-    QWidget *widget_13;
-    QVBoxLayout *verticalLayout_7;
-    QLabel *online_player_label;
-    OnlinePlayer *widget_14;
-    OnlinePlayer *widget_17;
-    OnlinePlayer *widget_15;
-    OnlinePlayer *widget_16;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_2;
     QPushButton *createNewRoomBtn1;
     QPushButton *joinRandomBtn1;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *onlineList;
     QWidget *ready_screen;
     QWidget *widget_10;
     QWidget *layoutWidget1;
@@ -127,6 +121,8 @@ public:
     QSpacerItem *horizontalSpacer_10;
     QPushButton *signup_btn;
     QSpacerItem *horizontalSpacer_11;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *signUpError;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_12;
     QPushButton *to_login_page_btn;
@@ -335,9 +331,9 @@ public:
 
         stackedWidget1 = new QStackedWidget(widget);
         stackedWidget1->setObjectName("stackedWidget1");
-        room1 = new QWidget();
-        room1->setObjectName("room1");
-        layoutWidget_41 = new QWidget(room1);
+        room_2 = new QWidget();
+        room_2->setObjectName("room_2");
+        layoutWidget_41 = new QWidget(room_2);
         layoutWidget_41->setObjectName("layoutWidget_41");
         layoutWidget_41->setGeometry(QRect(0, 60, 591, 361));
         gridLayout_21 = new QGridLayout(layoutWidget_41);
@@ -390,37 +386,7 @@ public:
 
         gridLayout_21->addWidget(widget_91, 2, 0, 1, 1);
 
-        widget_13 = new QWidget(room1);
-        widget_13->setObjectName("widget_13");
-        widget_13->setGeometry(QRect(640, 0, 261, 421));
-        verticalLayout_7 = new QVBoxLayout(widget_13);
-        verticalLayout_7->setObjectName("verticalLayout_7");
-        online_player_label = new QLabel(widget_13);
-        online_player_label->setObjectName("online_player_label");
-
-        verticalLayout_7->addWidget(online_player_label);
-
-        widget_14 = new OnlinePlayer(widget_13);
-        widget_14->setObjectName("widget_14");
-
-        verticalLayout_7->addWidget(widget_14);
-
-        widget_17 = new OnlinePlayer(widget_13);
-        widget_17->setObjectName("widget_17");
-
-        verticalLayout_7->addWidget(widget_17);
-
-        widget_15 = new OnlinePlayer(widget_13);
-        widget_15->setObjectName("widget_15");
-
-        verticalLayout_7->addWidget(widget_15);
-
-        widget_16 = new OnlinePlayer(widget_13);
-        widget_16->setObjectName("widget_16");
-
-        verticalLayout_7->addWidget(widget_16);
-
-        layoutWidget = new QWidget(room1);
+        layoutWidget = new QWidget(room_2);
         layoutWidget->setObjectName("layoutWidget");
         layoutWidget->setGeometry(QRect(10, 10, 416, 32));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget);
@@ -446,7 +412,13 @@ public:
 
         horizontalLayout_2->addWidget(joinRandomBtn1);
 
-        stackedWidget1->addWidget(room1);
+        verticalLayoutWidget = new QWidget(room_2);
+        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
+        verticalLayoutWidget->setGeometry(QRect(620, 60, 191, 361));
+        onlineList = new QVBoxLayout(verticalLayoutWidget);
+        onlineList->setObjectName("onlineList");
+        onlineList->setContentsMargins(0, 0, 0, 0);
+        stackedWidget1->addWidget(room_2);
 
         gridLayout_3->addWidget(stackedWidget1, 1, 0, 1, 1);
 
@@ -682,6 +654,18 @@ public:
 
         verticalLayout_4->addLayout(horizontalLayout_10);
 
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName("horizontalLayout_11");
+        signUpError = new QLabel(widget_11);
+        signUpError->setObjectName("signUpError");
+        signUpError->setFont(font4);
+        signUpError->setStyleSheet(QString::fromUtf8("color:white;"));
+
+        horizontalLayout_11->addWidget(signUpError);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_11);
+
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName("horizontalLayout_4");
         horizontalSpacer_12 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
@@ -804,6 +788,8 @@ public:
         horizontalLayout_6->setObjectName("horizontalLayout_6");
         loginError = new QLabel(widget_12);
         loginError->setObjectName("loginError");
+        loginError->setFont(font4);
+        loginError->setStyleSheet(QString::fromUtf8("color:white;"));
 
         horizontalLayout_6->addWidget(loginError);
 
@@ -842,7 +828,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget_main->setCurrentIndex(0);
+        stackedWidget_main->setCurrentIndex(2);
         stackedWidget->setCurrentIndex(0);
         stackedWidget1->setCurrentIndex(0);
 
@@ -861,7 +847,6 @@ public:
         joinRandomBtn->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "Jemmy", nullptr));
         pushButton_6->setText(QString());
-        online_player_label->setText(QCoreApplication::translate("MainWindow", "Online Player", nullptr));
         createNewRoomBtn1->setText(QCoreApplication::translate("MainWindow", "Create new room", nullptr));
         joinRandomBtn1->setText(QCoreApplication::translate("MainWindow", "Join random", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "Start Game", nullptr));
@@ -874,6 +859,7 @@ public:
         label_8->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         label_12->setText(QCoreApplication::translate("MainWindow", "Confirm password", nullptr));
         signup_btn->setText(QCoreApplication::translate("MainWindow", "Sign up", nullptr));
+        signUpError->setText(QString());
         to_login_page_btn->setText(QCoreApplication::translate("MainWindow", "Log in", nullptr));
         label_14->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         label_18->setText(QCoreApplication::translate("MainWindow", "Username", nullptr));

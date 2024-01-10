@@ -13,11 +13,10 @@
 PlayWindow::PlayWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PlayWindow)
-    , socketManager(SocketManager::GetInstance())
 {
     ui->setupUi(this);
     // this->mainWindow = mainWindow;
-    connect(socketManager->socket(), &QTcpSocket::readyRead, this, &PlayWindow::on_readFlag);
+    connect(SocketManager::instance().socket(), &QTcpSocket::readyRead, this, &PlayWindow::on_readFlag);
 }
 
 PlayWindow::~PlayWindow()
@@ -158,7 +157,7 @@ void PlayWindow::on_readFlag(){
         break;
     case MessageType::SRV_SIGNUP_RES:
         break;
-    case MessageType::SRV_VIEWONLINE_RES:
+    case MessageType::SRV_READYLIST_RES:
         break;
     case MessageType::SRV_DISCONNECT:
         break;
@@ -167,20 +166,28 @@ void PlayWindow::on_readFlag(){
     case MessageType::SRV_ADDTOROOM:
         break;
     case MessageType::SRV_START_ROUND:
+        ui->Notification->setText("Start Round");
+        ui->cashout_btn->setDisabled(true);
+        ui->hit_btn->setDisabled(true);
+        ui->bet_btn->setDisabled(true);
+        ui->stand_btn->setDisabled(true);
         break;
     case MessageType::SRV_BET_REQUEST:
         break;
     case MessageType::SRV_PLAYER_BET:
-       // QListWidgetItem *item = ui->listPlayer->item(2);
-
-
-       //  ui->listPlayer->addWidget(newPlayer);
         ui->bet_btn->setDisabled(true);
+        for(int i = 0; i<=3;i++){
+            QWidget *item = ui->listPlayer->itemAt(i)->widget();
+            if (item) {
+                player *currentPlayer = dynamic_cast<player*>(item);
+                if( currentPlayer->getUsername().compare("Luong", Qt::CaseSensitive) == 0){
+                    currentPlayer->setBetting(msg.payload.gameStateData.players[i].bet);
+                }
+            }
+        }
         break;
     case MessageType::SRV_GAME_STATE:
-        for(int i = 0; i<=3;i++){
-            player *player = ui->listPlayer->itemAt(i)->widget();
-        }
+        update_game_state(msg);
         break;
     case MessageType::SRV_ACTION_REQUEST:
         break;
@@ -195,6 +202,30 @@ void PlayWindow::on_readFlag(){
     default:
         qDebug() << "INVALID";
     }
+}
+
+void PlayWindow::update_game_state(Message msg){
+    for(int i = 0; i< msg.payload.gameStateData.num_of_players;i++){
+        QWidget *item = ui->listPlayer->itemAt(i)->widget();
+        if (item) {
+            player *currentPlayer = dynamic_cast<player*>(item);
+            currentPlayer->setUsername(msg.payload.gameStateData.players[i].username);
+            currentPlayer->setCurrentMoney(QString::number(msg.payload.gameStateData.players[i].money));
+
+            // neu den luot cua minh ( current = 1) thi hien thi betting
+            currentPlayer->setStatus(msg.payload.gameStateData.players[i].current);
+            currentPlayer->setScore(msg.payload.gameStateData.players[i].score);
+            currentPlayer->setBetting(msg.payload.gameStateData.players[i].bet);
+            currentPlayer->setCards(msg.payload.gameStateData.players[i].cards, msg.payload.gameStateData.players[i].num_of_cards);
+        }
+    }
+
+    if(msg.payload.gameStateData.start_round == 1){
+        ui->Notification->setVisible(true);
+    }else{
+        ui->Notification->setVisible(false);
+    }
+    ui->dealerScore->setText(QString::number(msg.payload.gameStateData.dealer_score));
 }
 
 

@@ -5,6 +5,7 @@
 #include <QDebug>
 #include "mainwindow.h"
 #include "socketmanager.h"
+#include "message.h"
 
 namespace Ui {
 class PlayWindow;
@@ -33,6 +34,8 @@ private slots:
 
     // read flag from server
     void on_readFlag();
+
+    void update_game_state(Message msg);
 
 private:
     Ui::PlayWindow *ui;

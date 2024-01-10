@@ -281,6 +281,19 @@ border-width: 1px;</string>
        </layout>
       </item>
       <item>
+       <widget class="QLabel" name="dealerScore">
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>15</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <spacer name="horizontalSpacer_26">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>

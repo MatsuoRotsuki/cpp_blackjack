@@ -322,6 +322,7 @@ typedef struct Message_
         struct RoomListResponsePayload roomListResponseData;
         struct JoinRoomRequestPayload joinRoomRequestData;
         struct CreateRoomRequestPayload createRoomRequestData;
+        struct GameStatePayload gameStateData;
     } payload;
 } Message;
 

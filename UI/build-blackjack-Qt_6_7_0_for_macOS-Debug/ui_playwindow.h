@@ -40,6 +40,7 @@ public:
     QLabel *label_73;
     QLabel *label_74;
     QLabel *label_75;
+    QLabel *dealerScore;
     QSpacerItem *horizontalSpacer_26;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
@@ -190,6 +191,15 @@ public:
 
         horizontalLayout_24->addLayout(list_card_11);
 
+        dealerScore = new QLabel(layoutWidget);
+        dealerScore->setObjectName("dealerScore");
+        QFont font;
+        font.setPointSize(15);
+        font.setBold(true);
+        dealerScore->setFont(font);
+
+        horizontalLayout_24->addWidget(dealerScore);
+
         horizontalSpacer_26 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout_24->addItem(horizontalSpacer_26);
@@ -290,9 +300,9 @@ public:
         coin_10->setMinimumSize(QSize(25, 0));
         coin_10->setSizeIncrement(QSize(30, 30));
         coin_10->setBaseSize(QSize(30, 30));
-        QFont font;
-        font.setBold(true);
-        coin_10->setFont(font);
+        QFont font1;
+        font1.setBold(true);
+        coin_10->setFont(font1);
         coin_10->setCursor(QCursor(Qt::PointingHandCursor));
         coin_10->setStyleSheet(QString::fromUtf8("border-radius: 5px;\n"
 "background-color: rgb(228, 192, 0);"));
@@ -302,7 +312,7 @@ public:
         coin_25 = new QPushButton(frame_5);
         coin_25->setObjectName("coin_25");
         coin_25->setMinimumSize(QSize(25, 0));
-        coin_25->setFont(font);
+        coin_25->setFont(font1);
         coin_25->setCursor(QCursor(Qt::PointingHandCursor));
         coin_25->setStyleSheet(QString::fromUtf8("border-radius: 5px;\n"
 "background-color: rgb(0, 194, 8);"));
@@ -312,7 +322,7 @@ public:
         coin_50 = new QPushButton(frame_5);
         coin_50->setObjectName("coin_50");
         coin_50->setMinimumSize(QSize(25, 0));
-        coin_50->setFont(font);
+        coin_50->setFont(font1);
         coin_50->setCursor(QCursor(Qt::PointingHandCursor));
         coin_50->setStyleSheet(QString::fromUtf8("border-radius:5px;\n"
 "background-color: rgb(0, 113, 177);"));
@@ -322,7 +332,7 @@ public:
         coin_100 = new QPushButton(frame_5);
         coin_100->setObjectName("coin_100");
         coin_100->setMinimumSize(QSize(25, 0));
-        coin_100->setFont(font);
+        coin_100->setFont(font1);
         coin_100->setCursor(QCursor(Qt::PointingHandCursor));
         coin_100->setStyleSheet(QString::fromUtf8("border-radius: 5px;\n"
 "background-color: rgb(204, 19, 196);"));
@@ -384,10 +394,10 @@ public:
         Notification = new QLabel(PlayWindow);
         Notification->setObjectName("Notification");
         Notification->setGeometry(QRect(357, 195, 331, 61));
-        QFont font1;
-        font1.setPointSize(18);
-        font1.setBold(true);
-        Notification->setFont(font1);
+        QFont font2;
+        font2.setPointSize(18);
+        font2.setBold(true);
+        Notification->setFont(font2);
         Notification->setAlignment(Qt::AlignCenter);
 
         retranslateUi(PlayWindow);
@@ -405,6 +415,7 @@ public:
         label_73->setText(QString());
         label_74->setText(QString());
         label_75->setText(QString());
+        dealerScore->setText(QCoreApplication::translate("PlayWindow", "15", nullptr));
         quitBtn->setText(QCoreApplication::translate("PlayWindow", "Quit", nullptr));
         inviteBtn->setText(QCoreApplication::translate("PlayWindow", "Invite", nullptr));
         coin_10->setText(QCoreApplication::translate("PlayWindow", "10", nullptr));
