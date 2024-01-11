@@ -53,7 +53,6 @@ private slots:
 
     void on_signup_btn_clicked();
 
-
     void on_joinRandomBtn_clicked();
 
     void on_createNewRoomBtn_clicked();

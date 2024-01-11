@@ -127,10 +127,6 @@ void MainWindow::on_login_btn_clicked()
     ScreenController::instance().switchToScreen(2);
 }
 
-void MainWindow::on_joinRandomBtn_clicked()
-{
-    ScreenController::instance().switchToScreen(2);
-}
 
 void MainWindow::on_readyRead()
 {
@@ -223,5 +219,13 @@ void MainWindow::on_signup_btn_clicked()
 void MainWindow::on_createNewRoomBtn_clicked()
 {
 
+}
+
+
+
+
+void MainWindow::on_joinRandomBtn_clicked()
+{
+    qDebug() << "play game";
 }
 

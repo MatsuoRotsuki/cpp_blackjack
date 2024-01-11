@@ -33,7 +33,7 @@ public:
     {
         if (OnlinePlayer->objectName().isEmpty())
             OnlinePlayer->setObjectName("OnlinePlayer");
-        OnlinePlayer->resize(300, 74);
+        OnlinePlayer->resize(252, 74);
         OnlinePlayer->setMaximumSize(QSize(300, 300));
         horizontalLayout = new QHBoxLayout(OnlinePlayer);
         horizontalLayout->setObjectName("horizontalLayout");
@@ -51,6 +51,12 @@ public:
 
         username = new QLabel(OnlinePlayer);
         username->setObjectName("username");
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Ubuntu Mono")});
+        font.setPointSize(16);
+        font.setBold(true);
+        username->setFont(font);
+        username->setStyleSheet(QString::fromUtf8("color:white;"));
 
         horizontalLayout->addWidget(username);
 
@@ -60,6 +66,12 @@ public:
 
         statusLabel = new QLabel(OnlinePlayer);
         statusLabel->setObjectName("statusLabel");
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Umpush")});
+        font1.setPointSize(16);
+        font1.setBold(true);
+        statusLabel->setFont(font1);
+        statusLabel->setStyleSheet(QString::fromUtf8("color:white;"));
 
         horizontalLayout->addWidget(statusLabel);
 

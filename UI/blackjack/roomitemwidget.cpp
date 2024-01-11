@@ -15,6 +15,6 @@ RoomItemWidget::~RoomItemWidget()
 
 void RoomItemWidget::on_joinRoombtn_clicked()
 {
-    ScreenController::instance().switchToScreen(1);
+    ScreenController::instance().switchToScreen(2);
 }
 
