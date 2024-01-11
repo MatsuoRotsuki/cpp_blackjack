@@ -21,4 +21,5 @@ void HandleReceivingThread(int client_socket);
 
 void DispatchDisconnect();
 void DispatchReadyList(Message message);
+void DispatchRoomList(Message message);
 void DispatchGameState(Message message);

@@ -122,6 +122,14 @@ void HandleSendingThread(int client_socket)
         case 11:
             requestMsg.type = MessageType::CLT_INVITE_REPLY;
             break;
+        case 12:
+            requestMsg.type = MessageType::CLT_INVITE_REPLY;
+            break;
+        case 13:
+            requestMsg.type = MessageType::CLT_LOGIN_REQ;
+            strcpy(requestMsg.payload.loginRequestData.username, "antony");
+            strcpy(requestMsg.payload.loginRequestData.password, "anton");
+            break;
         }
 
         // Check exit flag
@@ -178,6 +186,7 @@ void HandleReceivingThread(int client_socket)
                 DispatchReadyList(msgBuff);
                 break;
             case MessageType::SRV_ROOMLIST_RES:
+                DispatchRoomList(msgBuff);
                 break;
             case MessageType::SRV_GAME_STATE:
                 DispatchGameState(msgBuff);

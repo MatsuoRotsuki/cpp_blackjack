@@ -33,15 +33,14 @@ private slots:
     void back_to_home_screen();
 
     // read flag from server
-    void on_readFlag();
+    // void on_readFlag();
 
-    void update_game_state(Message msg);
+    // void update_game_state(Message msg);
 
 private:
     Ui::PlayWindow *ui;
     bool isInvitePopupShown;
     bool isQuitPopupShown;
-    SocketManager *socketManager;
     // MainWindow *mainWindow;
 };
 

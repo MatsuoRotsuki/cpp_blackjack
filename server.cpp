@@ -235,32 +235,3 @@ int FindClientSocketById(int id)
     }
     return -1; // NOT FOUND
 }
-
-std::vector<Client> *getAllClients()
-{
-    return &clients;
-}
-
-State getClientState(int id)
-{
-    std::lock_guard<std::mutex> guard(clients_mtx);
-    for (std::vector<Client>::iterator p_Client = clients.begin(); p_Client != clients.end(); p_Client++)
-    {
-        if (p_Client->id == id)
-            return p_Client->state;
-    }
-    return State::UNKNOWN; // NOT FOUND
-}
-
-void setClientState(int id, State state)
-{
-    std::lock_guard<std::mutex> guard(clients_mtx);
-    for (std::vector<Client>::iterator p_Client = clients.begin(); p_Client != clients.end(); p_Client++)
-    {
-        if (p_Client->id == id)
-        {
-            p_Client->state = state;
-            return;
-        }
-    }
-}

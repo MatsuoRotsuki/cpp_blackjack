@@ -40,6 +40,15 @@
 			"pushes" : 48,
 			"username" : "anton",
 			"wins" : 56
+		},
+		{
+			"id" : 5,
+			"loses" : 0,
+			"money" : 1000,
+			"name" : "Loc",
+			"password" : "784742a66a3a0c271feced5b149ff8db",
+			"username" : "passwordanton",
+			"wins" : 0
 		}
 	]
 }

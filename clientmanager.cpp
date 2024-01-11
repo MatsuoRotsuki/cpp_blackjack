@@ -356,8 +356,46 @@ void StateReady::HandleRoomListRequest(Message message)
 
     Message responseMsg;
     responseMsg.type = MessageType::SRV_ROOMLIST_RES;
+    responseMsg.payload.roomListResponseData.success = true;
 
+    std::list<GameContext*> allRooms = RoomManager::instance().GetAllRooms();
+    std::list<ClientContext *> allLoggedClients = ClientManager::instance().GetLoggedClients();
+    allLoggedClients.remove(this->context_);
+    responseMsg.payload.roomListResponseData.num_of_rooms = allRooms.size();
+    responseMsg.payload.roomListResponseData.num_of_players = allLoggedClients.size();
+    int index = 0;
+    for (auto it = allRooms.begin(); it != allRooms.end(); it++)
+    {
+        GameContext *p_Game = *it;
+        RoomData room;
+        room.id = p_Game->id_;
+        room.num_of_players = p_Game->newPlayerTurnNumber;
+        responseMsg.payload.roomListResponseData.rooms[index] = room;
+        index++;
+    }
 
+    index = 0;
+    for (auto it = allLoggedClients.begin(); it != allLoggedClients.end(); it++)
+    {
+        ClientContext* p_Client = *it;
+        PlayerData playerData;
+        playerData.id = p_Client->account_->id;
+        strcpy(playerData.username, p_Client->account_->username.c_str());
+        strcpy(playerData.name, p_Client->account_->name.c_str());
+        playerData.money = p_Client->account_->money;
+        playerData.wins = p_Client->account_->wins;
+        playerData.loses = p_Client->account_->loses;
+        playerData.pushes = p_Client->account_->pushes;
+        if (StateReady* stateReadyPtr = dynamic_cast<StateReady*>(p_Client->state_))
+        {
+            playerData.state = State::READY;
+        } else if (StatePlaying* statePlayingPtr = dynamic_cast<StatePlaying*>(p_Client->state_))
+        {
+            playerData.state = State::PLAYING;
+        }
+        responseMsg.payload.roomListResponseData.players[index] = playerData;
+        index++;
+    }
 
     send(this->context_->socket_, &responseMsg, sizeof(responseMsg), 0);
 }
@@ -451,4 +489,8 @@ void StatePlaying::HandleLeaveRoom(Message message)
 void StatePlaying::HandleInvite(Message message)
 {
     std::cout << "[Client " << this->context_->id_ << "] sent INVITE.\n";
+
+    GameContext *game = this->context_->game_;
+
+    
 }

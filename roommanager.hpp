@@ -50,7 +50,6 @@ public:
     std::mutex mutex_;
     void CreateStateMsg();
     void AddClient(ClientContext *client);
-    void Bet(int index, int betMoney);
 };
 
 class StateBetting : public GameState {
@@ -72,6 +71,7 @@ public:
     int GetNextId();
     void AddRoom(GameContext *game);
     GameContext* FindById(int id);
+    std::list<GameContext*> GetAllRooms();
 
 private:
     explicit RoomManager() {}

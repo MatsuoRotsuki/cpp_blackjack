@@ -14,7 +14,6 @@
 #include <vector>
 #include <atomic>
 #include "UI/blackjack/message.h"
-#include "state.h"
 #include "accountmanager.h"
 #include "clientmanager.hpp"
 
@@ -34,7 +33,4 @@ struct Client
 void HandleInterrupt(int signal);
 void HandleClient(int client_socket, int id);
 int FindClientSocketById(int id);
-std::vector<Client> *getAllClients();
-State getClientState(int id);
-void setClientState(int id, State state);
 void DispatchViewOnline(int id, Message reqMsg);

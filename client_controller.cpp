@@ -21,6 +21,39 @@ void DispatchReadyList(Message message)
     }
 }
 
+void DispatchRoomList(Message message)
+{
+    struct RoomListResponsePayload payload = message.payload.roomListResponseData;
+    int num_of_players = payload.num_of_players;
+    int num_of_rooms = payload.num_of_rooms;
+    for (int i = 0; i < num_of_rooms; i++)
+    {
+        RoomData data = message.payload.roomListResponseData.rooms[i];
+        std::cout << "id: " << data.id << std::endl;
+        std::cout << "num_players: " << data.num_of_players << std::endl;
+        std::cout << std::endl;
+    }
+    for (int i = 0; i < num_of_players; i++)
+    {
+        PlayerData data = message.payload.roomListResponseData.players[i];
+        std::cout << "id: " << data.id << std::endl;
+        std::cout << "username: " << data.username << std::endl;
+        std::cout << "name: " << data.name << std::endl;
+        std::cout << "money: " << data.money << std::endl;
+        std::cout << "wins: " << data.wins << std::endl;
+        std::cout << "loses: " << data.loses << std::endl;
+        std::cout << "pushes: " << data.pushes << std::endl;
+        if (data.state == State::PLAYING)
+        {
+            std::cout << "state: Playing" << std::endl;
+        } else if (data.state == State::READY)
+        {
+            std::cout << "state: Ready" << std::endl;
+        }
+        std::cout << std::endl;
+    }
+}
+
 void DispatchGameState(Message message)
 {
     std::cout << "num_of_players: " << message.payload.gameStateData.num_of_players << std::endl;

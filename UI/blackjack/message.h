@@ -44,21 +44,9 @@ Các cấu trúc được sử dụng chung
 ============================================================================
 */
 
-struct PlayerData {
-    int id;
-    char username[64];
-    char name[64];
-    int wins;
-    int loses;
-    int pushes;
-    int money;
-    int state;
-};
-
 struct RoomData {
     int id;
     int num_of_players;
-    int min_credits;
 };
 
 enum class Suit {
@@ -92,6 +80,24 @@ struct CardData {
 enum class PlayerAction {
     HIT,
     STAND,
+};
+
+enum class State 
+{
+    UNLOGGED_IN,
+    READY,
+    PLAYING,
+};
+
+struct PlayerData {
+    int id;
+    char username[64];
+    char name[64];
+    int wins;
+    int loses;
+    int pushes;
+    int money;
+    State state;
 };
 
 /*

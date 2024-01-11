@@ -40,6 +40,12 @@ GameContext *RoomManager::FindById(int id)
     return nullptr;
 }
 
+std::list<GameContext *> RoomManager::GetAllRooms()
+{
+    std::lock_guard<std::mutex> guard(s_mutex);
+    return rooms;
+}
+
 GameContext::GameContext()
     : id_(RoomManager::instance().GetNextId()), deck_(new Deck(1)), discarded_(new Deck()), dealerHand(new Hand()), state_(nullptr), currentTurn(-1), newPlayerTurnNumber(0)
 {
@@ -116,6 +122,11 @@ void GameContext::AddClient(ClientContext *client)
     std::lock_guard<std::mutex> guard(mutex_);
     if (newPlayerTurnNumber >= 4)
     {
+        //Send error message
+        Message errorMsg;
+        errorMsg.type = MessageType::SRV_INVALID_REQUEST;
+        strcpy(errorMsg.payload.invalidRequestData.message, "This room is full");
+        send(client->socket_, &errorMsg, sizeof(errorMsg), 0);
         return;
     }
     client->game_ = this;
@@ -124,37 +135,6 @@ void GameContext::AddClient(ClientContext *client)
     playerHands[newPlayerTurnNumber] = new Hand();
     newPlayerTurnNumber++;
     CreateStateMsg();
-}
-
-void GameContext::Bet(int index, int betMoney)
-{
-    std::lock_guard<std::mutex> guard(mutex_);
-    bet[index] = betMoney;
-    for (int i = 0; i < newPlayerTurnNumber; i++)
-    {
-        if (bet[i] == 0)
-        {
-            return;
-        }
-    }
-    std::cout << "Start round" << std::endl;
-
-    if (deck_->CardsLeft() < 16)
-    {
-        deck_->Reload(discarded_);
-    }
-
-    dealerHand->TakeCardFromDeck(deck_);
-    dealerHand->TakeCardFromDeck(deck_);
-
-    for (int i = 0; i < newPlayerTurnNumber; i++)
-    {
-        playerHands[i]->TakeCardFromDeck(deck_);
-        playerHands[i]->TakeCardFromDeck(deck_);
-    }
-    CreateStateMsg();
-
-    SetState(new StatePlayerTurn);
 }
 
 void GameState::SetContext(GameContext *context)
