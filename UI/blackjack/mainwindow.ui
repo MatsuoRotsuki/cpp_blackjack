@@ -21,7 +21,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_main">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="main_screen">
        <layout class="QGridLayout" name="gridLayout">
@@ -307,7 +307,7 @@ border-radius: 10px;</string>
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="pushButton_6">
+              <widget class="QPushButton" name="logoutBtn">
                <property name="minimumSize">
                 <size>
                  <width>50</width>
@@ -324,7 +324,7 @@ border-radius: 10px;</string>
                 <bool>false</bool>
                </property>
                <property name="text">
-                <string/>
+                <string>Logout</string>
                </property>
                <property name="icon">
                 <iconset>

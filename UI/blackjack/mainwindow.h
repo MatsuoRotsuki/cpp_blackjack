@@ -57,10 +57,15 @@ private slots:
 
     void on_createNewRoomBtn_clicked();
 
+
+    void on_logoutBtn_clicked();
+
 public slots:
 
 private:
     Ui::MainWindow *ui;
     SocketManager *socketManager;
+    bool isLogoutPopupShown;
+
 };
 #endif // MAINWINDOW_H
