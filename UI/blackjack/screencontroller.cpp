@@ -1,6 +1,6 @@
 #include "screencontroller.h"
 #include "onlineplayer.h"
-
+#include "player.h"
 ScreenController::ScreenController(QObject *parent) 
     : QObject(parent)
     , m_stackedWidget(nullptr)
@@ -98,4 +98,44 @@ int ScreenController::getStackedWidgetIndex()
     }
 
 }
+
+//create new room
+void ScreenController::CreateRoom(Message message){
+    if (allPlayers) {
+        while(QLayoutItem *item = allPlayers->takeAt(0)) {
+            QWidget *widget = item->widget();
+            if (widget) {
+                allPlayers->removeWidget(widget);
+                delete widget;
+            }
+            delete item;
+        }
+
+        int num_of_players = message.payload.readyListResponseData.num_of_players;
+        for(int i = 0; i< num_of_players;i++){
+            player *item = new player();
+            // PlayerData playerData = message.payload.gameStateData.players[i];
+            // player *currentPlayer = dynamic_cast<player*>(item);
+            item->setUsername(QString::fromStdString(std::string(message.payload.gameStateData.players[i].username)));
+            item->setCurrentMoney(QString::number(message.payload.gameStateData.players[i].money));
+
+            // neu den luot cua minh ( current = 1) thi hien thi betting
+            // item->setStatus(message.payload.gameStateData.players[i].current);
+            item->setScore(message.payload.gameStateData.players[i].score);
+            item->setBetting(message.payload.gameStateData.players[i].bet);
+            item->setCards(message.payload.gameStateData.players[i].cards, message.payload.gameStateData.players[i].num_of_cards);
+            allPlayers->addWidget(item);
+        }
+    }
+
+
+}
+
+        //     // if(msg.payload.gameStateData.start_round == 1){
+        //     //     ui->Notification->setVisible(true);
+        //     // }else{
+        //     //     ui->Notification->setVisible(false);
+        //     // }
+        //     ui->dealerScore->setText(QString::number(msg.payload.gameStateData.dealer_score));
+
 

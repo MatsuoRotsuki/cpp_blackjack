@@ -52,12 +52,13 @@ void player::setBetting(const int bet){
 }
 
 void player::setCards(const CardData cards[], int num_of_cards){
-    // reset all list card;
-    // for(int i = 0; i< num_of_cards;i++){
+    //reset all list card;
+    for(int i = 0; i< num_of_cards;i++){
         CardItem *cardItem = new CardItem();
-        cardItem->setImage(cards[num_of_cards-1]);
+        cardItem->setImage(cards[i]);
         ui->list_card->addWidget(cardItem);
-    // }
+    }
+
 }
 
 // std::string MessageTypeToString(MessageType type)

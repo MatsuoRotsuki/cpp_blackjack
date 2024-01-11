@@ -17,9 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->homeBtn, &QPushButton::clicked, this, &MainWindow::on_homeBtn_clicked);
     connect(ui->roomBtn, &QPushButton::clicked, this, &MainWindow::on_roomBtn_clicked);
     connect(ui->inviteBtn, &QPushButton::clicked, this, &MainWindow::on_inviteBtn_clicked);
-    connect(SocketManager::instance().socket(), &QTcpSocket::readyRead, this, &MainWindow::on_readyRead);
-    
     SocketManager::instance().socket()->connectToHost("127.0.0.1", 5500);
+    connect(SocketManager::instance().socket(), &QTcpSocket::readyRead, this, &MainWindow::on_readyRead);
 
     ui->stackedWidget_main->setCurrentIndex(4);
     // Hiển thị màn hình đầu tiên
@@ -104,6 +103,7 @@ void MainWindow::on_to_signup_page_btn_clicked()
 
 void MainWindow::on_login_btn_clicked()
 {
+    qDebug()<<"login";
     // Get input data
     QString q_Username = ui->usernameLineEdit->text();
     QString q_Password = ui->passwordLineEdit->text();
@@ -118,13 +118,13 @@ void MainWindow::on_login_btn_clicked()
     msg.type = MessageType::CLT_LOGIN_REQ;
     strcpy(msg.payload.loginRequestData.username, username);
     strcpy(msg.payload.loginRequestData.password, password);
-
+    qDebug()<<username;
     // Send request message
     QByteArray byteArray;
     byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
     SocketManager::instance().socket()->write(byteArray);
     //switch to home screen
-    ScreenController::instance().switchToScreen(2);
+    // ScreenController::instance().switchToScreen(0);
 }
 
 
@@ -142,7 +142,7 @@ void MainWindow::on_readyRead()
         break;
     case MessageType::SRV_LOGIN_RES:
         if (msg.payload.loginResponseData.success) {
-            ScreenController::instance().switchToScreen(2);
+            ScreenController::instance().switchToScreen(0);
         }
         ui->loginError->setText(QString::fromStdString(std::string(msg.payload.loginResponseData.message)));
         break;
@@ -158,6 +158,8 @@ void MainWindow::on_readyRead()
         ScreenController::instance().UpdateRoomList(msg);
         break;
     case MessageType::SRV_ADDTOROOM:
+        ScreenController::instance().switchToScreen(2);
+        ScreenController::instance().CreateRoom(msg);
         break;
     case MessageType::SRV_START_ROUND:
         ScreenController::instance().StartRound(msg);
@@ -169,7 +171,8 @@ void MainWindow::on_readyRead()
         ScreenController::instance().PlayerBet(msg);
         break;
     case MessageType::SRV_GAME_STATE:
-        ScreenController::instance().UpdateGameState(msg);
+        ScreenController::instance().CreateRoom(msg);
+        // ScreenController::instance().UpdateGameState(msg);
         break;
     case MessageType::SRV_ACTION_REQUEST:
         ScreenController::instance().ActionRequest(msg);

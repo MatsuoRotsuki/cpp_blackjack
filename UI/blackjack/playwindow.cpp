@@ -17,6 +17,7 @@ PlayWindow::PlayWindow(QWidget *parent)
     ui->setupUi(this);
     // this->mainWindow = mainWindow;
     // connect(SocketManager::instance().socket(), &QTcpSocket::readyRead, this, &PlayWindow::on_readFlag);
+    ScreenController::instance().allPlayers = ui->listPlayer;
 }
 
 PlayWindow::~PlayWindow()

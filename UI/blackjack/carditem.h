@@ -16,7 +16,7 @@ public:
     void setImagePath(const QString &path);
 
     // Hàm để đặt ảnh từ QPixmap
-    void setImage(const CardData data);
+    void setImage(const CardData cardItem);
     // void setImage(const CardData data )
 
     explicit CardItem(QWidget *parent = nullptr);

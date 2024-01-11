@@ -49,6 +49,15 @@
 			"password" : "784742a66a3a0c271feced5b149ff8db",
 			"username" : "passwordanton",
 			"wins" : 0
+		},
+		{
+			"id" : 6,
+			"loses" : 0,
+			"money" : 1000,
+			"name" : "k",
+			"password" : "8ce4b16b22b58894aa86c421e8759df3",
+			"username" : "k",
+			"wins" : 0
 		}
 	]
 }

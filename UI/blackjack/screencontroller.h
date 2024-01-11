@@ -17,6 +17,7 @@ public:
     int getStackedWidgetIndex();
     QStackedWidget* getStackedWidget() const;
     QVBoxLayout* m_readyList;
+    QHBoxLayout* allPlayers;
     void UpdateReadyList(Message message);
     void UpdateRoomList(Message message);
     void UpdateGameState(Message message);
@@ -24,6 +25,7 @@ public:
     void BetRequest(Message message);
     void PlayerBet(Message message);
     void ActionRequest(Message message);
+    void CreateRoom(Message message);
 
 signals:
     // Thêm các signals dùng để điều hướng giữa các màn hình
