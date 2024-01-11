@@ -54,6 +54,17 @@ std::list<ClientContext *> ClientManager::GetLoggedClients()
     return result;
 }
 
+std::list<ClientContext *> ClientManager::GetAllClients()
+{
+    std::lock_guard<std::mutex> guard(s_mutex);
+    std::list<ClientContext *> result;
+    for (const auto &pair : this->clients)
+    {
+        ClientContext *p_Client = pair.second;
+    }
+    return result;
+}
+
 int ClientManager::GetNextId()
 {
     std::lock_guard<std::mutex> guard(s_mutex);
@@ -78,7 +89,6 @@ ClientContext::ClientContext(int socket, int id, std::thread &&thread, ClientSta
 
 ClientContext::~ClientContext()
 {
-    std::cout << "Client " << id_ << " destroyed" << std::endl;
     delete state_;
 }
 
@@ -374,12 +384,15 @@ void StateReady::HandleRoomListRequest(Message message)
         index++;
     }
 
+    std::cout << "room ok" << std::endl;
+
     index = 0;
     for (auto it = allLoggedClients.begin(); it != allLoggedClients.end(); it++)
     {
         ClientContext* p_Client = *it;
         PlayerData playerData;
         playerData.id = p_Client->account_->id;
+        playerData.client_id = p_Client->id_;
         strcpy(playerData.username, p_Client->account_->username.c_str());
         strcpy(playerData.name, p_Client->account_->name.c_str());
         playerData.money = p_Client->account_->money;
@@ -396,6 +409,8 @@ void StateReady::HandleRoomListRequest(Message message)
         responseMsg.payload.roomListResponseData.players[index] = playerData;
         index++;
     }
+
+    std::cout << "players ok" << std::endl;
 
     send(this->context_->socket_, &responseMsg, sizeof(responseMsg), 0);
 }
@@ -419,6 +434,7 @@ void StateReady::HandleReadyListRequest(Message message)
         if (StateReady* stateReadyPtr = dynamic_cast<StateReady*>(p_Client->state_)) {
             PlayerData playerData;
             playerData.id = p_Client->account_->id;
+            playerData.client_id = p_Client->id_;
             strcpy(playerData.username, p_Client->account_->username.c_str());
             strcpy(playerData.name, p_Client->account_->name.c_str());
             playerData.money = p_Client->account_->money;
@@ -451,7 +467,8 @@ void StateReady::HandleJoinRoomRequest(Message message)
 {
     std::cout << "[Client " << this->context_->id_ << "] sent JOIN_ROOM.\n";
 
-    GameContext* game = RoomManager::instance().FindById(1);
+    int room_id = message.payload.joinRoomRequestData.room_id;
+    GameContext* game = RoomManager::instance().FindById(room_id);
     
     game->AddClient(this->context_);
 
@@ -461,6 +478,20 @@ void StateReady::HandleJoinRoomRequest(Message message)
 void StateReady::HandleInviteReply(Message message)
 {
     std::cout << "[Client " << this->context_->id_ << "] sent INVITE_REPLY.\n";
+
+    struct InviteReplyPayload payload = message.payload.inviteReplyData;
+    if (payload.reply == InvitationReply::NO)
+    {
+        // Do nothing
+    } 
+    else if (payload.reply == InvitationReply::YES)
+    {
+        GameContext* game = RoomManager::instance().FindById(payload.room_id);
+
+        game->AddClient(this->context_);
+
+        this->context_->SetState(new StatePlaying);
+    }
 }
 
 void StatePlaying::HandlePlayerBet(Message message)
@@ -470,6 +501,42 @@ void StatePlaying::HandlePlayerBet(Message message)
     GameContext *game = this->context_->game_;
 
     game->state_->HandlePlayerBet(this->context_->turn_, message);
+}
+
+void StatePlaying::HandleReadyListRequest(Message message)
+{
+    std::cout << "[Client " << this->context_->id_ << "] sent READYLIST.\n";
+
+    // Create response message
+    Message responseMsg;
+    responseMsg.type = MessageType::SRV_READYLIST_RES;
+
+    // Get list of ready players
+    std::list<ClientContext *> allLoggedClients = ClientManager::instance().GetLoggedClients();
+    allLoggedClients.remove(this->context_);
+    int index = 0;
+    for (auto it = allLoggedClients.begin(); it != allLoggedClients.end(); it++)
+    {
+        ClientContext* p_Client = *it;
+        // If the client's state is ready, add struct
+        if (StateReady* stateReadyPtr = dynamic_cast<StateReady*>(p_Client->state_)) {
+            PlayerData playerData;
+            playerData.id = p_Client->account_->id;
+            playerData.client_id = p_Client->id_;
+            strcpy(playerData.username, p_Client->account_->username.c_str());
+            strcpy(playerData.name, p_Client->account_->name.c_str());
+            playerData.money = p_Client->account_->money;
+            playerData.wins = p_Client->account_->wins;
+            playerData.loses = p_Client->account_->loses;
+            playerData.pushes = p_Client->account_->pushes;
+            responseMsg.payload.readyListResponseData.players[index] = playerData;
+            index++;
+        }
+    }
+    responseMsg.payload.readyListResponseData.success = true;
+    responseMsg.payload.readyListResponseData.num_of_players = index;
+    // Send
+    send(this->context_->socket_, &responseMsg, sizeof(responseMsg), 0);
 }
 
 void StatePlaying::HandlePlayerAction(Message message)
@@ -484,6 +551,13 @@ void StatePlaying::HandlePlayerAction(Message message)
 void StatePlaying::HandleLeaveRoom(Message message)
 {
     std::cout << "[Client " << this->context_->id_ << "] sent LEAVE_ROOM.\n";
+
+    GameContext *game = this->context_->game_;
+
+    game->state_->HandleLeaveRoom(this->context_->turn_, message);
+
+    //Change state
+    this->context_->SetState(new StateReady);
 }
 
 void StatePlaying::HandleInvite(Message message)
@@ -492,5 +566,5 @@ void StatePlaying::HandleInvite(Message message)
 
     GameContext *game = this->context_->game_;
 
-    
+    game->state_->HandleInvite(this->context_->turn_, message);
 }

@@ -1,12 +1,8 @@
 #include "server.h"
 
-int seed = 0;
-
 int listenfd;
 
-std::vector<Client> clients;
-
-std::mutex clients_mtx, exit_mtx;
+std::mutex exit_mtx;
 
 bool exit_flag = false;
 
@@ -80,10 +76,14 @@ int main(int argc, char const *argv[])
     }
 
     // Wait for client threads to finish, join all client threads
-    for (std::vector<Client>::iterator it = clients.begin(); it != clients.end(); it++)
+    std::list<ClientContext*> allClients = ClientManager::instance().GetAllClients();
+    for (auto it = allClients.begin(); it != allClients.end(); it++)
     {
-        if (it->thread.joinable())
-            it->thread.join();
+        ClientContext* p_Client = *it;
+        if (p_Client->thread_.joinable())
+        {
+            p_Client->thread_.join();
+        }
     }
 
     // Close server socket
@@ -174,9 +174,6 @@ void HandleClient(int client_socket, int id)
                 currentClient->state_->HandlePlayerAction(msgBuff);
                 break;
 
-            case MessageType::CLT_PLAYER_READY:
-                break;
-
             case MessageType::CLT_LEAVE_ROOM:
                 currentClient->state_->HandleLeaveRoom(msgBuff);
                 break;
@@ -204,9 +201,8 @@ void HandleClient(int client_socket, int id)
             // Logout and destroy client
             currentClient->state_->HandleDisconnect(msgBuff);
             close(client_socket);
-
+            
             // Terminate thread
-            std::cout << "Client handler thread " << id << " terminated.\n";
             return;
         }
         else if (received_bytes == -1)
@@ -223,15 +219,4 @@ void HandleClient(int client_socket, int id)
             }
         }
     }
-}
-
-int FindClientSocketById(int id)
-{
-    std::lock_guard<std::mutex> guard(clients_mtx);
-    for (std::vector<Client>::iterator p_Client = clients.begin(); p_Client != clients.end(); p_Client++)
-    {
-        if (p_Client->id == id)
-            return p_Client->socket;
-    }
-    return -1; // NOT FOUND
 }

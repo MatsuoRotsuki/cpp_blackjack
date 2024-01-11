@@ -32,5 +32,4 @@ struct Client
 */
 void HandleInterrupt(int signal);
 void HandleClient(int client_socket, int id);
-int FindClientSocketById(int id);
 void DispatchViewOnline(int id, Message reqMsg);

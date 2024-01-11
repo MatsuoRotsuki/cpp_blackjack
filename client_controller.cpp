@@ -11,6 +11,7 @@ void DispatchReadyList(Message message)
     for (int i = 0; i < num_of_players; i++) {
         PlayerData player = message.payload.readyListResponseData.players[i];
         std::cout << player.id << std::endl;
+        std::cout << player.client_id << std::endl;
         std::cout << player.username << std::endl;
         std::cout << player.name << std::endl;
         std::cout << player.money << std::endl;
@@ -37,6 +38,7 @@ void DispatchRoomList(Message message)
     {
         PlayerData data = message.payload.roomListResponseData.players[i];
         std::cout << "id: " << data.id << std::endl;
+        std::cout << "client id: " << data.client_id << std::endl;
         std::cout << "username: " << data.username << std::endl;
         std::cout << "name: " << data.name << std::endl;
         std::cout << "money: " << data.money << std::endl;
@@ -85,4 +87,16 @@ void DispatchGameState(Message message)
         }
         std::cout << std::endl;
     }
+}
+
+void DispatchInvite(Message message)
+{
+    struct ServerInvitePayload data = message.payload.serverInviteData;
+    int room_id = data.roomData.id;
+    int num_of_players = data.roomData.num_of_players;
+    int sender_id = data.sender_id;
+    char sender_username[64];
+    strcpy(sender_username, data.sender_username);
+
+    std::cout << "Player " << sender_username << " invite you to join room " << room_id << std::endl;
 }

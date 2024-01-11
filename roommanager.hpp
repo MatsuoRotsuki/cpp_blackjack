@@ -29,6 +29,8 @@ public:
 
     virtual void HandlePlayerBet(int idx, Message message);
     virtual void HandlePlayerAction(int idx, Message message);
+    virtual void HandleLeaveRoom(int idx, Message message);
+    virtual void HandleInvite(int idx, Message message);
 };
 
 class GameContext
@@ -41,9 +43,9 @@ public:
     Deck* deck_;
     Deck* discarded_;
     Hand* dealerHand;
-    Hand* playerHands[4];
-    int bet[4] = {0, 0, 0, 0};
-    ClientContext* clients[4];
+    Hand* playerHands[5];
+    int bet[5] = {0, 0, 0, 0};
+    ClientContext* clients[5];
     int id_;
     int newPlayerTurnNumber;
     int currentTurn;
@@ -54,7 +56,8 @@ public:
 
 class StateBetting : public GameState {
 public:
-    void HandlePlayerBet(int idx, Message message) override; 
+    void HandlePlayerBet(int idx, Message message) override;
+    void HandleLeaveRoom(int idx, Message message) override;
 };
 
 class StatePlayerTurn: public GameState {

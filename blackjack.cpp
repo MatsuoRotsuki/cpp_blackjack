@@ -200,6 +200,20 @@ std::string Deck::ToString() const
 
 Deck::Deck()
 {
+    for (auto it = deck.begin(); it != deck.end(); it++)
+    {
+        Card *card = *it;
+        delete card;
+    }
+}
+
+Hand::~Hand()
+{
+    for (auto it = hand.begin(); it != hand.end(); it++)
+    {
+        Card *card = *it;
+        delete card;
+    }
 }
 
 void Hand::AddCard(Card *card)

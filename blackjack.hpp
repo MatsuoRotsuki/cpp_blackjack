@@ -52,6 +52,7 @@ private:
 class Hand
 {
 public:
+    ~Hand();
     void AddCard(Card *card);
     void TakeCardFromDeck(Deck *deck);
     void DiscardHandToDeck(Deck *discarded);

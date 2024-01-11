@@ -100,6 +100,7 @@ void HandleSendingThread(int client_socket)
             break;
         case 5:
             requestMsg.type = MessageType::CLT_JOIN_ROOM_REQ;
+            requestMsg.payload.joinRoomRequestData.room_id = 1;
             break;
         case 6:
             requestMsg.type = MessageType::CLT_CREATE_ROOM_REQ;
@@ -118,17 +119,15 @@ void HandleSendingThread(int client_socket)
             break;
         case 10:
             requestMsg.type = MessageType::CLT_INVITE;
+            requestMsg.payload.clientInviteData.client_id = 1;
             break;
         case 11:
             requestMsg.type = MessageType::CLT_INVITE_REPLY;
+            requestMsg.payload.inviteReplyData.reply = InvitationReply::YES;
+            requestMsg.payload.inviteReplyData.room_id = 1;
             break;
         case 12:
-            requestMsg.type = MessageType::CLT_INVITE_REPLY;
-            break;
-        case 13:
-            requestMsg.type = MessageType::CLT_LOGIN_REQ;
-            strcpy(requestMsg.payload.loginRequestData.username, "antony");
-            strcpy(requestMsg.payload.loginRequestData.password, "anton");
+            requestMsg.type = MessageType::CLT_LEAVE_ROOM;
             break;
         }
 
@@ -190,6 +189,9 @@ void HandleReceivingThread(int client_socket)
                 break;
             case MessageType::SRV_GAME_STATE:
                 DispatchGameState(msgBuff);
+                break;
+            case MessageType::SRV_INVITE:
+                DispatchInvite(msgBuff);
                 break;
             }
         }

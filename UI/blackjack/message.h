@@ -91,6 +91,7 @@ enum class State
 
 struct PlayerData {
     int id;
+    int client_id;
     char username[64];
     char name[64];
     int wins;
@@ -98,6 +99,12 @@ struct PlayerData {
     int pushes;
     int money;
     State state;
+};
+
+enum class InvitationReply
+{
+    YES,
+    NO,
 };
 
 /*
@@ -241,10 +248,6 @@ struct StartRoundPayload {
 
 };
 
-struct BetRequestPayload {
-
-};
-
 struct PlayerBetPayload {
     int bet;
 };
@@ -254,22 +257,22 @@ struct PlayerBetPayload {
  */
 struct GameStatePayload
 {
-    int num_of_players;
+    int num_of_players; //OK
     struct Player {
-        char username[32];
-        char outcome[32];
-        int score;
-        int num_of_cards;
-        struct CardData cards[10];
-        int money;
-        int bet;
+        char username[32]; //OK
+        char outcome[32]; //OK
+        int score; //OK
+        int num_of_cards; //OK
+        struct CardData cards[10]; //OK
+        int money; //OK
+        int bet; //OK
         int current;
     } players[4];
     int canBet;
     int canAction;
-    int dealer_num_of_cards;
-    struct CardData dealer_cards[10];
-    int dealer_score;
+    int dealer_num_of_cards; //OK
+    struct CardData dealer_cards[10]; //OK
+    int dealer_score; //OK
     char start_round[32];
 };
 
@@ -288,24 +291,23 @@ struct OutcomePayload
 {
 };
 
-struct PlayerReadyPayload {
-
-};
-
 struct LeaveRoomPayload {
-
-};
+    //Empty payload
+}; //OK
 
 struct ClientInvitePayload {
-
+    int client_id;
 };
 
 struct ServerInvitePayload {
-
+    int sender_id;
+    char sender_username[64];
+    RoomData roomData;
 };
 
 struct InviteReplyPayload {
-
+    int room_id;
+    InvitationReply reply;
 };
 
 struct InviteOutcomePayload {
@@ -336,6 +338,10 @@ typedef struct Message_
         struct GameStatePayload gameStateData;
         struct PlayerBetPayload playerBetData;
         struct PlayerActionPayload PlayerActionData;
+        struct LeaveRoomPayload leaveRoomdata;
+        struct ClientInvitePayload clientInviteData;
+        struct ServerInvitePayload serverInviteData;
+        struct InviteReplyPayload inviteReplyData;
     } payload;
 } Message;
 

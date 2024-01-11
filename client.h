@@ -23,3 +23,4 @@ void DispatchDisconnect();
 void DispatchReadyList(Message message);
 void DispatchRoomList(Message message);
 void DispatchGameState(Message message);
+void DispatchInvite(Message message);

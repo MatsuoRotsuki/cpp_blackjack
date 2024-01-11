@@ -88,6 +88,7 @@ class StateReady : public ClientState
 
 class StatePlaying : public ClientState
 {
+    void HandleReadyListRequest(Message message) override;
     void HandlePlayerBet(Message message) override;
     void HandlePlayerAction(Message message) override;
     void HandleLeaveRoom(Message message) override;
@@ -106,6 +107,7 @@ public:
     void AddClient(ClientContext *client);
     void RemoveClient(ClientContext *client);
     std::list<ClientContext*> GetLoggedClients();
+    std::list<ClientContext*> GetAllClients();
     int GetNextId();
     ClientContext* getClientById(int id);
 

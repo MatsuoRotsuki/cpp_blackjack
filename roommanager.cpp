@@ -122,7 +122,7 @@ void GameContext::AddClient(ClientContext *client)
     std::lock_guard<std::mutex> guard(mutex_);
     if (newPlayerTurnNumber >= 4)
     {
-        //Send error message
+        // Send error message
         Message errorMsg;
         errorMsg.type = MessageType::SRV_INVALID_REQUEST;
         strcpy(errorMsg.payload.invalidRequestData.message, "This room is full");
@@ -144,6 +144,7 @@ void GameState::SetContext(GameContext *context)
 
 void GameState::HandlePlayerBet(int idx, Message message)
 {
+    // Default behavior
     Message msg;
     msg.type = MessageType::SRV_INVALID_REQUEST;
     strcpy(msg.payload.invalidRequestData.message, "Bad request");
@@ -153,11 +154,60 @@ void GameState::HandlePlayerBet(int idx, Message message)
 
 void GameState::HandlePlayerAction(int idx, Message message)
 {
+    // Default behavior
     Message msg;
     msg.type = MessageType::SRV_INVALID_REQUEST;
     strcpy(msg.payload.invalidRequestData.message, "Bad request");
 
     send(this->context_->clients[idx]->socket_, &msg, sizeof(msg), 0);
+}
+
+void GameState::HandleLeaveRoom(int idx, Message message)
+{
+    // Default behavior
+    Message msg;
+    msg.type = MessageType::SRV_INVALID_REQUEST;
+    strcpy(msg.payload.invalidRequestData.message, "Bad request");
+
+    send(this->context_->clients[idx]->socket_, &msg, sizeof(msg), 0);
+}
+
+void GameState::HandleInvite(int idx, Message message)
+{
+    std::lock_guard<std::mutex> guard(this->context_->mutex_);
+    // TODO
+    // Get sender client info
+    ClientContext *sendClient = this->context_->clients[idx];
+
+    // Get receiver client info
+    int receiver_id = message.payload.clientInviteData.client_id;
+    std::cout << "Sent invitation to client id " << receiver_id << std::endl;
+    ClientContext *receiveClient = ClientManager::instance().getClientById(receiver_id);
+    if (receiveClient != nullptr)
+    {
+        //Get Room info, create invite message
+        Message inviteMsg;
+        inviteMsg.type = MessageType::SRV_INVITE;
+        RoomData room;
+        room.id = this->context_->id_;
+        room.num_of_players = this->context_->newPlayerTurnNumber;
+        inviteMsg.payload.serverInviteData.roomData = room;
+        inviteMsg.payload.serverInviteData.sender_id = sendClient->id_;
+        strcpy(inviteMsg.payload.serverInviteData.sender_username, sendClient->account_->username.c_str());
+
+        // Send
+        send(receiveClient->socket_, &inviteMsg, sizeof(inviteMsg), 0);
+    }
+    else
+    {
+        // Error
+        Message errorMsg;
+        errorMsg.type = MessageType::SRV_INVALID_REQUEST;
+        strcpy(errorMsg.payload.invalidRequestData.message, "User not found");
+
+        send(sendClient->socket_, &errorMsg, sizeof(errorMsg), 0);
+        return;
+    }
 }
 
 void StateBetting::HandlePlayerBet(int idx, Message message)
@@ -194,13 +244,50 @@ void StateBetting::HandlePlayerBet(int idx, Message message)
     this->context_->SetState(new StatePlayerTurn);
 }
 
+void StateBetting::HandleLeaveRoom(int idx, Message message)
+{
+    // TODO
+    std::lock_guard<std::mutex> guard(this->context_->mutex_);
+
+    delete this->context_->playerHands[idx];
+
+    this->context_->clients[idx]->turn_ = -1;
+
+    for (int i = idx; i < this->context_->newPlayerTurnNumber - 1; i++)
+    {
+        this->context_->playerHands[i] = this->context_->playerHands[i+1];
+    }
+
+    for (int i = idx; i < this->context_->newPlayerTurnNumber - 1; i++)
+    {
+        this->context_->bet[i] = this->context_->bet[i+1];
+    }
+
+    for (int i = idx; i < this->context_->newPlayerTurnNumber - 1; i++)
+    {
+        this->context_->clients[i] = this->context_->clients[i+1];
+        this->context_->clients[i]->turn_ = i;
+    }
+
+    if (idx == this->context_->newPlayerTurnNumber - 1)
+    {
+        this->context_->playerHands[idx] = nullptr;
+        this->context_->bet[idx] = 0;
+        this->context_->clients[idx] = nullptr;
+    }
+
+    this->context_->newPlayerTurnNumber--;
+
+    this->context_->CreateStateMsg();
+}
+
 void StatePlayerTurn::HandlePlayerAction(int idx, Message message)
 {
     std::lock_guard<std::mutex> guard(this->context_->mutex_);
 
     // Get all betted players
     int betted = 0;
-    for (int i = 0 ; i < this->context_->newPlayerTurnNumber; i++)
+    for (int i = 0; i < this->context_->newPlayerTurnNumber; i++)
     {
         if (this->context_->bet[i] != 0)
         {
@@ -233,7 +320,7 @@ void StatePlayerTurn::HandlePlayerAction(int idx, Message message)
 
         if (this->context_->playerHands[idx]->CalculateValue() > 20)
         {
-            //Burst or Blackjack
+            // Burst or Blackjack
             this->context_->currentTurn++;
         }
 
@@ -247,10 +334,11 @@ void StatePlayerTurn::HandlePlayerAction(int idx, Message message)
         this->context_->CreateStateMsg();
     }
 
-    if (this->context_->currentTurn == betted) {
+    if (this->context_->currentTurn == betted)
+    {
         // Control dealer
-        
-        while(this->context_->dealerHand->CalculateValue() < 17)
+
+        while (this->context_->dealerHand->CalculateValue() < 17)
         {
             if (this->context_->deck_->IsEmpty())
             {
@@ -269,7 +357,8 @@ void StatePlayerTurn::HandlePlayerAction(int idx, Message message)
 
         for (int i = 0; i < this->context_->currentTurn; i++)
         {
-            if (this->context_->dealerHand->CalculateValue() > 21){
+            if (this->context_->dealerHand->CalculateValue() > 21)
+            {
                 // Dealer burst
                 this->context_->clients[i]->account_->wins++;
                 this->context_->clients[i]->account_->money += this->context_->bet[i];
@@ -277,22 +366,26 @@ void StatePlayerTurn::HandlePlayerAction(int idx, Message message)
             }
             else if (this->context_->playerHands[i]->CalculateValue() > this->context_->dealerHand->CalculateValue())
             {
-                //Win
+                // Win
                 this->context_->clients[i]->account_->wins++;
                 this->context_->clients[i]->account_->money += this->context_->bet[i];
                 this->context_->clients[i]->account_->save();
-            } else if (this->context_->playerHands[i]->CalculateValue() < this->context_->dealerHand->CalculateValue()) {
-                //Lose
+            }
+            else if (this->context_->playerHands[i]->CalculateValue() < this->context_->dealerHand->CalculateValue())
+            {
+                // Lose
                 this->context_->clients[i]->account_->loses++;
                 this->context_->clients[i]->account_->money -= this->context_->bet[i];
                 this->context_->clients[i]->account_->save();
-            } else {
+            }
+            else
+            {
                 this->context_->clients[i]->account_->pushes++;
                 this->context_->clients[i]->account_->save();
             }
         }
 
-        //Outcome
+        // Outcome
         this->context_->CreateStateMsg();
 
         this->context_->dealerHand->DiscardHandToDeck(this->context_->discarded_);
@@ -308,7 +401,6 @@ void StatePlayerTurn::HandlePlayerAction(int idx, Message message)
         std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 
         this->context_->CreateStateMsg();
-
 
         this->context_->SetState(new StateBetting);
     }
