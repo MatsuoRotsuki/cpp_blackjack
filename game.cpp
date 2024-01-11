@@ -21,7 +21,7 @@ void Game::startRound()
         player.getHand().discardHandToDeck(discarded);
     }
 
-    if (deck.cardsLeft() < 4)
+    if (deck.cardsLeft() < 16)
     {
         deck.reloadDeckFromDiscard(discarded);
     }

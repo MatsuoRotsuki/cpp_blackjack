@@ -88,23 +88,40 @@ void HandleSendingThread(int client_socket)
             break;
 
         case 2:
-            requestMsg.type = MessageType::CLT_SIGNUP_REQ;
-            strcpy(requestMsg.payload.signupRequestData.username, "antonylouis");
-            strcpy(requestMsg.payload.signupRequestData.password, "123456");
-            strcpy(requestMsg.payload.signupRequestData.confirm_password, "123456");
-            strcpy(requestMsg.payload.signupRequestData.name, "Loc Pham");
+            requestMsg.type = MessageType::CLT_LOGIN_REQ;
+            strcpy(requestMsg.payload.loginRequestData.username, "anton");
+            strcpy(requestMsg.payload.loginRequestData.password, "anton");
             break;
         case 3:
-            requestMsg.type = MessageType::CLT_READYLIST_REQ;
+            requestMsg.type = MessageType::CLT_ROOMLIST_REQ;
             break;
         case 4:
-            requestMsg.type = MessageType::CLT_ROOMLIST_REQ;
-
+            requestMsg.type = MessageType::CLT_READYLIST_REQ;
+            break;
         case 5:
             requestMsg.type = MessageType::CLT_JOIN_ROOM_REQ;
-
+            break;
         case 6:
             requestMsg.type = MessageType::CLT_CREATE_ROOM_REQ;
+            break;
+        case 7:
+            requestMsg.type = MessageType::CLT_PLAYER_BET;
+            requestMsg.payload.playerBetData.bet = 10;
+            break;
+        case 8:
+            requestMsg.type = MessageType::CLT_PLAYER_ACTION;
+            requestMsg.payload.PlayerActionData.action = PlayerAction::HIT;
+            break;
+        case 9:
+            requestMsg.type = MessageType::CLT_PLAYER_ACTION;
+            requestMsg.payload.PlayerActionData.action = PlayerAction::STAND;
+            break;
+        case 10:
+            requestMsg.type = MessageType::CLT_INVITE;
+            break;
+        case 11:
+            requestMsg.type = MessageType::CLT_INVITE_REPLY;
+            break;
         }
 
         // Check exit flag
@@ -133,6 +150,7 @@ void HandleReceivingThread(int client_socket)
         received_bytes = recv(client_socket, &msgBuff, sizeof(msgBuff), MSG_DONTWAIT);
         if (received_bytes > 0)
         {
+            std::cout << "\033[2J\033[1;1H";
             std::cout << MessageTypeToString(msgBuff.type) << std::endl;
             // Validate
 
@@ -160,6 +178,9 @@ void HandleReceivingThread(int client_socket)
                 DispatchReadyList(msgBuff);
                 break;
             case MessageType::SRV_ROOMLIST_RES:
+                break;
+            case MessageType::SRV_GAME_STATE:
+                DispatchGameState(msgBuff);
                 break;
             }
         }

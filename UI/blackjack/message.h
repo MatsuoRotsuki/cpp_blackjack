@@ -89,6 +89,11 @@ struct CardData {
     Rank rank;
 };
 
+enum class PlayerAction {
+    HIT,
+    STAND,
+};
+
 /*
 ============================================================================
 Dưới đây là cấu trúc payload của các thông điệp cụ thể
@@ -235,7 +240,7 @@ struct BetRequestPayload {
 };
 
 struct PlayerBetPayload {
-
+    int bet;
 };
 
 /**
@@ -259,7 +264,7 @@ struct GameStatePayload
     int dealer_num_of_cards;
     struct CardData dealer_cards[10];
     int dealer_score;
-    int start_round;
+    char start_round[32];
 };
 
 struct ActionRequestPayload {
@@ -267,7 +272,7 @@ struct ActionRequestPayload {
 };
 
 struct PlayerActionPayload {
-
+    PlayerAction action;
 };
 
 /**
@@ -323,6 +328,8 @@ typedef struct Message_
         struct JoinRoomRequestPayload joinRoomRequestData;
         struct CreateRoomRequestPayload createRoomRequestData;
         struct GameStatePayload gameStateData;
+        struct PlayerBetPayload playerBetData;
+        struct PlayerActionPayload PlayerActionData;
     } payload;
 } Message;
 
