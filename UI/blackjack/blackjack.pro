@@ -13,6 +13,7 @@ SOURCES += \
     carditem.cpp \
     gamecontroller.cpp \
     inviteplayerdialog.cpp \
+    logoutdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     onlineplayer.cpp \
@@ -28,6 +29,7 @@ HEADERS += \
     carditem.h \
     gamecontroller.h \
     inviteplayerdialog.h \
+    logoutdialog.h \
     mainwindow.h \
     onlineplayer.h \
     player.h \
@@ -41,6 +43,7 @@ HEADERS += \
 FORMS += \
     carditem.ui \
     inviteplayerdialog.ui \
+    logoutdialog.ui \
     mainwindow.ui \
     onlineplayer.ui \
     player.ui \

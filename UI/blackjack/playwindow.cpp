@@ -13,6 +13,7 @@
 PlayWindow::PlayWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::PlayWindow)
+    , isQuitPopupShown(false)
 {
     ui->setupUi(this);
     // this->mainWindow = mainWindow;

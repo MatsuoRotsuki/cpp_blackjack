@@ -4,6 +4,7 @@
 #include "playwindow.h"
 #include "screencontroller.h"
 #include "onlineplayer.h"
+#include "logoutdialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -227,5 +228,34 @@ void MainWindow::on_createNewRoomBtn_clicked()
 void MainWindow::on_joinRandomBtn_clicked()
 {
     qDebug() << "play game";
+}
+
+
+void MainWindow::on_logoutBtn_clicked()
+{
+    if(!isLogoutPopupShown){
+        LogoutDialog *logoutDialog = new LogoutDialog();
+        // invitePopup->show();
+
+        QPoint buttonPos = ui->logoutBtn->mapToGlobal(QPoint(0, 0));
+
+        // Set the position of the popup
+        logoutDialog->move(buttonPos.x(), buttonPos.y() + ui->logoutBtn->height());
+        logoutDialog->setWindowTitle("Confirm logout");
+        logoutDialog->show();
+        isLogoutPopupShown = true;
+
+        // Connect accepted and rejected signals
+        connect(logoutDialog, &LogoutDialog::accepted, this, [&]() {
+            isLogoutPopupShown = false;
+            qDebug() << "Yes to exit" ;
+            ScreenController::instance().switchToScreen(4);
+
+        });
+        connect(logoutDialog, &LogoutDialog::rejected, this, [&]() {
+            isLogoutPopupShown = false;
+            // Handle the case when the user clicks Cancel or closes the window
+        });
+    }
 }
 
