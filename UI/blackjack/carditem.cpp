@@ -83,8 +83,10 @@ void CardItem::setImage(const CardData cardItem)
     // default :
     //     break;
     // }
-    qDebug()<<"set image";
-    QString imageUrl = "2_h.png";
-    QPixmap pixmap(imageUrl);
+    QPixmap pixmap("2_h.png");
+    if (pixmap.isNull())
+    {
+        qDebug() << "not found";
+    }
     ui->Card_Item->setPixmap(pixmap);
 }

@@ -28,8 +28,12 @@ PlayWindow::~PlayWindow()
 
 void PlayWindow::on_hit_btn_clicked()
 {
-    player *newPlayer = new player();
-    ui->listPlayer->addWidget(newPlayer);
+    Message msg;
+    msg.type = MessageType::CLT_PLAYER_ACTION;
+    msg.payload.PlayerActionData.action = PlayerAction::HIT;
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    SocketManager::instance().socket()->write(byteArray);
 }
 
 
@@ -37,19 +41,25 @@ void PlayWindow::on_stand_btn_clicked()
 {
 
     // Get the number of items in the layout
-    int itemCount = ui->listPlayer->count();
+    // int itemCount = ui->listPlayer->count();
 
-    // Check if there is at least one item in the layout
-    if (itemCount > 0) {
-        // Get the last item (widget) in the layout
-        QWidget *lastItem = ui->listPlayer->itemAt(itemCount - 1)->widget();
+    // // Check if there is at least one item in the layout
+    // if (itemCount > 0) {
+    //     // Get the last item (widget) in the layout
+    //     QWidget *lastItem = ui->listPlayer->itemAt(itemCount - 1)->widget();
 
-        // Remove the last item from the layout
-        ui->listPlayer->removeWidget(lastItem);
+    //     // Remove the last item from the layout
+    //     ui->listPlayer->removeWidget(lastItem);
 
-        // Delete the last item to free memory
-        delete lastItem;
-    }
+    //     // Delete the last item to free memory
+    //     delete lastItem;
+    // }
+    Message msg;
+    msg.type = MessageType::CLT_PLAYER_ACTION;
+    msg.payload.PlayerActionData.action = PlayerAction::STAND;
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    SocketManager::instance().socket()->write(byteArray);
 }
 
 
@@ -229,4 +239,15 @@ void PlayWindow::back_to_home_screen()
 //     ui->dealerScore->setText(QString::number(msg.payload.gameStateData.dealer_score));
 // }
 
+
+
+void PlayWindow::on_bet_btn_clicked()
+{
+    Message msg;
+    msg.type = MessageType::CLT_PLAYER_BET;
+    msg.payload.playerBetData.bet = 100;
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    SocketManager::instance().socket()->write(byteArray);
+}
 

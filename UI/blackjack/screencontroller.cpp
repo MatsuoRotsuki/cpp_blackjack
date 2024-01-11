@@ -111,7 +111,7 @@ void ScreenController::CreateRoom(Message message){
             delete item;
         }
 
-        int num_of_players = message.payload.readyListResponseData.num_of_players;
+        int num_of_players = message.payload.gameStateData.num_of_players;
         for(int i = 0; i< num_of_players;i++){
             player *item = new player();
             // PlayerData playerData = message.payload.gameStateData.players[i];

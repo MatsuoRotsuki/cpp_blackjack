@@ -58,7 +58,6 @@ void player::setCards(const CardData cards[], int num_of_cards){
         cardItem->setImage(cards[i]);
         ui->list_card->addWidget(cardItem);
     }
-
 }
 
 // std::string MessageTypeToString(MessageType type)

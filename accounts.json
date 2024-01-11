@@ -33,13 +33,13 @@
 		},
 		{
 			"id" : 4,
-			"loses" : 234,
-			"money" : 1080,
+			"loses" : 235,
+			"money" : 1280,
 			"name" : "anton",
 			"password" : "784742a66a3a0c271feced5b149ff8db",
 			"pushes" : 48,
 			"username" : "anton",
-			"wins" : 56
+			"wins" : 59
 		},
 		{
 			"id" : 5,

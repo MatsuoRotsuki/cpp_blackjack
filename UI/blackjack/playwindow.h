@@ -37,6 +37,8 @@ private slots:
 
     // void update_game_state(Message msg);
 
+    void on_bet_btn_clicked();
+
 private:
     Ui::PlayWindow *ui;
     bool isInvitePopupShown;
