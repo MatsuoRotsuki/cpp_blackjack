@@ -29,13 +29,13 @@
    <enum>Qt::LeftToRight</enum>
   </property>
   <layout class="QFormLayout" name="formLayout">
-   <item row="0" column="0">
+   <item row="0" column="0" colspan="2">
     <widget class="QWidget" name="widget_2" native="true">
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QLabel" name="status">
         <property name="text">
-         <string>Status</string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -158,7 +158,7 @@ border-width: 1px;</string>
              <string notr="true">color: rgb(255, 249, 100);</string>
             </property>
             <property name="text">
-             <string>Bet money : 5K</string>
+             <string> 0K</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -198,6 +198,9 @@ border-width: 1px;</string>
             <property name="text">
              <string>Username</string>
             </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
            </widget>
           </item>
           <item>
@@ -211,7 +214,7 @@ border-width: 1px;</string>
              <string notr="true">color: rgb(255, 249, 100);</string>
             </property>
             <property name="text">
-             <string>Your money : 65K</string>
+             <string>0K</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>

@@ -59,6 +59,8 @@ private slots:
 
     void on_joinBtn_clicked();
 
+    void on_createRoomBtn_clicked();
+
 public slots:
 
 private:

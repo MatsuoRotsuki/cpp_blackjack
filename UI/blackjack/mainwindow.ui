@@ -384,30 +384,10 @@ border-radius: 10px;</string>
                 <property name="spacing">
                  <number>0</number>
                 </property>
-                <item row="3" column="0">
-                 <widget class="RoomItemWidget" name="widget_5" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(255, 255, 65);</string>
-                  </property>
-                 </widget>
-                </item>
                 <item row="1" column="0">
                  <widget class="RoomItemWidget" name="widget_6" native="true">
                   <property name="styleSheet">
                    <string notr="true">background-color: rgb(255, 255, 85);</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="RoomItemWidget" name="widget_7" native="true"/>
-                </item>
-                <item row="2" column="1">
-                 <widget class="RoomItemWidget" name="widget_8" native="true"/>
-                </item>
-                <item row="3" column="1">
-                 <widget class="RoomItemWidget" name="widget_3" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(64, 255, 66);</string>
                   </property>
                  </widget>
                 </item>
@@ -425,9 +405,6 @@ border-radius: 10px;</string>
                   </property>
                  </widget>
                 </item>
-                <item row="2" column="0">
-                 <widget class="RoomItemWidget" name="widget_9" native="true"/>
-                </item>
                </layout>
               </widget>
               <widget class="QWidget" name="layoutWidget">
@@ -441,61 +418,16 @@ border-radius: 10px;</string>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
                 <item>
-                 <widget class="QPushButton" name="createNewRoomBtn">
-                  <property name="minimumSize">
-                   <size>
-                    <width>200</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>200</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(0, 178, 255);
-border-radius: 10px;</string>
-                  </property>
+                 <widget class="QPushButton" name="createRoomBtn">
                   <property name="text">
-                   <string>Create new room</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="joinRandomBtn">
-                  <property name="minimumSize">
-                   <size>
-                    <width>200</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>200</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">background-color: rgb(0, 178, 255);
-border-radius: 10px;</string>
-                  </property>
-                  <property name="text">
-                   <string>Join random</string>
+                   <string>Create room</string>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QPushButton" name="joinBtn">
                   <property name="text">
-                   <string>join Room</string>
+                   <string>Join Room</string>
                   </property>
                  </widget>
                 </item>

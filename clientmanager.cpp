@@ -159,12 +159,37 @@ void ClientState::HandleReadyListRequest(Message message)
     // std::cout << "[Client " << this->context_->id_ << "] sent READYLIST. INVALID. Current state: " << typeid(*this->context_->state_).name() << std::endl;
 
     // Create response message
-    Message responseMsg;
-    responseMsg.type = MessageType::SRV_INVALID_REQUEST;
-    strcpy(responseMsg.payload.invalidRequestData.message, "Bad request");
+     std::cout << "[Client " << this->context_->id_ << "] sent READYLIST.\n";
 
+    // Create response message
+    Message responseMsg;
+    responseMsg.type = MessageType::SRV_READYLIST_RES;
+
+    // Get list of ready players
+    std::list<ClientContext *> allLoggedClients = ClientManager::instance().GetLoggedClients();
+    allLoggedClients.remove(this->context_);
+    int index = 0;
+    for (auto it = allLoggedClients.begin(); it != allLoggedClients.end(); it++)
+    {
+        ClientContext* p_Client = *it;
+        // If the client's state is ready, add struct
+        if (StateReady* stateReadyPtr = dynamic_cast<StateReady*>(p_Client->state_)) {
+            PlayerData playerData;
+            playerData.id = p_Client->account_->id;
+            strcpy(playerData.username, p_Client->account_->username.c_str());
+            strcpy(playerData.name, p_Client->account_->name.c_str());
+            playerData.money = p_Client->account_->money;
+            playerData.wins = p_Client->account_->wins;
+            playerData.loses = p_Client->account_->loses;
+            playerData.pushes = p_Client->account_->pushes;
+            responseMsg.payload.readyListResponseData.players[index] = playerData;
+            index++;
+        }
+    }
+    responseMsg.payload.readyListResponseData.success = true;
+    responseMsg.payload.readyListResponseData.num_of_players = index;
     // Send
-    send(this->context_->socket_, &responseMsg, sizeof(Message), 0);
+    send(this->context_->socket_, &responseMsg, sizeof(responseMsg), 0);
 }
 
 void ClientState::HandleCreateRoomRequest(Message message)

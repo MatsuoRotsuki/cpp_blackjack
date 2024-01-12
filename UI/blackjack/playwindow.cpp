@@ -135,7 +135,7 @@ void PlayWindow::on_quitBtn_clicked()
             QByteArray byteArray;
             byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
             SocketManager::instance().socket()->write(byteArray);
-            ScreenController::instance().switchToScreen(0);
+             ScreenController::instance().switchToScreen(0);
 
             // back_to_home_screen();
 

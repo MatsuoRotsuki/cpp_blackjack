@@ -27,7 +27,7 @@ void player::setUsername(const QString &username)
 
 
 void player::setCurrentMoney(const QString &currentMoney){
-    ui->money->setText(currentMoney);
+    ui->money->setText("Total money: " + currentMoney);
 }
 
 void player::setStatus(const int status){
@@ -48,7 +48,7 @@ void player::setScore(const int score){
 }
 
 void player::setBetting(const int bet){
-    ui->betting->setText(QString::number(bet));
+    ui->betting->setText("Bet money: " + QString::number(bet));
 }
 
 void player::setCards(const CardData cards[], int num_of_cards){

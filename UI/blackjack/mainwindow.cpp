@@ -243,9 +243,6 @@ void MainWindow::on_joinRandomBtn_clicked()
 }
 
 
-
-
-
 void MainWindow::on_joinBtn_clicked()
 {
     Message msg;
@@ -256,5 +253,17 @@ void MainWindow::on_joinBtn_clicked()
     SocketManager::instance().socket()->write(byteArray);
     ScreenController::instance().switchToScreen(2);
     qDebug() << "play game";
+}
+
+
+
+void MainWindow::on_createRoomBtn_clicked()
+{
+    Message msg;
+    msg.type = MessageType::CLT_CREATE_ROOM_REQ;
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    SocketManager::instance().socket()->write(byteArray);
+    ScreenController::instance().switchToScreen(2);
 }
 
