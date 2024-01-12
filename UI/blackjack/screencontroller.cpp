@@ -1,6 +1,7 @@
 #include "screencontroller.h"
 #include "onlineplayer.h"
 #include "player.h"
+#include "carditem.h"
 ScreenController::ScreenController(QObject *parent) 
     : QObject(parent)
     , m_stackedWidget(nullptr)
@@ -52,6 +53,7 @@ void ScreenController::UpdateReadyList(Message message)
     }
 
     int num_of_players = message.payload.readyListResponseData.num_of_players;
+    qDebug() << "num of player : " <<num_of_players;
     for (int i = 0; i < num_of_players; i++) {
         PlayerData player = message.payload.readyListResponseData.players[i];
         qDebug() << player.id ;
@@ -83,6 +85,7 @@ void ScreenController::BetRequest(Message message)
 
 void ScreenController::PlayerBet(Message message)
 {
+
 }
 
 void ScreenController::ActionRequest(Message message)
@@ -127,9 +130,32 @@ void ScreenController::CreateRoom(Message message){
             allPlayers->addWidget(item);
         }
     }
-
-
 }
+
+void ScreenController::UpdateDealer(Message message){
+    if(dealerScore){
+        dealerScore->setText(QString::number(message.payload.gameStateData.dealer_score));
+    }
+    if (dealer) {
+        while(QLayoutItem *item = dealer->takeAt(0)) {
+            QWidget *widget = item->widget();
+            if (widget) {
+                dealer->removeWidget(widget);
+                delete widget;
+            }
+            delete item;
+        }
+
+        int num_of_cards = message.payload.gameStateData.dealer_num_of_cards;
+        for(int i = 0; i< num_of_cards;i++){
+            CardItem *cardItem = new CardItem();
+            cardItem->setImage(message.payload.gameStateData.dealer_cards[i]);
+            dealer->addWidget(cardItem);
+        }
+    }
+}
+
+
 
         //     // if(msg.payload.gameStateData.start_round == 1){
         //     //     ui->Notification->setVisible(true);

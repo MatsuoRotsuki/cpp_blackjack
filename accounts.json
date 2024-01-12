@@ -33,13 +33,13 @@
 		},
 		{
 			"id" : 4,
-			"loses" : 235,
-			"money" : 1280,
+			"loses" : 239,
+			"money" : 1480,
 			"name" : "anton",
 			"password" : "784742a66a3a0c271feced5b149ff8db",
 			"pushes" : 48,
 			"username" : "anton",
-			"wins" : 59
+			"wins" : 65
 		},
 		{
 			"id" : 5,
@@ -57,6 +57,26 @@
 			"name" : "k",
 			"password" : "8ce4b16b22b58894aa86c421e8759df3",
 			"username" : "k",
+			"wins" : 0
+		},
+		{
+			"id" : 7,
+			"loses" : 4,
+			"money" : 1000,
+			"name" : "ko",
+			"password" : "ed73f6b46391b95e1d03c6818a73b8b9",
+			"pushes" : 0,
+			"username" : "ko",
+			"wins" : 4
+		},
+		{
+			"id" : 8,
+			"loses" : 1,
+			"money" : 900,
+			"name" : "l",
+			"password" : "2db95e8e1a9267b7a1188556b2013b33",
+			"pushes" : 0,
+			"username" : "l",
 			"wins" : 0
 		}
 	]

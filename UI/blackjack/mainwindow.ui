@@ -21,7 +21,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_main">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="main_screen">
        <layout class="QGridLayout" name="gridLayout">
@@ -435,8 +435,8 @@ border-radius: 10px;</string>
                 <rect>
                  <x>10</x>
                  <y>10</y>
-                 <width>416</width>
-                 <height>32</height>
+                 <width>530</width>
+                 <height>42</height>
                 </rect>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -489,6 +489,13 @@ border-radius: 10px;</string>
                   </property>
                   <property name="text">
                    <string>Join random</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="joinBtn">
+                  <property name="text">
+                   <string>join Room</string>
                   </property>
                  </widget>
                 </item>

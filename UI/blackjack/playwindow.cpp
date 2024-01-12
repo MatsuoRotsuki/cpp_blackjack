@@ -18,6 +18,8 @@ PlayWindow::PlayWindow(QWidget *parent)
     // this->mainWindow = mainWindow;
     // connect(SocketManager::instance().socket(), &QTcpSocket::readyRead, this, &PlayWindow::on_readFlag);
     ScreenController::instance().allPlayers = ui->listPlayer;
+    ScreenController::instance().dealer = ui->dealer;
+    ScreenController::instance().dealerScore = ui->dealerScore;
 }
 
 PlayWindow::~PlayWindow()
@@ -93,14 +95,6 @@ void PlayWindow::on_inviteBtn_clicked()
         byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
         SocketManager::instance().socket()->write(byteArray);
 
-        // Connect the dialog's destroyed signal to a slot that will reset the flag when the dialog is closed
-        // connect(invitePlayerDialog, &InvitePlayerDialog::destroyed, this, [&]() {
-        //     isInvitePopupShown = false;
-        //     qDebug() << "check" << isInvitePopupShown;
-
-        //     // Disconnect the signal-slot connection
-        //     disconnect(invitePlayerDialog, &InvitePlayerDialog::destroyed, this, nullptr);
-        // });
         connect(invitePlayerDialog, &InvitePlayerDialog::rejected, this, [&]() {
             isInvitePopupShown = false;
             // Handle the case when the user clicks Cancel or closes the window
@@ -135,8 +129,15 @@ void PlayWindow::on_quitBtn_clicked()
             //     // Gọi hàm trong MainWindow
             //     mainWindow->on_back_to_main_window();
             // }
-            qDebug() << "Yes to exit" ;
-            back_to_home_screen();
+            ui->Notification->setVisible(false);
+            Message msg;
+            msg.type = MessageType::CLT_LEAVE_ROOM;
+            QByteArray byteArray;
+            byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+            SocketManager::instance().socket()->write(byteArray);
+            ScreenController::instance().switchToScreen(0);
+
+            // back_to_home_screen();
 
         });
         connect(quitDialog, &QuitDialog::rejected, this, [&]() {
@@ -243,6 +244,7 @@ void PlayWindow::back_to_home_screen()
 
 void PlayWindow::on_bet_btn_clicked()
 {
+    ui->Notification->setVisible(false);
     Message msg;
     msg.type = MessageType::CLT_PLAYER_BET;
     msg.payload.playerBetData.bet = 100;

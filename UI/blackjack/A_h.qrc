@@ -17,6 +17,7 @@
         <file>K_h.png</file>
         <file>J_h.png</file>
         <file>Q_h.png</file>
+        <file>A_h.png</file>
     </qresource>
     <qresource prefix="/diamonds">
         <file>6_d.png</file>

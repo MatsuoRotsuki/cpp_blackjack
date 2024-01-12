@@ -158,7 +158,10 @@ void MainWindow::on_readyRead()
         ScreenController::instance().UpdateRoomList(msg);
         break;
     case MessageType::SRV_ADDTOROOM:
-        ScreenController::instance().switchToScreen(2);
+        if (msg.payload.loginResponseData.success) {
+            ScreenController::instance().switchToScreen(2);
+        }
+        // ScreenController::instance().switchToScreen(2);
         ScreenController::instance().CreateRoom(msg);
         break;
     case MessageType::SRV_START_ROUND:
@@ -171,6 +174,7 @@ void MainWindow::on_readyRead()
         ScreenController::instance().PlayerBet(msg);
         break;
     case MessageType::SRV_GAME_STATE:
+        ScreenController::instance().UpdateDealer(msg);
         ScreenController::instance().CreateRoom(msg);
         // ScreenController::instance().UpdateGameState(msg);
         break;
@@ -221,7 +225,13 @@ void MainWindow::on_signup_btn_clicked()
 
 void MainWindow::on_createNewRoomBtn_clicked()
 {
-
+    qDebug()<< "create new room";
+    Message msg;
+    msg.type = MessageType::CLT_CREATE_ROOM_REQ;
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    SocketManager::instance().socket()->write(byteArray);
+    ScreenController::instance().switchToScreen(2);
 }
 
 
@@ -229,6 +239,22 @@ void MainWindow::on_createNewRoomBtn_clicked()
 
 void MainWindow::on_joinRandomBtn_clicked()
 {
+    qDebug() << "play game";
+}
+
+
+
+
+
+void MainWindow::on_joinBtn_clicked()
+{
+    Message msg;
+    msg.type = MessageType::CLT_JOIN_ROOM_REQ;
+    msg.payload.joinRoomRequestData.room_id = 1;
+    QByteArray byteArray;
+    byteArray.append(reinterpret_cast<const char*>(&msg), sizeof(Message));
+    SocketManager::instance().socket()->write(byteArray);
+    ScreenController::instance().switchToScreen(2);
     qDebug() << "play game";
 }
 
